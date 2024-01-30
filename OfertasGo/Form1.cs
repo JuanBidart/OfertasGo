@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace OfertasGo
 {
@@ -15,6 +17,17 @@ namespace OfertasGo
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+                frmProductos productos = new frmProductos();
+                productos.ShowDialog();
         }
     }
 }
