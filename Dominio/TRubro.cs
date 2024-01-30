@@ -15,4 +15,5 @@ namespace Dominio
         public  byte Activo { get; set; }
         public byte Eliminado { get; set; }
     }
+    
 }

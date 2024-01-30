@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OfertasGo
 {
@@ -52,21 +54,62 @@ namespace OfertasGo
         {
             frmAgregarRubro agregarRubro = new frmAgregarRubro();
             agregarRubro.ShowDialog();
+            actComboBoxRubro();
         }
-
-        private void frmAgregarProducto_Load(object sender, EventArgs e)
+        public void actComboBoxRubro() 
         {
             ConexionRubro conexionRubro = new ConexionRubro();
             try
             {
-                cboRubro.DataSource = conexionRubro.listarRubro();
+                List<TRubro> rubros = new List<TRubro>();
+                rubros = conexionRubro.listarRubro();
+                List<string> values = new List<string>();
+
+                foreach (var rubro in rubros)
+                {
+                    values.Add(rubro.Rubro);
+
+                }
+
+                cboRubro.DataSource = values;
 
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message.ToString());
-            } 
+            }
+        }
+
+        private void frmAgregarProducto_Load(object sender, EventArgs e)
+        {
+            txtRecargo.Text = "0";
+            txtDescripcion.Focus();
+
+            //    ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
+            actComboBoxRubro();
+        }
+
+        
+
+        private void txtCosto_Leave(object sender, EventArgs e)
+        {
+            string input = txtCosto.Text;
+            if (decimal.TryParse(input, out decimal value))
+            {
+
+
+                string formattedValue = value.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
+
+                // Asignar el valor formateado al TextBox
+                txtCosto.Text = formattedValue;
+            }
+            else 
+            {
+                MessageBox.Show("Solo Numeros", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtCosto.Text = "";
+                txtCosto.Focus();
+             }
         }
     }
 }

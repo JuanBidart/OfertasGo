@@ -106,7 +106,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(28, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(485, 26);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCosto
@@ -115,16 +115,17 @@
             this.txtCosto.Location = new System.Drawing.Point(199, 184);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(193, 26);
-            this.txtCosto.TabIndex = 6;
+            this.txtCosto.TabIndex = 2;
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCosto.Leave += new System.EventHandler(this.txtCosto_Leave);
             // 
             // txtRecargo
             // 
             this.txtRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecargo.Location = new System.Drawing.Point(199, 240);
             this.txtRecargo.Name = "txtRecargo";
-            this.txtRecargo.Size = new System.Drawing.Size(193, 26);
-            this.txtRecargo.TabIndex = 7;
+            this.txtRecargo.Size = new System.Drawing.Size(88, 26);
+            this.txtRecargo.TabIndex = 3;
             this.txtRecargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtFinal
@@ -133,7 +134,7 @@
             this.txtFinal.Location = new System.Drawing.Point(199, 296);
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(193, 26);
-            this.txtFinal.TabIndex = 8;
+            this.txtFinal.TabIndex = 4;
             this.txtFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAceptar
@@ -145,7 +146,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(54, 403);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(164, 75);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -159,7 +160,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(274, 403);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 75);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -169,7 +170,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(201, 351);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 12;
+            this.dtpFecha.TabIndex = 5;
             // 
             // cboRubro
             // 
@@ -180,7 +181,7 @@
             this.cboRubro.Location = new System.Drawing.Point(201, 132);
             this.cboRubro.Name = "cboRubro";
             this.cboRubro.Size = new System.Drawing.Size(191, 28);
-            this.cboRubro.TabIndex = 13;
+            this.cboRubro.TabIndex = 1;
             // 
             // label6
             // 
@@ -202,7 +203,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(398, 130);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(78, 31);
-            this.btnNuevo.TabIndex = 15;
+            this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
