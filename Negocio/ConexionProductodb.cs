@@ -37,12 +37,12 @@ namespace Negocio
                 while (lector.Read())
                 {
                     TProductos productos = new TProductos();
-                    productos.idProductos = (int)lector["idProductos"];
-                    TRubro rubro = new TRubro();
-                    productos.Rubro.Rubro = (string)lector["Rubro"];
+                    productos.idProductos = lector.GetInt32(0);
+                    //TRubro rubro = new TRubro();
+                    productos.Rubro.Rubro = lector.GetString(1);
                     productos.Descripcion = (string)lector["Description"];
                     productos.Costo = (double)lector["Costo"];
-                    productos.RecargoPorcentaje = (double)lector["Recargo%"];
+                    productos.RecargoPorcentaje = (double)lector["[Recargo%]"];
                     productos.Final = (double)lector["Final"];
                     productos.FechaModificacion = (DateTime)lector["FechaModificcion"];
 
@@ -67,7 +67,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,Recargo%,Final,FechaMod,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

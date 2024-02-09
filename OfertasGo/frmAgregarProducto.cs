@@ -33,7 +33,7 @@ namespace OfertasGo
             try
             {
                 producto.Descripcion = txtDescripcion.Text;
-                producto.Costo = double.Parse(txtCosto.Text);
+                producto.Costo = double.Parse(txtCosto.Text.Remove(0, 1));
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text);
                 producto.Final = double.Parse(txtFinal.Text);
                 producto.FechaModificacion = dtpFecha.Value.Date;
@@ -83,7 +83,9 @@ namespace OfertasGo
 
         private void frmAgregarProducto_Load(object sender, EventArgs e)
         {
+            txtCosto.Text = "0";
             txtRecargo.Text = "0";
+            txtFinal.Text = "0";
             txtDescripcion.Focus();
 
             //    ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
@@ -110,6 +112,40 @@ namespace OfertasGo
                 txtCosto.Text = "";
                 txtCosto.Focus();
              }
+        }
+
+        private void txtCosto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCosto.Text != "0" && !txtCosto.Text.Contains("$"))
+            {
+                double costo = double.Parse(txtCosto.Text);
+                double recargo = double.Parse(txtRecargo.Text);
+                double final = ((costo * recargo) / 100) + costo;
+                txtFinal.Text = final.ToString();
+                txtFinal.ForeColor = Color.Red;
+
+            }
+           
+        }
+
+        private void txtRecargo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRecargo.Text != "0")
+            {
+
+                double costo = double.Parse(txtCosto.Text.Remove(0,1));
+                double recargo = double.Parse(txtRecargo.Text);
+                double final = ((costo * recargo) / 100) + costo;
+                txtFinal.Text = final.ToString();
+                txtFinal.ForeColor = Color.Red;
+            }
+           
+        }
+
+        private void frmAgregarProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           // frmProductos productos = new frmProductos();
+           // productos.actualizaLLista();
         }
     }
 }
