@@ -38,14 +38,13 @@ namespace Negocio
                 {
                     TProductos productos = new TProductos();
                     productos.idProductos = lector.GetInt32(0);
-                    //TRubro rubro = new TRubro();
-                    productos.Rubro.Rubro = lector.GetString(1);
-                    productos.Descripcion = (string)lector["Description"];
+                    productos.Descripcion = (string)lector["Descripcion"];
                     productos.Costo = (double)lector["Costo"];
-                    productos.RecargoPorcentaje = (double)lector["[Recargo%]"];
+                    productos.RecargoPorcentaje = lector.GetDouble(3);
                     productos.Final = (double)lector["Final"];
-                    productos.FechaModificacion = (DateTime)lector["FechaModificcion"];
-
+                    //productos.FechaModificacion = lector.GetDateTime(5);
+                    TRubro rubro = new TRubro();
+                    productos.Rubro.Rubro = lector.GetString(6);
                     listaProductos.Add(productos);
 
                 }
