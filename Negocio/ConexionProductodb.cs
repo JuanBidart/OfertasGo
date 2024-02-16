@@ -42,9 +42,11 @@ namespace Negocio
                     productos.Costo = (double)lector["Costo"];
                     productos.RecargoPorcentaje = lector.GetDouble(3);
                     productos.Final = (double)lector["Final"];
-                    //productos.FechaModificacion = lector.GetDateTime(5);
+                    productos.FechaModificacion = lector.GetString(5);
                     TRubro rubro = new TRubro();
-                    productos.Rubro.Rubro = lector.GetString(6);
+                    productos.Rubro = rubro; 
+                    rubro.Rubro = lector.GetString(6);
+
                     listaProductos.Add(productos);
 
                 }
@@ -66,6 +68,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
+                //falta agregar rubro
+
                 datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
                 datos.ejecutarAccion();
             }
