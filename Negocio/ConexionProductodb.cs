@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using Dominio;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -18,7 +19,7 @@ namespace Negocio
 
         {
          List<TProductos> listaProductos = new List<TProductos>();
-         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Rubro.Rubro from Productos, Rubro";
+         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro from Productos";
          string cadenayconexion = $"data source= {rutaDatabase};Version=3";
            
 
@@ -43,9 +44,10 @@ namespace Negocio
                     productos.RecargoPorcentaje = lector.GetDouble(3);
                     productos.Final = (double)lector["Final"];
                     productos.FechaModificacion = lector.GetString(5);
+                    productos.Activo = lector.GetByte(6);
                     TRubro rubro = new TRubro();
                     productos.Rubro = rubro; 
-                    rubro.Rubro = lector.GetString(6);
+                    rubro.Rubro = lector.GetString(7);
 
                     listaProductos.Add(productos);
 
@@ -68,9 +70,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                //falta agregar rubro
+                //convertir datos duble en string para la base de datos(sqlite)
+                string costo = productonuevo.Costo.ToString().Replace(",",".");
+                string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
+                string final = productonuevo.Final.ToString().Replace(",", ".");
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+"',@idRubro)");
+                datos.setearParametro("@idRubro",productonuevo.Rubro.Rubro);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

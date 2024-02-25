@@ -11,7 +11,7 @@ namespace Negocio
 {
    public class ConexionRubro
     {
-
+        //rubrexfhjhtdf
         public List<TRubro> listarRubro() 
         {
             List<TRubro> rubro = new List<TRubro>();

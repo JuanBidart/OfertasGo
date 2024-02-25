@@ -29,16 +29,24 @@ namespace OfertasGo
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             TProductos producto = new TProductos();
-            TRubro rubro = new TRubro();
+            //TRubro rubro = new TRubro();
             ConexionProductodb productodb = new ConexionProductodb();
+            
             
             try
             {
                 producto.Descripcion = txtDescripcion.Text;
-                producto.Costo = double.Parse(txtCosto.Text.Remove(0, 1));
+                producto.Costo = double.Parse(txtCosto.Text);
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text);
                 producto.Final = double.Parse(txtFinal.Text);
-                producto.FechaModificacion = dtpFecha.Value.Date.ToString();
+                producto.FechaModificacion = dtpFecha.Value.Date.ToString("dd/MM/yy");
+
+                if (chbactivo.Checked)
+                {
+                    producto.Activo = 1;
+                }
+                else producto.Activo = 0;
+                
                 producto.Rubro = (TRubro)cboRubro.SelectedItem;
                 
 
@@ -89,31 +97,13 @@ namespace OfertasGo
 
         
 
-        private void txtCosto_Leave(object sender, EventArgs e)
-        {
-            string input = txtCosto.Text;
-            if (decimal.TryParse(input, out decimal value))
-            {
-
-
-                string formattedValue = value.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
-
-                // Asignar el valor formateado al TextBox
-                txtCosto.Text = formattedValue;
-            }
-            else 
-            {
-                MessageBox.Show("Solo Numeros", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                txtCosto.Text = "";
-                txtCosto.Focus();
-             }
-        }
+       
 
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (txtCosto.Text != "0" && txtCosto.Text != "" &&!txtCosto.Text.Contains("$"))
+                if (txtCosto.Text != "0" && txtCosto.Text != "")
                 {
                     double costo = double.Parse(txtCosto.Text);
                     double recargo = double.Parse(txtRecargo.Text);
@@ -134,22 +124,26 @@ namespace OfertasGo
 
         private void txtRecargo_TextChanged(object sender, EventArgs e)
         {
-            if (txtRecargo.Text != "0")
+            try
+            {
+                if (txtRecargo.Text != "0" && txtRecargo.Text != "")
+                {
+
+                    double costo = double.Parse(txtCosto.Text);
+                    double recargo = double.Parse(txtRecargo.Text);
+                    double final = ((costo * recargo) / 100) + costo;
+                    txtFinal.Text = final.ToString();
+                    txtFinal.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
             {
 
-                double costo = double.Parse(txtCosto.Text.Remove(0,1));
-                double recargo = double.Parse(txtRecargo.Text);
-                double final = ((costo * recargo) / 100) + costo;
-                txtFinal.Text = final.ToString();
-                txtFinal.ForeColor = Color.Red;
+               throw ex;
             }
+           
            
         }
 
-        private void frmAgregarProducto_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           // frmProductos productos = new frmProductos();
-           // productos.actualizaLLista();
-        }
     }
 }
