@@ -14,6 +14,7 @@ namespace OfertasGo
     public partial class frmProductos : Form
     {
         public ConexionProductodb conexionProductodb = new ConexionProductodb();
+        public ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
         
 
         public frmProductos()
@@ -25,19 +26,31 @@ namespace OfertasGo
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            actualizaLLista();
+            
+            actualizaLista();
+            actualizaHistorial();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarProducto agregarProducto = new frmAgregarProducto();
             agregarProducto.ShowDialog();
-            actualizaLLista();
+            actualizaLista();
+            actualizaHistorial();
         }
-        public void actualizaLLista() 
+        public void actualizaLista() 
         {
             var listadeProductos = conexionProductodb.listarProductos();
             dgvProductos.DataSource = listadeProductos;
+
+        }
+        public void actualizaHistorial() 
+        {
+            var listaHistorial = historialPrecios.listarhistorial();
+            dgvHistorial.DataSource = listaHistorial;
+
+            dgvHistorial.Columns[0].Visible = false;
+
         }
     }
 }

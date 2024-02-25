@@ -23,11 +23,13 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     THistorialPrecio aux = new THistorialPrecio();
-                    aux.idHistorial = (int)datos.Lector["idHistorial"];
+                    aux.idHistorial = datos.Lector.GetInt32(0);
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Costo = (double)datos.Lector["Costo"];
                     aux.Final = (double)datos.Lector["Final"];
-                    aux.FechaMod = (DateTime)datos.Lector["FechaMod"];
+                    var fecha = datos.Lector.GetString(4);
+
+                    aux.FechaMod = DateTime.ParseExact(fecha,"dd/MM/yy",null); 
 
                     listaHistorial.Add(aux);
                 }
