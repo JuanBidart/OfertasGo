@@ -11,7 +11,7 @@ namespace Negocio
     {
 
 
-        public List<THistorialPrecio> listar()
+        public List<THistorialPrecio> listarhistorial()
         {
             List<THistorialPrecio> listaHistorial = new List<THistorialPrecio>(); 
             AccesoDatos datos = new AccesoDatos();

@@ -30,43 +30,75 @@
         {
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.lblHistorial = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(39, 137);
+            this.dgvProductos.Location = new System.Drawing.Point(52, 96);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(920, 250);
+            this.dgvProductos.Size = new System.Drawing.Size(1227, 308);
             this.dgvProductos.TabIndex = 0;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(39, 414);
+            this.btnAgregar.Location = new System.Drawing.Point(52, 412);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(194, 77);
+            this.btnAgregar.Size = new System.Drawing.Size(259, 95);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // dgvHistorial
+            // 
+            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorial.Location = new System.Drawing.Point(916, 441);
+            this.dgvHistorial.Name = "dgvHistorial";
+            this.dgvHistorial.RowHeadersWidth = 51;
+            this.dgvHistorial.RowTemplate.Height = 24;
+            this.dgvHistorial.Size = new System.Drawing.Size(363, 150);
+            this.dgvHistorial.TabIndex = 2;
+            // 
+            // lblHistorial
+            // 
+            this.lblHistorial.AutoSize = true;
+            this.lblHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorial.ForeColor = System.Drawing.Color.White;
+            this.lblHistorial.Location = new System.Drawing.Point(982, 412);
+            this.lblHistorial.Name = "lblHistorial";
+            this.lblHistorial.Size = new System.Drawing.Size(243, 29);
+            this.lblHistorial.TabIndex = 3;
+            this.lblHistorial.Text = "Historial de Precios";
+            // 
             // frmProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(993, 576);
+            this.ClientSize = new System.Drawing.Size(1324, 709);
+            this.Controls.Add(this.lblHistorial);
+            this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +106,7 @@
 
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.DataGridView dgvHistorial;
+        private System.Windows.Forms.Label lblHistorial;
     }
 }
