@@ -117,6 +117,7 @@
             this.txtCosto.Size = new System.Drawing.Size(193, 26);
             this.txtCosto.TabIndex = 2;
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCosto.TextChanged += new System.EventHandler(this.txtCosto_TextChanged);
             this.txtCosto.Leave += new System.EventHandler(this.txtCosto_Leave);
             // 
             // txtRecargo
@@ -124,9 +125,10 @@
             this.txtRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecargo.Location = new System.Drawing.Point(199, 240);
             this.txtRecargo.Name = "txtRecargo";
-            this.txtRecargo.Size = new System.Drawing.Size(88, 26);
+            this.txtRecargo.Size = new System.Drawing.Size(80, 26);
             this.txtRecargo.TabIndex = 3;
             this.txtRecargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRecargo.TextChanged += new System.EventHandler(this.txtRecargo_TextChanged);
             // 
             // txtFinal
             // 
@@ -232,6 +234,7 @@
             this.MaximizeBox = false;
             this.Name = "frmAgregarProducto";
             this.Text = "Agregar Producto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAgregarProducto_FormClosed);
             this.Load += new System.EventHandler(this.frmAgregarProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

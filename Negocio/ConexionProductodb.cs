@@ -37,14 +37,15 @@ namespace Negocio
                 while (lector.Read())
                 {
                     TProductos productos = new TProductos();
-                    productos.idProductos = (int)lector["idProductos"];
-                    TRubro rubro = new TRubro();
-                    productos.Rubro.Rubro = (string)lector["Rubro"];
-                    productos.Descripcion = (string)lector["Description"];
+                    productos.idProductos = lector.GetInt32(0);
+                    productos.Descripcion = (string)lector["Descripcion"];
                     productos.Costo = (double)lector["Costo"];
-                    productos.RecargoPorcentaje = (double)lector["Recargo%"];
+                    productos.RecargoPorcentaje = lector.GetDouble(3);
                     productos.Final = (double)lector["Final"];
-                    productos.FechaModificacion = (DateTime)lector["FechaModificcion"];
+                    productos.FechaModificacion = lector.GetString(5);
+                    TRubro rubro = new TRubro();
+                    productos.Rubro = rubro; 
+                    rubro.Rubro = lector.GetString(6);
 
                     listaProductos.Add(productos);
 
@@ -67,7 +68,9 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,Recargo%,Final,FechaMod,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
+                //falta agregar rubro
+
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo) VALUES ('" + productonuevo.Descripcion + "'," + productonuevo.Costo + "," + productonuevo.RecargoPorcentaje + "," + productonuevo.Final + ",'" + productonuevo.FechaModificacion + "',1)");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

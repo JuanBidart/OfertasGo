@@ -25,14 +25,19 @@ namespace OfertasGo
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            var listadeProductos = conexionProductodb.listarProductos();
-            dgvProductos.DataSource = listadeProductos;
+            actualizaLLista();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarProducto agregarProducto = new frmAgregarProducto();
-            agregarProducto.ShowDialog(); 
+            agregarProducto.ShowDialog();
+            actualizaLLista();
+        }
+        public void actualizaLLista() 
+        {
+            var listadeProductos = conexionProductodb.listarProductos();
+            dgvProductos.DataSource = listadeProductos;
         }
     }
 }
