@@ -1,13 +1,13 @@
 CREATE TRIGGER HistorialPrecios 
 BEFORE UPDATE on Productos
 BEGIN
-	INSERT INTO HistorialPrecios(Descripcion,Costo,Final,FechaModificacion)
-			VALUES(Productos.Descripcion, Productos.Costo,Productos.Final,CONVERT(DATE,GETDATE()));
+	INSERT INTO HistorialPrecios(Descripcion,Costo,Final,FechaMod,idProducto)
+			VALUES(NEW.Descripcion, NEW.Costo, NEW.Final,NEW.FechaModificacion, NEW.idProductos);
 END;
 --------------------------------------------------------------------------------------------------------------------------
 CREATE TRIGGER HistorialPrecios_crear
 AFTER INSERT on Productos
 BEGIN
-	INSERT INTO HistorialPrecios(Descripcion,Costo,Final,FechaModificacion)
-			VALUES(Productos.Descripcion, Productos.Costo,Productos.Final,CONVERT(DATE,GETDATE()));
-END;
+	INSERT INTO HistorialPrecios(Descripcion,Costo,Final,FechaMod,idProducto)
+			VALUES(NEW.Descripcion, NEW.Costo, NEW.Final,NEW.FechaModificacion, NEW.idProductos);
+END
