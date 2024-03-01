@@ -23,11 +23,12 @@ namespace Dominio
         public byte Activo { get; set; }
         public byte Eliminado { get; set; }
         public string Observaciones { get; set; }
+        public TProveedores Proveedores { get; set; }
 
-        public override string ToString()
-        {
-            return Costo.ToString(CultureInfo.CreateSpecificCulture("ES-AR"));
-        }
+        //public override string ToString()
+        //{
+        //    return Costo.ToString(CultureInfo.CreateSpecificCulture("ES-AR"));
+        //}
 
 
     }

@@ -20,6 +20,9 @@ namespace Dominio
         public byte Activo { get; set; }
         public byte Eliminado { get; set; }
 
-
+        public override string ToString()
+        {
+            return RazonSocial.ToString();
+        }
     }
 }

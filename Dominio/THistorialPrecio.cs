@@ -15,5 +15,7 @@ namespace Dominio
         public double Final { get; set; }
         public DateTime FechaMod { get; set; }
 
+        public int idProducto { get; set; }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 using Negocio;
 
 namespace OfertasGo
@@ -51,6 +52,15 @@ namespace OfertasGo
 
             dgvHistorial.Columns[0].Visible = false;
 
+        }
+
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            int idProductoSelec = productoSeleccionado.idProductos;
+            List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorial();
+            List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
+            dgvHistorial.DataSource = listaFiltrada;
         }
     }
 }

@@ -63,6 +63,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ConexionHistorialPrecios.cs" />
     <Compile Include="ConexionProductodb.cs" />
+    <Compile Include="ConexionProveedores.cs" />
     <Compile Include="ConexionRubro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

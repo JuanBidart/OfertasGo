@@ -45,6 +45,7 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvProductos.Size = new System.Drawing.Size(920, 250);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // btnAgregar
             // 
@@ -60,7 +61,7 @@
             // 
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Location = new System.Drawing.Point(636, 366);
-            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 51;
             this.dgvHistorial.RowTemplate.Height = 24;

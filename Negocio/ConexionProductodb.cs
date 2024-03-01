@@ -19,7 +19,7 @@ namespace Negocio
 
         {
          List<TProductos> listaProductos = new List<TProductos>();
-         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro from Productos";
+         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos";
          string cadenayconexion = $"data source= {rutaDatabase};Version=3";
            
 
@@ -48,6 +48,9 @@ namespace Negocio
                     TRubro rubro = new TRubro();
                     productos.Rubro = rubro; 
                     rubro.Rubro = lector.GetString(7);
+                    TProveedores proveedores = new TProveedores();
+                    productos.Proveedores = proveedores;
+                    proveedores.RazonSocial = lector.GetString(8);
 
                     listaProductos.Add(productos);
 
@@ -75,7 +78,7 @@ namespace Negocio
                 string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
                 string final = productonuevo.Final.ToString().Replace(",", ".");
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+"',@idRubro)");
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+"',@idRubro,'"+productonuevo.Proveedores+"')");
                 datos.setearParametro("@idRubro",productonuevo.Rubro.Rubro);
                 datos.ejecutarAccion();
             }

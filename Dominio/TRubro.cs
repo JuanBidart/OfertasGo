@@ -23,5 +23,5 @@ namespace Dominio
             return Rubro.ToString();
         }
     }
-       
+
 }

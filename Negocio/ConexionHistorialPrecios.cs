@@ -17,7 +17,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.seterarConsulta("SELECT idHistorial,Descripcion,Costo,Final,FechaMod FROM HistorialPrecios");
+                datos.seterarConsulta("SELECT idHistorial,Descripcion,Costo,Final,FechaMod,idProducto FROM HistorialPrecios");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -28,6 +28,7 @@ namespace Negocio
                     aux.Costo = (double)datos.Lector["Costo"];
                     aux.Final = (double)datos.Lector["Final"];
                     var fecha = datos.Lector.GetString(4);
+                    aux.idProducto = datos.Lector.GetInt32(5);
 
                     aux.FechaMod = DateTime.ParseExact(fecha,"dd/MM/yy",null); 
 

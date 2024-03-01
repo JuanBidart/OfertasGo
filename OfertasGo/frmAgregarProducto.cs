@@ -48,6 +48,7 @@ namespace OfertasGo
                 else producto.Activo = 0;
                 
                 producto.Rubro = (TRubro)cboRubro.SelectedItem;
+                producto.Proveedores = (TProveedores)cbxProveedor.SelectedItem;
                 
 
                 
@@ -83,7 +84,20 @@ namespace OfertasGo
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+        public void actComboBoxProveedores () 
+        {
+            ConexionProveedores conexionProveedores = new ConexionProveedores();
+            try
+            {
+                cbxProveedor.DataSource = conexionProveedores.listarProveedores();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+        }
         private void frmAgregarProducto_Load(object sender, EventArgs e)
         {
             txtCosto.Text = "0";
@@ -93,6 +107,7 @@ namespace OfertasGo
 
             //    ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
             actComboBoxRubro();
+            actComboBoxProveedores();
         }
 
         
@@ -145,5 +160,9 @@ namespace OfertasGo
            
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
