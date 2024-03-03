@@ -56,3 +56,4 @@ C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CopyComplete
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources

@@ -77,6 +77,12 @@
     <Compile Include="frmAgregarProducto.Designer.cs">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarProveedor.Designer.cs">
+      <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarRubro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarProducto.resx">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarProveedor.resx">
+      <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarRubro.resx">
       <DependentUpon>frmAgregarRubro.cs</DependentUpon>
