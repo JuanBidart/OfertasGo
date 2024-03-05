@@ -16,18 +16,18 @@ namespace OfertasGo
     {
         public ConexionProductodb conexionProductodb = new ConexionProductodb();
         public ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
-        
+        private IEnumerable<object> collection;
 
         public frmProductos()
         {
             InitializeComponent();
-            
-            
+
+
         }
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            
+
             actualizaLista();
             actualizaHistorial();
         }
@@ -39,13 +39,13 @@ namespace OfertasGo
             actualizaLista();
             actualizaHistorial();
         }
-        public void actualizaLista() 
+        public void actualizaLista()
         {
             var listadeProductos = conexionProductodb.listarProductos();
             dgvProductos.DataSource = listadeProductos;
 
         }
-        public void actualizaHistorial() 
+        public void actualizaHistorial()
         {
             var listaHistorial = historialPrecios.listarhistorial();
             dgvHistorial.DataSource = listaHistorial;
@@ -61,6 +61,12 @@ namespace OfertasGo
             List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorial();
             List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
             dgvHistorial.DataSource = listaFiltrada;
+
+            
+
+
+
         }
+
     }
 }

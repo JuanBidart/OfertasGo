@@ -36,9 +36,9 @@ namespace OfertasGo
             try
             {
                 producto.Descripcion = txtDescripcion.Text;
-                producto.Costo = double.Parse(txtCosto.Text);
-                producto.RecargoPorcentaje = double.Parse(txtRecargo.Text);
-                producto.Final = double.Parse(txtFinal.Text);
+                producto.Costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                producto.RecargoPorcentaje = double.Parse(txtRecargo.Text.Replace(".", ","));
+                producto.Final = double.Parse(txtFinal.Text.Replace(".", ","));
                 producto.FechaModificacion = dtpFecha.Value.Date.ToString("dd/MM/yy");
 
                 if (chbactivo.Checked)
@@ -70,6 +70,7 @@ namespace OfertasGo
             frmAgregarRubro agregarRubro = new frmAgregarRubro();
             agregarRubro.ShowDialog();
             actComboBoxRubro();
+            cboRubro.Focus();
         }
         public void actComboBoxRubro() 
         {
@@ -120,8 +121,8 @@ namespace OfertasGo
             {
                 if (txtCosto.Text != "0" && txtCosto.Text != "")
                 {
-                    double costo = double.Parse(txtCosto.Text);
-                    double recargo = double.Parse(txtRecargo.Text);
+                    double costo = double.Parse(txtCosto.Text.Replace(".",","));
+                    double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
                     double final = ((costo * recargo) / 100) + costo;
                     txtFinal.Text = final.ToString();
                     txtFinal.ForeColor = Color.Red;
@@ -144,8 +145,8 @@ namespace OfertasGo
                 if (txtRecargo.Text != "0" && txtRecargo.Text != "")
                 {
 
-                    double costo = double.Parse(txtCosto.Text);
-                    double recargo = double.Parse(txtRecargo.Text);
+                    double costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                    double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
                     double final = ((costo * recargo) / 100) + costo;
                     txtFinal.Text = final.ToString();
                     txtFinal.ForeColor = Color.Red;
@@ -164,6 +165,10 @@ namespace OfertasGo
         {
             frmAgregarProveedor frmproveedor = new frmAgregarProveedor();
             frmproveedor.ShowDialog();
+            actComboBoxProveedores();
+            cbxProveedor.Focus();
         }
+
+
     }
 }

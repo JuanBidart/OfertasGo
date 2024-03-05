@@ -70,7 +70,15 @@ namespace Negocio
             //ACA ME QUEDE FALTAN LOS VALORES
             try
             {
-                datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado) VALUES ()");
+                datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado) VALUES (@RazonSocial,@Direccion,@Ciudad,@Telefono,@Telefono2,@Activo,@Eliminado)");
+                datos.setearParametro("@RazonSocial",Proveedor.RazonSocial);
+                datos.setearParametro("@Direccion",Proveedor.Direccion);
+                datos.setearParametro("@Ciudad",Proveedor.Ciudad);
+                datos.setearParametro("@Telefono",Proveedor.Telefono);
+                datos.setearParametro("@Telefono2",Proveedor.Telefono2);
+                datos.setearParametro("@Activo",Proveedor.Activo);
+                datos.setearParametro("@Eliminado",Proveedor.Eliminado);
+
                 datos.ejecutarAccion();
             }
             catch (Exception)

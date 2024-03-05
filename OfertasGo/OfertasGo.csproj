@@ -71,6 +71,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAcercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercade.Designer.cs">
+      <DependentUpon>frmAcercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcercade.resx">
+      <DependentUpon>frmAcercade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarProducto.resx">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
@@ -145,6 +154,12 @@
       <Project>{3f7c2ca9-3ca0-4272-96f5-9f5dc40df08d}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\acercade.png">
+      <Link>acercade.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

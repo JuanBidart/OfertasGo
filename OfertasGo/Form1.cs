@@ -19,15 +19,23 @@ namespace OfertasGo
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
                 frmProductos productos = new frmProductos();
                 productos.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tslAcercade_Click(object sender, EventArgs e)
+        {
+            frmAcercade acercade = new frmAcercade();
+            acercade.ShowDialog();
         }
     }
 }
