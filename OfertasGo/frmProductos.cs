@@ -16,7 +16,6 @@ namespace OfertasGo
     {
         public ConexionProductodb conexionProductodb = new ConexionProductodb();
         public ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
-        private IEnumerable<object> collection;
 
         public frmProductos()
         {

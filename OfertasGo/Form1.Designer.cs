@@ -30,6 +30,7 @@ namespace OfertasGo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -37,6 +38,8 @@ namespace OfertasGo
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tslConfiguracion = new System.Windows.Forms.ToolStripLabel();
             this.tslAcercade = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDolar = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +88,7 @@ namespace OfertasGo
             this.toolStripLabel1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 19);
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 22);
             this.toolStripLabel1.Text = "Archivo";
             // 
             // salirToolStripMenuItem
@@ -98,15 +101,29 @@ namespace OfertasGo
             // tslConfiguracion
             // 
             this.tslConfiguracion.Name = "tslConfiguracion";
-            this.tslConfiguracion.Size = new System.Drawing.Size(83, 15);
+            this.tslConfiguracion.Size = new System.Drawing.Size(83, 22);
             this.tslConfiguracion.Text = "Configuración";
             // 
             // tslAcercade
             // 
             this.tslAcercade.Name = "tslAcercade";
-            this.tslAcercade.Size = new System.Drawing.Size(43, 15);
+            this.tslAcercade.Size = new System.Drawing.Size(43, 22);
             this.tslAcercade.Text = "Acerca";
             this.tslAcercade.Click += new System.EventHandler(this.tslAcercade_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 20;
+            // 
+            // lblDolar
+            // 
+            this.lblDolar.AutoSize = true;
+            this.lblDolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDolar.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblDolar.Location = new System.Drawing.Point(14, 425);
+            this.lblDolar.Name = "lblDolar";
+            this.lblDolar.Size = new System.Drawing.Size(0, 20);
+            this.lblDolar.TabIndex = 3;
             // 
             // Form1
             // 
@@ -114,6 +131,7 @@ namespace OfertasGo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(808, 450);
+            this.Controls.Add(this.lblDolar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
@@ -121,6 +139,8 @@ namespace OfertasGo
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -137,6 +157,8 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripLabel tslAcercade;
         private System.Windows.Forms.ToolStripDropDownButton toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDolar;
     }
 }
 

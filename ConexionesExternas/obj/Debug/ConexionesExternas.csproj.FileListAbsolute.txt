@@ -1,0 +1,9 @@
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Debug\ConexionesExternas.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Debug\ConexionesExternas.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Debug\ConexionesExternas.csproj.AssemblyReference.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Debug\ConexionesExternas.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Debug\ConexionesExternas.csproj.CopyComplete
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Debug\ConexionesExternas.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Debug\ConexionesExternas.pdb

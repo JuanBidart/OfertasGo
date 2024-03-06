@@ -60,3 +60,7 @@ C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgre
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\acercade.png
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
