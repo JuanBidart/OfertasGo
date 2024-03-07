@@ -39,8 +39,11 @@ namespace OfertasGo
             this.tslConfiguracion = new System.Windows.Forms.ToolStripLabel();
             this.tslAcercade = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblDolar = new System.Windows.Forms.Label();
+            this.sspBarradeEstado = new System.Windows.Forms.StatusStrip();
+            this.tsslBarra = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
+            this.sspBarradeEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -59,6 +62,7 @@ namespace OfertasGo
             // 
             // btnProveedores
             // 
+            this.btnProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnProveedores.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,17 +117,37 @@ namespace OfertasGo
             // 
             // timer1
             // 
-            this.timer1.Interval = 20;
+            this.timer1.Interval = 30000;
             // 
-            // lblDolar
+            // sspBarradeEstado
             // 
-            this.lblDolar.AutoSize = true;
-            this.lblDolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDolar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblDolar.Location = new System.Drawing.Point(14, 425);
-            this.lblDolar.Name = "lblDolar";
-            this.lblDolar.Size = new System.Drawing.Size(0, 20);
-            this.lblDolar.TabIndex = 3;
+            this.sspBarradeEstado.BackColor = System.Drawing.Color.DodgerBlue;
+            this.sspBarradeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslBarra,
+            this.tsslFecha});
+            this.sspBarradeEstado.Location = new System.Drawing.Point(0, 428);
+            this.sspBarradeEstado.Name = "sspBarradeEstado";
+            this.sspBarradeEstado.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            this.sspBarradeEstado.Size = new System.Drawing.Size(808, 22);
+            this.sspBarradeEstado.TabIndex = 4;
+            this.sspBarradeEstado.Text = "statusStrip1";
+            // 
+            // tsslBarra
+            // 
+            this.tsslBarra.ForeColor = System.Drawing.SystemColors.Control;
+            this.tsslBarra.Name = "tsslBarra";
+            this.tsslBarra.Size = new System.Drawing.Size(118, 17);
+            this.tsslBarra.Text = "toolStripStatusLabel2";
+            // 
+            // tsslFecha
+            // 
+            this.tsslFecha.AutoSize = false;
+            this.tsslFecha.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedOuter;
+            this.tsslFecha.ForeColor = System.Drawing.SystemColors.Control;
+            this.tsslFecha.Name = "tsslFecha";
+            this.tsslFecha.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.tsslFecha.Size = new System.Drawing.Size(118, 17);
+            this.tsslFecha.Text = "toolStripStatusLabel1";
             // 
             // Form1
             // 
@@ -131,18 +155,19 @@ namespace OfertasGo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(808, 450);
-            this.Controls.Add(this.lblDolar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
+            this.Controls.Add(this.sspBarradeEstado);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.sspBarradeEstado.ResumeLayout(false);
+            this.sspBarradeEstado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +183,9 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripDropDownButton toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label lblDolar;
+        private System.Windows.Forms.StatusStrip sspBarradeEstado;
+        private System.Windows.Forms.ToolStripStatusLabel tsslBarra;
+        private System.Windows.Forms.ToolStripStatusLabel tsslFecha;
     }
 }
 
