@@ -83,5 +83,15 @@ namespace OfertasGo
                 lblPorcentaje.Text = porcentajeDeSuba.ToString().Insert(0, "%");
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
+            frmAgregarProducto.ShowDialog();
+            actualizaHistorial();
+            actualizaLista();
+
+        }
     }
 }

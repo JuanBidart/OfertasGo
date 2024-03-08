@@ -14,13 +14,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OfertasGo
 {
+
     public partial class frmAgregarProducto : Form
     {
+        public TProductos producto = null;
         public frmAgregarProducto()
         {
             InitializeComponent();
         }
+        public frmAgregarProducto(TProductos producto)
+        {
+            
+            InitializeComponent();
+            this.producto = producto;
 
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -31,8 +39,8 @@ namespace OfertasGo
             TProductos producto = new TProductos();
             //TRubro rubro = new TRubro();
             ConexionProductodb productodb = new ConexionProductodb();
-            
-            
+
+
             try
             {
                 producto.Descripcion = txtDescripcion.Text;
@@ -46,14 +54,14 @@ namespace OfertasGo
                     producto.Activo = 1;
                 }
                 else producto.Activo = 0;
-                
+
                 producto.Rubro = (TRubro)cboRubro.SelectedItem;
                 producto.Proveedores = (TProveedores)cbxProveedor.SelectedItem;
-                
 
-                
+
+
                 productodb.agregarProducto(producto);
-                
+
                 MessageBox.Show("Agregado exitosamente");
                 Close();
 
@@ -72,7 +80,7 @@ namespace OfertasGo
             actComboBoxRubro();
             cboRubro.Focus();
         }
-        public void actComboBoxRubro() 
+        public void actComboBoxRubro()
         {
             ConexionRubro conexionRubro = new ConexionRubro();
             try
@@ -85,7 +93,7 @@ namespace OfertasGo
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-        public void actComboBoxProveedores () 
+        public void actComboBoxProveedores()
         {
             ConexionProveedores conexionProveedores = new ConexionProveedores();
             try
@@ -101,14 +109,35 @@ namespace OfertasGo
         }
         private void frmAgregarProducto_Load(object sender, EventArgs e)
         {
-            txtCosto.Text = "0";
-            txtRecargo.Text = "0";
-            txtFinal.Text = "0";
-            txtDescripcion.Focus();
+            if (producto == null)
+            {
+                txtCosto.Text = "0";
+                txtRecargo.Text = "0";
+                txtFinal.Text = "0";
+                txtDescripcion.Focus();
 
-            //    ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
-            actComboBoxRubro();
-            actComboBoxProveedores();
+
+                actComboBoxRubro();
+                actComboBoxProveedores();
+            }
+
+
+
+        
+            else 
+            {
+                actComboBoxRubro();
+                actComboBoxProveedores();
+
+
+                txtDescripcion.Text = producto.Descripcion.ToString();
+                txtCosto.Text = producto.Costo.ToString();
+                txtRecargo.Text = producto.RecargoPorcentaje.ToString();
+                txtFinal.Text = producto.Final.ToString();
+                dtpFecha.Text = producto.FechaModificacion;
+
+            }   
+            
         }
 
         
@@ -119,15 +148,19 @@ namespace OfertasGo
         {
             try
             {
-                if (txtCosto.Text != "0" && txtCosto.Text != "")
+                if (producto == null)
                 {
-                    double costo = double.Parse(txtCosto.Text.Replace(".",","));
-                    double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
-                    double final = ((costo * recargo) / 100) + costo;
-                    txtFinal.Text = final.ToString();
-                    txtFinal.ForeColor = Color.Red;
+                    if (txtCosto.Text != "0" && txtCosto.Text != "")
+                    {
+                        double costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                        double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+                        double final = ((costo * recargo) / 100) + costo;
+                        txtFinal.Text = final.ToString();
+                        txtFinal.ForeColor = Color.Red;
 
+                    }
                 }
+                
             }
             catch (Exception)
             {

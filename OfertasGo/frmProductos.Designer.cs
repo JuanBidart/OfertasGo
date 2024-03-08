@@ -34,6 +34,7 @@
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.lblPorcentaje = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             lblHistorial = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
@@ -70,7 +71,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAgregar.Location = new System.Drawing.Point(12, 335);
@@ -80,7 +81,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseMnemonic = false;
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.UseWaitCursor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvHistorial
@@ -122,6 +122,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Suba";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnModificar.Location = new System.Drawing.Point(229, 335);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(194, 77);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseMnemonic = false;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +144,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1027, 576);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(lblHistorial);
@@ -154,5 +170,6 @@
         private System.Windows.Forms.DataGridView dgvHistorial;
         private System.Windows.Forms.Label lblPorcentaje;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
