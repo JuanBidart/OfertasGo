@@ -19,7 +19,7 @@ namespace Negocio
 
         {
          List<TProductos> listaProductos = new List<TProductos>();
-         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos";
+         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos"; //falta actualizar consulta
          string cadenayconexion = $"data source= {rutaDatabase};Version=3";
            
 
@@ -93,6 +93,10 @@ namespace Negocio
             }
         
         }
-
+        public void modificarProducto(TProductos productoModificar)
+        { 
+        
+        
+        }
     }
 }

@@ -128,13 +128,15 @@ namespace OfertasGo
             {
                 actComboBoxRubro();
                 actComboBoxProveedores();
-
+                cbxProveedor.ValueMember = "idProveedores";
+                cbxProveedor.DisplayMember = "RazonSocial";
 
                 txtDescripcion.Text = producto.Descripcion.ToString();
                 txtCosto.Text = producto.Costo.ToString();
                 txtRecargo.Text = producto.RecargoPorcentaje.ToString();
                 txtFinal.Text = producto.Final.ToString();
                 dtpFecha.Text = producto.FechaModificacion;
+                cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
 
             }   
             
