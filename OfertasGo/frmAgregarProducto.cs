@@ -37,7 +37,6 @@ namespace OfertasGo
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             TProductos producto = new TProductos();
-            //TRubro rubro = new TRubro();
             ConexionProductodb productodb = new ConexionProductodb();
 
 

@@ -67,7 +67,7 @@ namespace Negocio
         {
          AccesoDatos datos = new AccesoDatos();
 
-            //ACA ME QUEDE FALTAN LOS VALORES
+           
             try
             {
                 datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado) VALUES (@RazonSocial,@Direccion,@Ciudad,@Telefono,@Telefono2,@Activo,@Eliminado)");

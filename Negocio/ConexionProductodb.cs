@@ -19,7 +19,9 @@ namespace Negocio
 
         {
          List<TProductos> listaProductos = new List<TProductos>();
-         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos"; //falta actualizar consulta
+            // SENTENCIA QUE FUNCIONABA = SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos
+            //                         0           1         2      3         4             5               6             7            8                  9                          10                            
+         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
          string cadenayconexion = $"data source= {rutaDatabase};Version=3";
            
 
@@ -45,12 +47,15 @@ namespace Negocio
                     productos.Final = (double)lector["Final"];
                     productos.FechaModificacion = lector.GetString(5);
                     productos.Activo = lector.GetByte(6);
+
                     TRubro rubro = new TRubro();
-                    productos.Rubro = rubro; 
-                    rubro.Rubro = lector.GetString(7);
+                    productos.Rubro = rubro;
+                    rubro.idRubro = lector.GetInt32(7);
+                    rubro.Rubro = lector.GetString(8);
                     TProveedores proveedores = new TProveedores();
                     productos.Proveedores = proveedores;
-                    proveedores.RazonSocial = lector.GetString(8);
+                    proveedores.idProveedores = lector.GetInt32(9);
+                    proveedores.RazonSocial = lector.GetString(10);
 
                     listaProductos.Add(productos);
 
@@ -78,8 +83,9 @@ namespace Negocio
                 string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
                 string final = productonuevo.Final.ToString().Replace(",", ".");
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+"',@idRubro,'"+productonuevo.Proveedores+"')");
-                datos.setearParametro("@idRubro",productonuevo.Rubro.Rubro);
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+ "',@idRubro,@idProveedores)");
+                datos.setearParametro("@idProveedores",productonuevo.Proveedores.idProveedores);
+                datos.setearParametro("@idRubro",productonuevo.Rubro.idRubro);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
