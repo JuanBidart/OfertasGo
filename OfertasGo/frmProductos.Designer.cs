@@ -45,10 +45,9 @@
             lblHistorial.AutoSize = true;
             lblHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblHistorial.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lblHistorial.Location = new System.Drawing.Point(730, 340);
-            lblHistorial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblHistorial.Location = new System.Drawing.Point(973, 418);
             lblHistorial.Name = "lblHistorial";
-            lblHistorial.Size = new System.Drawing.Size(191, 24);
+            lblHistorial.Size = new System.Drawing.Size(243, 29);
             lblHistorial.TabIndex = 3;
             lblHistorial.Text = "Historial de Precios";
             // 
@@ -60,11 +59,12 @@
             this.dgvProductos.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 79);
+            this.dgvProductos.Location = new System.Drawing.Point(16, 97);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1003, 250);
+            this.dgvProductos.Size = new System.Drawing.Size(1337, 308);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
@@ -74,9 +74,10 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 335);
+            this.btnAgregar.Location = new System.Drawing.Point(16, 412);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(194, 77);
+            this.btnAgregar.Size = new System.Drawing.Size(259, 95);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseMnemonic = false;
@@ -89,25 +90,27 @@
             this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Location = new System.Drawing.Point(632, 366);
-            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvHistorial.Location = new System.Drawing.Point(843, 450);
+            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 51;
             this.dgvHistorial.RowTemplate.Height = 24;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.ShowCellToolTips = false;
-            this.dgvHistorial.Size = new System.Drawing.Size(384, 171);
+            this.dgvHistorial.Size = new System.Drawing.Size(512, 210);
             this.dgvHistorial.TabIndex = 2;
             this.dgvHistorial.DataSourceChanged += new System.EventHandler(this.dgvHistorial_DataSourceChanged);
+            this.dgvHistorial.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvHistorial_DataBindingComplete);
             // 
             // lblPorcentaje
             // 
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorcentaje.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPorcentaje.Location = new System.Drawing.Point(525, 394);
+            this.lblPorcentaje.Location = new System.Drawing.Point(700, 485);
+            this.lblPorcentaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPorcentaje.Name = "lblPorcentaje";
-            this.lblPorcentaje.Size = new System.Drawing.Size(46, 31);
+            this.lblPorcentaje.Size = new System.Drawing.Size(57, 39);
             this.lblPorcentaje.TabIndex = 4;
             this.lblPorcentaje.Text = "00";
             // 
@@ -116,9 +119,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(543, 366);
+            this.label1.Location = new System.Drawing.Point(724, 450);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Suba";
             // 
@@ -128,9 +132,10 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificar.Location = new System.Drawing.Point(229, 335);
+            this.btnModificar.Location = new System.Drawing.Point(305, 412);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(194, 77);
+            this.btnModificar.Size = new System.Drawing.Size(259, 95);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseMnemonic = false;
@@ -139,11 +144,11 @@
             // 
             // frmProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1027, 576);
+            this.ClientSize = new System.Drawing.Size(1369, 709);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPorcentaje);
@@ -152,6 +157,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmProductos";
             this.Text = "Productos";

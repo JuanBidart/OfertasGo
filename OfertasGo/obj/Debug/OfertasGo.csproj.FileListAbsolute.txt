@@ -64,3 +64,9 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Conexion
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\acercade.png
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
