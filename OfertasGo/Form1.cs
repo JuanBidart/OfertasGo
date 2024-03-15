@@ -17,7 +17,7 @@ namespace OfertasGo
 {
     public partial class Form1 : Form
     {
-        DateTime Fecha;
+        //DateTime Fecha;
         public Form1()
         {
             InitializeComponent();

@@ -107,9 +107,9 @@
             this.lblPorcentaje.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblPorcentaje.Location = new System.Drawing.Point(525, 394);
             this.lblPorcentaje.Name = "lblPorcentaje";
-            this.lblPorcentaje.Size = new System.Drawing.Size(92, 31);
+            this.lblPorcentaje.Size = new System.Drawing.Size(46, 31);
             this.lblPorcentaje.TabIndex = 4;
-            this.lblPorcentaje.Text = "label1";
+            this.lblPorcentaje.Text = "00";
             // 
             // label1
             // 

@@ -101,8 +101,40 @@ namespace Negocio
         }
         public void modificarProducto(TProductos productoModificar)
         { 
-        
-        
+        AccesoDatos datos = new AccesoDatos();
+            
+            
+
+            try
+            {
+                //convertir datos duble en string para la base de datos(sqlite)
+                //string costo = productoModificar.Costo.ToString().Replace(",", ".");
+                //string recargoPorcentaje = productoModificar.RecargoPorcentaje.ToString().Replace(",", ".");
+                //string final = productoModificar.Final.ToString().Replace(",", ".");
+                datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
+
+
+                datos.setearParametro("@Descripcion",productoModificar.Descripcion);
+                datos.setearParametro("@Costo",productoModificar.Costo);
+                datos.setearParametro("@Recargo",productoModificar.RecargoPorcentaje);
+                datos.setearParametro("@Final",productoModificar.Final);
+                datos.setearParametro("@FechaModificacion",productoModificar.FechaModificacion);
+                datos.setearParametro("@Activo", productoModificar.Activo);
+                datos.setearParametro("@idRubro", productoModificar.Rubro.idRubro);
+                datos.setearParametro("@idProveedores", productoModificar.Proveedores.idProveedores);
+                datos.setearParametro("idProducto", productoModificar.idProductos);
+
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
         }
     }
 }

@@ -36,12 +36,16 @@ namespace OfertasGo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            TProductos producto = new TProductos();
+            
             ConexionProductodb productodb = new ConexionProductodb();
 
 
             try
             {
+                if (producto == null)
+                {
+                    producto = new TProductos();
+                }
                 producto.Descripcion = txtDescripcion.Text;
                 producto.Costo = double.Parse(txtCosto.Text.Replace(".", ","));
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text.Replace(".", ","));
@@ -58,11 +62,21 @@ namespace OfertasGo
                 producto.Proveedores = (TProveedores)cbxProveedor.SelectedItem;
 
 
+                if (producto.idProductos != 0) 
+                {
+                    productodb.modificarProducto(producto);
+                    MessageBox.Show("Modificado","OK");
+                    Close();
 
-                productodb.agregarProducto(producto);
+                }
+                else
+                {
+                    productodb.agregarProducto(producto);
 
-                MessageBox.Show("Agregado exitosamente");
-                Close();
+                    MessageBox.Show("Agregado exitosamente");
+                    Close();
+                }
+               
 
             }
             catch (Exception ex)
@@ -129,6 +143,8 @@ namespace OfertasGo
                 actComboBoxProveedores();
                 cbxProveedor.ValueMember = "idProveedores";
                 cbxProveedor.DisplayMember = "RazonSocial";
+                cboRubro.ValueMember = "idRubro";
+                cboRubro.DisplayMember = "Rubro";
 
                 txtDescripcion.Text = producto.Descripcion.ToString();
                 txtCosto.Text = producto.Costo.ToString();
@@ -136,6 +152,7 @@ namespace OfertasGo
                 txtFinal.Text = producto.Final.ToString();
                 dtpFecha.Text = producto.FechaModificacion;
                 cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
+                cboRubro.SelectedValue = producto.Rubro.idRubro;
 
             }   
             
@@ -149,10 +166,11 @@ namespace OfertasGo
         {
             try
             {
-                if (producto == null)
+                //if (producto == null)
                 {
-                    if (txtCosto.Text != "0" && txtCosto.Text != "")
+                    if (txtCosto.Text != "0" && txtCosto.Text != "" && txtRecargo.Text != "0" && txtRecargo.Text != "")
                     {
+
                         double costo = double.Parse(txtCosto.Text.Replace(".", ","));
                         double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
                         double final = ((costo * recargo) / 100) + costo;
