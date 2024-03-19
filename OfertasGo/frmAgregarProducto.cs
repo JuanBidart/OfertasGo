@@ -27,6 +27,7 @@ namespace OfertasGo
             
             InitializeComponent();
             this.producto = producto;
+            this.Text = "Modificar Producto";
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -165,26 +166,61 @@ namespace OfertasGo
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
             try
-            {
-                //if (producto == null)
-                {
-                    if (txtCosto.Text != "0" && txtCosto.Text != "" && txtRecargo.Text != "0" && txtRecargo.Text != "")
-                    {
+                
+                
 
-                        double costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                        double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
-                        double final = ((costo * recargo) / 100) + costo;
-                        txtFinal.Text = final.ToString();
-                        txtFinal.ForeColor = Color.Red;
+            {
+                double costo;
+                double recargo;
+                double final;
+                if (producto == null)
+                {
+                    if (txtCosto.Text != "0" && txtCosto.Text != "")
+                    {
+                        if (txtRecargo.Text != "0" && txtRecargo.Text != "")
+                        {
+                            costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                            recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+                            final = ((costo * recargo) / 100) + costo;
+                            txtFinal.Text = final.ToString();
+                            txtFinal.ForeColor = Color.Red;
+                        }
+                        else 
+                        { 
+                            
+                            txtFinal.Text = txtCosto.Text;
+                            txtFinal.ForeColor = Color.Red;
+                        }
+                        
 
                     }
                 }
+                else
+                {
+                    if (txtCosto.Text != "0" && txtCosto.Text != "")
+                    {
+                        costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                        if (txtRecargo.Text == "")
+                        {
+                            recargo = producto.RecargoPorcentaje;
+                        }
+                        else
+                        {
+                            recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+                        }
+                        final = ((costo * recargo) / 100) + costo;
+                        txtFinal.Text = final.ToString();
+                        txtFinal.ForeColor = Color.Red;
+                    }
+                    
+
+                }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
           
            

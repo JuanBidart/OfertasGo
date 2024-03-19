@@ -106,6 +106,8 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(28, 66);
             this.txtDescripcion.Name = "txtDescripcion";
@@ -118,7 +120,7 @@
             this.txtCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCosto.Location = new System.Drawing.Point(196, 229);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(123, 26);
+            this.txtCosto.Size = new System.Drawing.Size(101, 26);
             this.txtCosto.TabIndex = 6;
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCosto.TextChanged += new System.EventHandler(this.txtCosto_TextChanged);
@@ -128,7 +130,7 @@
             this.txtRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecargo.Location = new System.Drawing.Point(196, 285);
             this.txtRecargo.Name = "txtRecargo";
-            this.txtRecargo.Size = new System.Drawing.Size(80, 26);
+            this.txtRecargo.Size = new System.Drawing.Size(69, 26);
             this.txtRecargo.TabIndex = 7;
             this.txtRecargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRecargo.TextChanged += new System.EventHandler(this.txtRecargo_TextChanged);
@@ -138,7 +140,7 @@
             this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFinal.Location = new System.Drawing.Point(196, 341);
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(147, 26);
+            this.txtFinal.Size = new System.Drawing.Size(101, 26);
             this.txtFinal.TabIndex = 8;
             // 
             // btnAceptar

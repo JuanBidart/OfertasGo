@@ -42,6 +42,8 @@ namespace OfertasGo
             this.sspBarradeEstado = new System.Windows.Forms.StatusStrip();
             this.tsslBarra = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslFecha = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.sspBarradeEstado.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,7 @@ namespace OfertasGo
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.Transparent;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 342);
+            this.btnProveedores.Location = new System.Drawing.Point(12, 370);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(173, 72);
             this.btnProveedores.TabIndex = 1;
@@ -83,7 +85,7 @@ namespace OfertasGo
             this.tslAcercade});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(808, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(816, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -124,11 +126,12 @@ namespace OfertasGo
             this.sspBarradeEstado.BackColor = System.Drawing.Color.DodgerBlue;
             this.sspBarradeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslBarra,
-            this.tsslFecha});
-            this.sspBarradeEstado.Location = new System.Drawing.Point(0, 428);
+            this.tsslFecha,
+            this.tssHora});
+            this.sspBarradeEstado.Location = new System.Drawing.Point(0, 456);
             this.sspBarradeEstado.Name = "sspBarradeEstado";
             this.sspBarradeEstado.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.sspBarradeEstado.Size = new System.Drawing.Size(808, 22);
+            this.sspBarradeEstado.Size = new System.Drawing.Size(816, 22);
             this.sspBarradeEstado.TabIndex = 4;
             this.sspBarradeEstado.Text = "statusStrip1";
             // 
@@ -149,17 +152,30 @@ namespace OfertasGo
             this.tsslFecha.Size = new System.Drawing.Size(118, 17);
             this.tsslFecha.Text = "toolStripStatusLabel1";
             // 
+            // tssHora
+            // 
+            this.tssHora.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tssHora.ForeColor = System.Drawing.SystemColors.Control;
+            this.tssHora.Name = "tssHora";
+            this.tssHora.Size = new System.Drawing.Size(33, 17);
+            this.tssHora.Text = "Hora";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(808, 450);
+            this.ClientSize = new System.Drawing.Size(816, 478);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.sspBarradeEstado);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(562, 343);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
@@ -186,6 +202,8 @@ namespace OfertasGo
         private System.Windows.Forms.StatusStrip sspBarradeEstado;
         private System.Windows.Forms.ToolStripStatusLabel tsslBarra;
         private System.Windows.Forms.ToolStripStatusLabel tsslFecha;
+        private System.Windows.Forms.ToolStripStatusLabel tssHora;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

@@ -17,7 +17,9 @@ namespace OfertasGo
 {
     public partial class Form1 : Form
     {
-        //DateTime Fecha;
+
+        string fechalarga;
+        string Hora;
         public Form1()
         {
             InitializeComponent();
@@ -46,17 +48,29 @@ namespace OfertasGo
         {
             tsslFecha.Spring = true;
             tsslFecha.TextAlign = ContentAlignment.TopRight;
-            tsslFecha.AutoSize = true;
+      
+
+            tssHora.Spring = true;
+            tssHora.TextAlign = ContentAlignment.TopRight;
+          
 
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-            
-           
-            string fechalarga = DateTime.Now.ToLongDateString();
-            
+
+            fechalarga = DateTime.Now.ToLongDateString();
             tsslFecha.Text = ti.ToTitleCase(fechalarga);
             recorrer();
+            tssHora.Text = Hora;
+            timer2.Start();
+            timer2.Tick += Timer2_Tick;
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            Hora = DateTime.Now.ToShortTimeString();
+            tssHora.Text = Hora;
 
         }
+
         public void recorrer()
         {
             
@@ -79,8 +93,12 @@ namespace OfertasGo
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            
-            
+
+            fechalarga = DateTime.Now.ToLongDateString();
+            TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+            tsslFecha.Text = ti.ToTitleCase(fechalarga);
+
+
             if (DateTime.Now.Minute == 30 )
             {
                 apiDolar dolar = new apiDolar();

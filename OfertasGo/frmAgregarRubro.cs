@@ -43,5 +43,10 @@ namespace OfertasGo
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void txtRubro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
