@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,20 +34,22 @@ namespace OfertasGo
 
             actualizaLista();
             actualizaHistorial();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            
             frmAgregarProducto agregarProducto = new frmAgregarProducto();
             agregarProducto.ShowDialog();
             actualizaLista();
-
+            
         }
         public void actualizaLista()
         {
             var listadeProductos = conexionProductodb.listarProductos();
             dgvProductos.DataSource = listadeProductos;
-            paso = true;
+           
         }
         public void actualizaHistorial()
         {
@@ -55,8 +58,8 @@ namespace OfertasGo
             dgvHistorial.DataSource = listaHistorial;
 
             dgvHistorial.Columns[0].Visible = false;
-
-
+            
+            paso = true;
 
         }
         public void cargarListaFiltrada()
@@ -66,19 +69,39 @@ namespace OfertasGo
             List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorialDesendiente();
             List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
 
-
+            
             ListaFiltradaObtenidda = listaFiltrada;
-
+            paso = true;
         }
+        public string doubleAPorcentaje(double funcion) 
+        {
+            if (funcion >= 0)
+            {
+                return funcion.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar")).Remove(0, 1).Insert(0, "%");
+            }
+            else
+            {
+                return funcion.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar")).Remove(1, 1).Insert(0, "%");
+
+            }
+
+        }//Funcion que convierte en string con formato %00,00 una funcion que devuelve double
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
-            if (paso != false)
+            //cada vez que seleciono un producto de la tabla producto
+            //if (dgvProductos.CurrentRow.Index != 0) //para que al abrir el formulario no intente con los datos aun no cargados
+            if (paso != false && dgvProductos.CurrentRow != null)
+                       
             {
-                cargarListaFiltrada();
+                cargarListaFiltrada(); //carga la lista a la propiedad de la clase
                 dgvHistorial.DataSource = ListaFiltradaObtenidda;
                 lblUltimaFechaAct.Text = obtenerUltimafechamod();
                 lblDiasPasados.Text = diasPasados().ToString();
+                lbIinflacionMen.Text = doubleAPorcentaje(inflacionMensual());
+                lblVarMen.Text = doubleAPorcentaje(variacionMensualAcumulada());
+
+
 
                 try
                 {
@@ -89,7 +112,7 @@ namespace OfertasGo
 
 
                         List<double> listaCosto = new List<double>();
-                        //listaCosto = null;
+
                         double valorActual = 0;
                         double ultimoValor = 0;
                         foreach (var item in ListaFiltradaObtenidda)
@@ -123,9 +146,95 @@ namespace OfertasGo
 
                     throw ex;
                 }
+                finally {  }
             }
         }
-        public int diasPasados()
+        private List<THistorialPrecio> listaFiltradaporFecha(int DiasPasados) //Funcion que devuelve una nueva lista solo de los objetos con fecha dentro de los dias pasados por parametros
+        {
+
+            List<THistorialPrecio> historialFiltroFecha = new List<THistorialPrecio>();
+            DateTime ahora = DateTime.Now;
+            DateTime tiempo = ahora.Subtract(TimeSpan.FromDays(DiasPasados));
+            foreach (var item in ListaFiltradaObtenidda)
+            {
+                if (item.FechaMod > tiempo)
+                {
+                    historialFiltroFecha.Add(item);
+                }
+            }
+            return historialFiltroFecha;
+        }
+
+        public double inflacionMensual()
+        {
+            try
+            {
+                List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(30);
+                double resultado = 0.0;
+
+                List<double> datosVariaciones = new List<double>();
+                foreach (var item in historialFiltroFecha)
+                {
+                    datosVariaciones.Add(item.Costo);
+                }
+
+                THistorialPrecio valoractual = historialFiltroFecha[0];
+
+                double actualCosto = valoractual.Costo;
+                double minCosto = datosVariaciones.Min();
+                if (actualCosto == minCosto)
+                {
+                    datosVariaciones.Remove(minCosto);
+                    minCosto = datosVariaciones.Min();
+
+                    resultado = ((actualCosto - minCosto) / minCosto) * 100;
+                    return resultado;
+                }
+                else
+                {
+                    resultado = ((actualCosto - minCosto) / minCosto) * 100; ;
+                    return resultado;
+                }
+            }
+            catch (Exception)
+            {
+
+                return 00.00;
+            }
+           
+
+
+
+        }
+        public double variacionMensualAcumulada()
+        {
+            List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(30);
+            int cantidadDeRegistros = historialFiltroFecha.Count;
+
+            List<double> datosVariaciones = new List<double>();
+            foreach (var item in historialFiltroFecha)
+            {
+                datosVariaciones.Add(item.Costo);
+            }
+            double resultadoCosto = 0;
+            for (int i = cantidadDeRegistros-1; i > 0; i--)
+            {
+
+                
+                {
+                    resultadoCosto += ((datosVariaciones[i - 1] - datosVariaciones[i]) / datosVariaciones[i]) * 100;
+                }
+                   
+                
+                
+            }
+            return resultadoCosto;
+
+           
+
+
+        }
+         public int diasPasados()
         {
             THistorialPrecio ultimofechaleida = ListaFiltradaObtenidda[0];
             DateTime ultimafecha = ultimofechaleida.FechaMod;
@@ -145,9 +254,9 @@ namespace OfertasGo
             var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
             frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
             frmAgregarProducto.ShowDialog();
-
+            dgvProductos.DataSource = null;
             actualizaLista();
-
+           
         }
 
         private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)
@@ -155,7 +264,6 @@ namespace OfertasGo
             paso = false;
         }
 
-        
     }
        
 }

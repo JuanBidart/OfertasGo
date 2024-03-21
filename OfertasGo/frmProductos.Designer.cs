@@ -39,6 +39,10 @@
             this.lblUltimaFechaAct = new System.Windows.Forms.Label();
             this.lbld555 = new System.Windows.Forms.Label();
             this.lblDiasPasados = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblVarMen = new System.Windows.Forms.Label();
+            this.lbIinflacionMen = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             lblHistorial = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
@@ -185,13 +189,63 @@
             this.lblDiasPasados.TabIndex = 10;
             this.lblDiasPasados.Text = "00";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label3.Location = new System.Drawing.Point(640, 573);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 32);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Variacion\rMensual Acu.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblVarMen
+            // 
+            this.lblVarMen.AutoSize = true;
+            this.lblVarMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVarMen.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblVarMen.Location = new System.Drawing.Point(659, 547);
+            this.lblVarMen.Name = "lblVarMen";
+            this.lblVarMen.Size = new System.Drawing.Size(32, 24);
+            this.lblVarMen.TabIndex = 12;
+            this.lblVarMen.Text = "00";
+            // 
+            // lbIinflacionMen
+            // 
+            this.lbIinflacionMen.AutoSize = true;
+            this.lbIinflacionMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIinflacionMen.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbIinflacionMen.Location = new System.Drawing.Point(775, 547);
+            this.lbIinflacionMen.Name = "lbIinflacionMen";
+            this.lbIinflacionMen.Size = new System.Drawing.Size(32, 24);
+            this.lbIinflacionMen.TabIndex = 13;
+            this.lbIinflacionMen.Text = "00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(758, 574);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 32);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Inflacion\r\nMensual";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1027, 576);
+            this.ClientSize = new System.Drawing.Size(1027, 614);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbIinflacionMen);
+            this.Controls.Add(this.lblVarMen);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDiasPasados);
             this.Controls.Add(this.lbld555);
             this.Controls.Add(this.lblUltimaFechaAct);
@@ -229,5 +283,9 @@
         private System.Windows.Forms.Label lblUltimaFechaAct;
         private System.Windows.Forms.Label lbld555;
         private System.Windows.Forms.Label lblDiasPasados;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblVarMen;
+        private System.Windows.Forms.Label lbIinflacionMen;
+        private System.Windows.Forms.Label label5;
     }
 }
