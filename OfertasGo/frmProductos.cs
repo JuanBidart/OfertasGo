@@ -43,6 +43,7 @@ namespace OfertasGo
             frmAgregarProducto agregarProducto = new frmAgregarProducto();
             agregarProducto.ShowDialog();
             actualizaLista();
+            dgvProductos.CurrentRow.Selected = false;
             
         }
         public void actualizaLista()
@@ -256,7 +257,9 @@ namespace OfertasGo
             frmAgregarProducto.ShowDialog();
             dgvProductos.DataSource = null;
             actualizaLista();
-           
+            dgvProductos.CurrentRow.Selected = false;
+
+
         }
 
         private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)

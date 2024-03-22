@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using Dominio;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Negocio
 {
@@ -134,6 +135,28 @@ namespace Negocio
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
+
+           
+
+        }
+        public void desactivarProducto(TProductos Producto)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.seterarConsulta("UPDATE Productos SET Activo = @activo WHERE idProductos = @idProducto");
+                datos.setearParametro("activo",0);
+                datos.setearParametro("idProducto",Producto.idProductos);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }  
+
 
         }
     }

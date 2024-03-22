@@ -257,6 +257,9 @@ namespace OfertasGo
             cbxProveedor.Focus();
         }
 
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
