@@ -73,7 +73,50 @@ namespace Negocio
             }
             finally { }
         }
+        public List<TProductos> listarProductosActivos()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<TProductos> listaProductos = new List<TProductos>();
+            try
+            {
+                datos.seterarConsulta("SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = 1 ;");
+                datos.ejecutarLectura();
 
+                while (datos.Lector.Read())
+                {
+                    TProductos productos = new TProductos();
+                    productos.idProductos = datos.Lector.GetInt32(0);
+                    productos.Descripcion = (string)datos.Lector["Descripcion"];
+                    productos.Costo = (double)datos.Lector["Costo"];
+                    productos.RecargoPorcentaje = datos.Lector.GetDouble(3);
+                    productos.Final = (double)datos.Lector["Final"];
+                    productos.FechaModificacion = datos.Lector.GetString(5);
+                    productos.Activo = datos.Lector.GetByte(6);
+
+                    TRubro rubro = new TRubro();
+                    productos.Rubro = rubro;
+                    rubro.idRubro = datos.Lector.GetInt32(7);
+                    rubro.Rubro = datos.Lector.GetString(8);
+                    TProveedores proveedores = new TProveedores();
+                    productos.Proveedores = proveedores;
+                    proveedores.idProveedores = datos.Lector.GetInt32(9);
+                    proveedores.RazonSocial = datos.Lector.GetString(10);
+
+                    listaProductos.Add(productos);
+
+                    
+                }
+                return listaProductos;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+            
+        }
         public void agregarProducto(TProductos productonuevo)
         {
             AccesoDatos datos = new AccesoDatos();

@@ -101,6 +101,12 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaProductos.Designer.cs">
+      <DependentUpon>frmListaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarRubro.resx">
       <DependentUpon>frmAgregarRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaProductos.resx">
+      <DependentUpon>frmListaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

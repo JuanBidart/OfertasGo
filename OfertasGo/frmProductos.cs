@@ -48,7 +48,7 @@ namespace OfertasGo
         }
         public void actualizaLista()
         {
-            var listadeProductos = conexionProductodb.listarProductos();
+            var listadeProductos = conexionProductodb.listarProductosActivos();
             dgvProductos.DataSource = listadeProductos;
            
         }
