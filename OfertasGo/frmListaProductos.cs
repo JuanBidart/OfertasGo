@@ -24,7 +24,33 @@ namespace OfertasGo
         private void frmListaProductos_Load(object sender, EventArgs e)
         {
            List<TProductos> listaProductos = conexionProductodb.listarProductos();
-            lvLista.
+            lvLista.Items.Clear();
+           
+
+            
+
+            foreach (var item in listaProductos)
+            {
+                ListViewItem lvItem = new ListViewItem();
+
+                lvItem = lvLista.Items.Add(item.idProductos.ToString());
+                lvItem.SubItems.Add(item.Descripcion);
+                if (item.Activo == 0)
+                {
+                    lvItem.SubItems.Add("NO");
+                    lvItem.BackColor = Color.Red;
+                }
+                else
+                {
+                    lvItem.SubItems.Add("SI");
+                }
+                
+            }
+        }
+
+        private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

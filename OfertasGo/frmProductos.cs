@@ -48,7 +48,7 @@ namespace OfertasGo
         }
         public void actualizaLista()
         {
-            var listadeProductos = conexionProductodb.listarProductosActivos();
+            var listadeProductos = conexionProductodb.listarProductosActivos(true);
             dgvProductos.DataSource = listadeProductos;
            
         }
@@ -267,6 +267,12 @@ namespace OfertasGo
             paso = false;
         }
 
+        private void btnActDes_Click(object sender, EventArgs e)
+        {
+            frmListaProductos frmListaProductos = new frmListaProductos();
+            frmListaProductos.ShowDialog();
+            actualizaLista();
+        }
     }
        
 }

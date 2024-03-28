@@ -73,13 +73,16 @@ namespace Negocio
             }
             finally { }
         }
-        public List<TProductos> listarProductosActivos()
+        public List<TProductos> listarProductosActivos(bool activo_desactivo)
         {
+            string act = "";
             AccesoDatos datos = new AccesoDatos();
             List<TProductos> listaProductos = new List<TProductos>();
             try
             {
-                datos.seterarConsulta("SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = 1 ;");
+                if (activo_desactivo == true) { act = "1"; } else { act = "0"; }    
+
+                datos.seterarConsulta("SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = "+ act +" ;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
