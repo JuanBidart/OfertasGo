@@ -44,6 +44,7 @@
             this.lbIinflacionMen = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnActDes = new System.Windows.Forms.Button();
+            this.btnDesactivar = new System.Windows.Forms.Button();
             lblHistorial = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
@@ -100,7 +101,7 @@
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Location = new System.Drawing.Point(632, 366);
-            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 51;
             this.dgvHistorial.RowTemplate.Height = 24;
@@ -242,14 +243,29 @@
             this.btnActDes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnActDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActDes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnActDes.Location = new System.Drawing.Point(12, 429);
+            this.btnActDes.Location = new System.Drawing.Point(12, 558);
             this.btnActDes.Name = "btnActDes";
-            this.btnActDes.Size = new System.Drawing.Size(194, 77);
+            this.btnActDes.Size = new System.Drawing.Size(194, 44);
             this.btnActDes.TabIndex = 15;
-            this.btnActDes.Text = "Activar/Desactivar";
+            this.btnActDes.Text = "Activar/Desactivar por Lotes";
             this.btnActDes.UseMnemonic = false;
             this.btnActDes.UseVisualStyleBackColor = false;
             this.btnActDes.Click += new System.EventHandler(this.btnActDes_Click);
+            // 
+            // btnDesactivar
+            // 
+            this.btnDesactivar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDesactivar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesactivar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDesactivar.Location = new System.Drawing.Point(12, 416);
+            this.btnDesactivar.Name = "btnDesactivar";
+            this.btnDesactivar.Size = new System.Drawing.Size(194, 77);
+            this.btnDesactivar.TabIndex = 16;
+            this.btnDesactivar.Text = "Desactivar";
+            this.btnDesactivar.UseMnemonic = false;
+            this.btnDesactivar.UseVisualStyleBackColor = false;
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // frmProductos
             // 
@@ -258,6 +274,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1027, 614);
+            this.Controls.Add(this.btnDesactivar);
             this.Controls.Add(this.btnActDes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbIinflacionMen);
@@ -305,5 +322,6 @@
         private System.Windows.Forms.Label lbIinflacionMen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnActDes;
+        private System.Windows.Forms.Button btnDesactivar;
     }
 }

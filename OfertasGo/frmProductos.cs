@@ -273,6 +273,14 @@ namespace OfertasGo
             frmListaProductos.ShowDialog();
             actualizaLista();
         }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {   
+            var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            conexionProductodb.desOactProducto(productoSeleccionado,false);
+            actualizaLista();
+
+        }
     }
        
 }

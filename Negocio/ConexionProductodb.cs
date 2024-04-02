@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using Dominio;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Negocio
 {
@@ -185,13 +186,16 @@ namespace Negocio
            
 
         }
-        public void desactivarProducto(TProductos Producto)
+        public void desOactProducto(TProductos Producto, bool trueActivar_falseDesativar)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.seterarConsulta("UPDATE Productos SET Activo = @activo WHERE idProductos = @idProducto");
-                datos.setearParametro("activo",0);
+                if (trueActivar_falseDesativar) 
+                { datos.setearParametro("activo", 1); } 
+                else { datos.setearParametro("activo", 0); };
+               
                 datos.setearParametro("idProducto",Producto.idProductos);
                 datos.ejecutarAccion();
 
@@ -205,5 +209,6 @@ namespace Negocio
 
 
         }
+
     }
 }

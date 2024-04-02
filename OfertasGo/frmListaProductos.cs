@@ -52,5 +52,14 @@ namespace OfertasGo
         {
 
         }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            ////List<TProductos> listaProductos = conexionProductodb.listarProductos();
+            ////var selecionado2 = lvLista.CheckedItems.GetEnumerator();
+            ////if (selecionado2.MoveNext()) {
+            ////    conexionProductodb.desOactProducto(listaProductos[int.Parse(selecionado2)])
+            ////}
+        }
     }
 }

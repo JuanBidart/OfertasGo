@@ -51,7 +51,7 @@ namespace OfertasGo
                 producto.Costo = double.Parse(txtCosto.Text.Replace(".", ","));
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text.Replace(".", ","));
                 producto.Final = double.Parse(txtFinal.Text.Replace(".", ","));
-                producto.FechaModificacion = dtpFecha.Value.Date.ToString("dd/MM/yy");
+                producto.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy"); // dtpFecha.Value.Date.ToString("dd/MM/yy");
 
                 if (chbactivo.Checked)
                 {

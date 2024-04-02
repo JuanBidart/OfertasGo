@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.lvLista = new System.Windows.Forms.ListView();
+            this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnActivar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvLista
@@ -46,11 +46,11 @@
             this.colActivo});
             this.lvLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvLista.HideSelection = false;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
             this.lvLista.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
             this.lvLista.LabelEdit = true;
             this.lvLista.Location = new System.Drawing.Point(20, 34);
             this.lvLista.Margin = new System.Windows.Forms.Padding(2);
@@ -61,6 +61,10 @@
             this.lvLista.View = System.Windows.Forms.View.Details;
             this.lvLista.SelectedIndexChanged += new System.EventHandler(this.lvLista_SelectedIndexChanged);
             // 
+            // colId
+            // 
+            this.colId.Text = "Id";
+            // 
             // colProducto
             // 
             this.colProducto.Text = "Producto";
@@ -70,23 +74,20 @@
             // 
             this.colActivo.Text = "Activo";
             // 
-            // colId
+            // btnActivar
             // 
-            this.colId.Text = "Id";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificar.Location = new System.Drawing.Point(596, 45);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(148, 77);
-            this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseMnemonic = false;
-            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnActivar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnActivar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnActivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActivar.Location = new System.Drawing.Point(596, 45);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(148, 77);
+            this.btnActivar.TabIndex = 7;
+            this.btnActivar.Text = "Activar";
+            this.btnActivar.UseMnemonic = false;
+            this.btnActivar.UseVisualStyleBackColor = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
             // frmListaProductos
             // 
@@ -94,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(993, 404);
-            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.lvLista);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmListaProductos";
@@ -110,6 +111,6 @@
         private System.Windows.Forms.ColumnHeader colProducto;
         private System.Windows.Forms.ColumnHeader colActivo;
         private System.Windows.Forms.ColumnHeader colId;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnActivar;
     }
 }
