@@ -15,6 +15,8 @@ namespace Dominio
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
         public TRubro Rubro { get; set; }
+        [DisplayName("Provedor")]
+        public TProveedores Proveedores { get; set; }
         public double Costo { get; set; }
         [DisplayName("% Desc.")]
         public int DescuentoCostoProcentaje { get; set; }
@@ -28,7 +30,7 @@ namespace Dominio
         public byte Activo { get; set; }
         public byte Eliminado { get; set; }
         public string Observaciones { get; set; }
-        public TProveedores Proveedores { get; set; }
+        
 
         //public override string ToString()
         //{

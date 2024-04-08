@@ -8,6 +8,7 @@ using Dominio;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 
 namespace Negocio
 {
@@ -17,13 +18,28 @@ namespace Negocio
     string rutaDatabase = "./Database/dbofertas.db";
 
 
-        public List<TProductos> listarProductos()
-
+        public List<TProductos> listarProductos(bool orden, bool ascendente)
         {
-         List<TProductos> listaProductos = new List<TProductos>();
+            
+
+            if (orden==false) ascendente = false;
+
+            string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
+
+            if (orden == true && ascendente == false)
+            {
+                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE DESC;";
+            }
+            if (orden == true && ascendente == true)
+            {
+                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE ASC;";
+            }
+
+
+            List<TProductos> listaProductos = new List<TProductos>();
             // SENTENCIA QUE FUNCIONABA = SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos
             //                         0           1         2      3         4             5               6             7            8                  9                          10                            
-         string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
+         
          string cadenayconexion = $"data source= {rutaDatabase};Version=3";
            
 
@@ -59,6 +75,7 @@ namespace Negocio
                     proveedores.idProveedores = lector.GetInt32(9);
                     proveedores.RazonSocial = lector.GetString(10);
 
+                    productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
                     listaProductos.Add(productos);
 
                 }
@@ -74,16 +91,32 @@ namespace Negocio
             }
             finally { }
         }
-        public List<TProductos> listarProductosActivos(bool activo_desactivo)
+        public List<TProductos> listarProductosActivos(bool activo_desactivo, bool orden, bool ascendente)
         {
             string act = "";
+            string consulta = "";
             AccesoDatos datos = new AccesoDatos();
             List<TProductos> listaProductos = new List<TProductos>();
             try
             {
-                if (activo_desactivo == true) { act = "1"; } else { act = "0"; }    
+                if (activo_desactivo == true) { act = "1"; } else { act = "0"; }
+                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + " ;";
 
-                datos.seterarConsulta("SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = "+ act +" ;");
+                if (orden == true && ascendente == false)
+                {
+                    consulta += consulta.Replace(";","") + " ORDER BY Descripcion COLLATE NOCASE DESC;";
+                }
+                if (orden == true && ascendente == true)
+                {
+                    consulta += consulta.Replace(";","") + " ORDER BY Descripcion COLLATE NOCASE ASC;";
+                }
+
+
+
+                datos.seterarConsulta(consulta);
+                
+                
+                
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -106,6 +139,8 @@ namespace Negocio
                     proveedores.idProveedores = datos.Lector.GetInt32(9);
                     proveedores.RazonSocial = datos.Lector.GetString(10);
 
+
+                    productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
                     listaProductos.Add(productos);
 
                     

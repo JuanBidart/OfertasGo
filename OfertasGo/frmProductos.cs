@@ -31,7 +31,7 @@ namespace OfertasGo
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-
+           
             actualizaLista();
             actualizaHistorial();
             
@@ -39,16 +39,25 @@ namespace OfertasGo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
-            frmAgregarProducto agregarProducto = new frmAgregarProducto();
-            agregarProducto.ShowDialog();
-            actualizaLista();
-            dgvProductos.CurrentRow.Selected = false;
+            try
+            {
+                frmAgregarProducto agregarProducto = new frmAgregarProducto();
+                agregarProducto.ShowDialog();
+                actualizaLista();
+                dgvProductos.CurrentRow.Selected = false;
+            }
+            catch (NullReferenceException)
+            {
+                
+                
+            }
+         
             
         }
         public void actualizaLista()
         {
-            var listadeProductos = conexionProductodb.listarProductosActivos(true);
+            var listadeProductos = conexionProductodb.listarProductosActivos(true,true,true);
+                               
             dgvProductos.DataSource = listadeProductos;
            
         }
@@ -252,12 +261,21 @@ namespace OfertasGo
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
-            frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
-            frmAgregarProducto.ShowDialog();
-            dgvProductos.DataSource = null;
-            actualizaLista();
-            dgvProductos.CurrentRow.Selected = false;
+            try
+            {
+                var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+                frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
+                frmAgregarProducto.ShowDialog();
+                dgvProductos.DataSource = null;
+                actualizaLista();
+                dgvProductos.CurrentRow.Selected = false;
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Debe haber un elemento seleccionado","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
 
 
         }

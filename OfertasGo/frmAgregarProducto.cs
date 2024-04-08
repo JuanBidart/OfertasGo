@@ -240,10 +240,16 @@ namespace OfertasGo
                     txtFinal.ForeColor = Color.Red;
                 }
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos","Error");            
+            }
+
+
             catch (Exception ex)
             {
 
-               throw ex;
+                throw ex;
             }
            
            

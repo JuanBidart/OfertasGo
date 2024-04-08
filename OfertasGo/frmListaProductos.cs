@@ -16,18 +16,24 @@ namespace OfertasGo
     {
         TProductos productos = new TProductos();
         ConexionProductodb conexionProductodb = new ConexionProductodb();
+        List<TProductos> listaTotalProductos = new List<TProductos>();  
         public frmListaProductos()
         {
             InitializeComponent();
+            listaTotalProductos = conexionProductodb.listarProductos(true,true);
         }
 
         private void frmListaProductos_Load(object sender, EventArgs e)
         {
-           List<TProductos> listaProductos = conexionProductodb.listarProductos();
-            lvLista.Items.Clear();
-           
 
-            
+            refrescarLista(listaTotalProductos);
+           
+        }
+        private void refrescarLista(List<TProductos> listaProductos)
+        {
+
+           
+            lvLista.Items.Clear();
 
             foreach (var item in listaProductos)
             {
@@ -44,22 +50,55 @@ namespace OfertasGo
                 {
                     lvItem.SubItems.Add("SI");
                 }
-                
+
             }
         }
 
-        private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnActivar_Click(object sender, EventArgs e)
         {
-            ////List<TProductos> listaProductos = conexionProductodb.listarProductos();
-            ////var selecionado2 = lvLista.CheckedItems.GetEnumerator();
-            ////if (selecionado2.MoveNext()) {
-            ////    conexionProductodb.desOactProducto(listaProductos[int.Parse(selecionado2)])
-            ////}
+                   
+            
+            foreach (ListViewItem item in lvLista.CheckedItems)
+            {
+                TProductos productoSelecionado = new TProductos();
+                productoSelecionado.idProductos = int.Parse(item.Text);
+                conexionProductodb.desOactProducto(productoSelecionado, true);
+            }
+            listaTotalProductos = conexionProductodb.listarProductos(true, true);
+            refrescarLista(listaTotalProductos);
+            txtBuscar.Text = string.Empty;
+        }
+
+        private void btnDesactivarLote_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvLista.CheckedItems)
+            {
+                TProductos productoSelecionado = new TProductos();
+                productoSelecionado.idProductos = int.Parse(item.Text);
+                conexionProductodb.desOactProducto(productoSelecionado, false);
+            }
+            listaTotalProductos = conexionProductodb.listarProductos(true, true);
+            refrescarLista(listaTotalProductos);
+            txtBuscar.Text= string.Empty;
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                lvLista.Items.Clear();
+                List<TProductos> listaProductos2 = new List<TProductos>();
+                listaProductos2 = conexionProductodb.listarProductos(false,false);
+                listaProductos2 = listaProductos2.FindAll(x => x.Descripcion.ToUpper() == txtBuscar.Text.ToUpper() || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
+
+                refrescarLista(listaProductos2);
+
+            }
+            else
+            {
+                refrescarLista(listaTotalProductos);
+            }
         }
     }
 }
