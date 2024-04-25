@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label lblHistorial;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label6;
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
@@ -45,7 +47,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnActDes = new System.Windows.Forms.Button();
             this.btnDesactivar = new System.Windows.Forms.Button();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.cbxProveedor = new System.Windows.Forms.ComboBox();
             lblHistorial = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +68,32 @@
             lblHistorial.Size = new System.Drawing.Size(191, 24);
             lblHistorial.TabIndex = 3;
             lblHistorial.Text = "Historial de Precios";
+            // 
+            // label4
+            // 
+            label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            label4.Location = new System.Drawing.Point(11, 44);
+            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(80, 24);
+            label4.TabIndex = 19;
+            label4.Text = "Buscar:";
+            // 
+            // label6
+            // 
+            label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            label6.Location = new System.Drawing.Point(436, 44);
+            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(107, 24);
+            label6.TabIndex = 20;
+            label6.Text = "Proveedor";
             // 
             // dgvProductos
             // 
@@ -269,6 +301,23 @@
             this.btnDesactivar.UseVisualStyleBackColor = false;
             this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Location = new System.Drawing.Point(96, 48);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(327, 20);
+            this.txtbuscar.TabIndex = 17;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // cbxProveedor
+            // 
+            this.cbxProveedor.FormattingEnabled = true;
+            this.cbxProveedor.Location = new System.Drawing.Point(548, 49);
+            this.cbxProveedor.Name = "cbxProveedor";
+            this.cbxProveedor.Size = new System.Drawing.Size(121, 21);
+            this.cbxProveedor.TabIndex = 18;
+            this.cbxProveedor.SelectionChangeCommitted += new System.EventHandler(this.cbxProveedor_SelectionChangeCommitted);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +325,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1027, 614);
+            this.Controls.Add(label6);
+            this.Controls.Add(label4);
+            this.Controls.Add(this.cbxProveedor);
+            this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.btnDesactivar);
             this.Controls.Add(this.btnActDes);
             this.Controls.Add(this.label5);
@@ -325,5 +378,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnActDes;
         private System.Windows.Forms.Button btnDesactivar;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.ComboBox cbxProveedor;
     }
 }

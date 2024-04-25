@@ -1,7 +1,11 @@
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Database\dbofertas.db
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.dll.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.pdb
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Dominio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\SQLitePCLRaw.core.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\SQLitePCLRaw.provider.dynamic_cdecl.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\System.Buffers.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\System.Data.SQLite.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\System.Memory.dll

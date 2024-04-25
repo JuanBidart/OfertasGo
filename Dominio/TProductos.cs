@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Dominio
 {
@@ -30,7 +24,7 @@ namespace Dominio
         public byte Activo { get; set; }
         public byte Eliminado { get; set; }
         public string Observaciones { get; set; }
-        
+
 
         //public override string ToString()
         //{
@@ -39,5 +33,5 @@ namespace Dominio
 
 
     }
-    
+
 }

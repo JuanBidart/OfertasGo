@@ -1,5 +1,7 @@
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\acercade.png
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\dbofertas.db
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\SQLite.Interop.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\OfertasGo.exe.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\OfertasGo.exe.manifest
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\OfertasGo.application
@@ -17,6 +19,7 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Newton
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\ConexionesExternas.pdb
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Dominio.pdb
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Negocio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Negocio.dll.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\System.Buffers.xml
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\System.Data.SQLite.xml
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\System.Memory.xml

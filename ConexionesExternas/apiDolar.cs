@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConexionesExternas
 {
     public class apiDolar
     {
-       
+
 
         public string Compra { get; set; }
         public string Venta { get; set; }
@@ -19,7 +14,7 @@ namespace ConexionesExternas
         public string Moneda { get; set; }
         public string Fecha { get; set; }
 
-        public apiDolar()        
+        public apiDolar()
         {
 
             actualizarData();

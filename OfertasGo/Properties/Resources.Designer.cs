@@ -69,5 +69,15 @@ namespace OfertasGo.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] dbofertas {
+            get {
+                object obj = ResourceManager.GetObject("dbofertas", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

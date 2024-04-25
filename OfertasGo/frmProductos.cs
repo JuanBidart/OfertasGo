@@ -1,17 +1,11 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
-using Negocio;
 
 namespace OfertasGo
 {
@@ -20,6 +14,7 @@ namespace OfertasGo
         public ConexionProductodb conexionProductodb = new ConexionProductodb();
         public ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
         List<THistorialPrecio> ListaFiltradaObtenidda = new List<THistorialPrecio>();
+        List<TProductos> listaProductosActivos = new List<TProductos>();
         bool paso = false;
 
         public frmProductos()
@@ -31,12 +26,27 @@ namespace OfertasGo
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-           
+
             actualizaLista();
             actualizaHistorial();
-            
-        }
+            actComboBoxProveedor();
+            cbxProveedor.SelectedIndex = -1;
+            dgvProductos.Columns[0].SortMode = DataGridViewColumnSortMode.Programmatic;
 
+        }
+        public void actComboBoxProveedor()
+        {
+            ConexionProveedores conexionProveedores = new ConexionProveedores();
+            try
+            {
+                cbxProveedor.DataSource = conexionProveedores.listarProveedores();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -45,21 +55,26 @@ namespace OfertasGo
                 agregarProducto.ShowDialog();
                 actualizaLista();
                 dgvProductos.CurrentRow.Selected = false;
+                actComboBoxProveedor();
+                cbxProveedor.SelectedIndex = -1;
             }
             catch (NullReferenceException)
             {
-                
-                
+
+
             }
-         
-            
+
+
         }
         public void actualizaLista()
         {
-            var listadeProductos = conexionProductodb.listarProductosActivos(true,true,true);
-                               
+            var listadeProductos = conexionProductodb.listarProductosActivos(true, true, true);
+
             dgvProductos.DataSource = listadeProductos;
-           
+
+            listaProductosActivos.Clear();
+            listaProductosActivos = listadeProductos;
+
         }
         public void actualizaHistorial()
         {
@@ -68,7 +83,7 @@ namespace OfertasGo
             dgvHistorial.DataSource = listaHistorial;
 
             dgvHistorial.Columns[0].Visible = false;
-            
+
             paso = true;
 
         }
@@ -79,11 +94,11 @@ namespace OfertasGo
             List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorialDesendiente();
             List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
 
-            
+
             ListaFiltradaObtenidda = listaFiltrada;
             paso = true;
         }
-        public string doubleAPorcentaje(double funcion) 
+        public string doubleAPorcentaje(double funcion)
         {
             if (funcion >= 0)
             {
@@ -102,7 +117,7 @@ namespace OfertasGo
             //cada vez que seleciono un producto de la tabla producto
             //if (dgvProductos.CurrentRow.Index != 0) //para que al abrir el formulario no intente con los datos aun no cargados
             if (paso != false && dgvProductos.CurrentRow != null)
-                       
+
             {
                 cargarListaFiltrada(); //carga la lista a la propiedad de la clase
                 dgvHistorial.DataSource = ListaFiltradaObtenidda;
@@ -156,7 +171,7 @@ namespace OfertasGo
 
                     throw ex;
                 }
-                finally {  }
+                finally { }
             }
         }
         private List<THistorialPrecio> listaFiltradaporFecha(int DiasPasados) //Funcion que devuelve una nueva lista solo de los objetos con fecha dentro de los dias pasados por parametros
@@ -211,7 +226,7 @@ namespace OfertasGo
 
                 return 00.00;
             }
-           
+
 
 
 
@@ -227,30 +242,30 @@ namespace OfertasGo
                 datosVariaciones.Add(item.Costo);
             }
             double resultadoCosto = 0;
-            for (int i = cantidadDeRegistros-1; i > 0; i--)
+            for (int i = cantidadDeRegistros - 1; i > 0; i--)
             {
 
-                
+
                 {
                     resultadoCosto += ((datosVariaciones[i - 1] - datosVariaciones[i]) / datosVariaciones[i]) * 100;
                 }
-                   
-                
-                
+
+
+
             }
             return resultadoCosto;
 
-           
+
 
 
         }
-         public int diasPasados()
+        public int diasPasados()
         {
             THistorialPrecio ultimofechaleida = ListaFiltradaObtenidda[0];
             DateTime ultimafecha = ultimofechaleida.FechaMod;
             DateTime fechaActual = DateTime.Now;
             TimeSpan dias = fechaActual - ultimafecha;
-           return dias.Days;
+            return dias.Days;
         }
         public string obtenerUltimafechamod()
         {
@@ -273,9 +288,9 @@ namespace OfertasGo
             catch (NullReferenceException)
             {
 
-                MessageBox.Show("Debe haber un elemento seleccionado","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Debe haber un elemento seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
 
 
         }
@@ -293,12 +308,67 @@ namespace OfertasGo
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)
-        {   
+        {
             var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
-            conexionProductodb.desOactProducto(productoSeleccionado,false);
+            conexionProductodb.desOactProducto(productoSeleccionado, false);
             actualizaLista();
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int index = cbxProveedor.SelectedIndex;
+            var provedor = (TProveedores)cbxProveedor.SelectedItem;
+
+            List<TProductos> listaProductosbuscados;
+            
+            string filtro = txtbuscar.Text;
+            if (filtro.Length > 1)
+            {
+                dgvProductos.DataSource = null;
+                if (index >= 0 && provedor != null)
+                {
+                    listaProductosbuscados = listaProductosActivos.FindAll(x => (filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper())) &&  x.Proveedores.idProveedores == provedor.idProveedores);
+                    
+                    dgvProductos.DataSource = listaProductosbuscados;
+                }
+                else
+                {
+                    listaProductosbuscados = listaProductosActivos.FindAll(x => filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                    dgvProductos.DataSource = listaProductosbuscados;
+                }
+
+
+
+            }
+            else
+            {
+                dgvProductos.DataSource = null;
+                actualizaLista();
+
+            }
+        }
+
+        private void cbxProveedor_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int index = cbxProveedor.SelectedIndex;
+            var provedor = (TProveedores)cbxProveedor.SelectedItem;
+
+            List<TProductos> listaProductosbuscados;
+            string filtro = txtbuscar.Text;
+
+            dgvProductos.DataSource = null;
+            if (index >= 0)
+            {
+                listaProductosbuscados = listaProductosActivos.FindAll(x => (filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper())) && x.Proveedores.idProveedores == provedor.idProveedores);
+                dgvProductos.DataSource = listaProductosbuscados;
+            }
+            else
+            {
+                listaProductosbuscados = listaProductosActivos.FindAll(x => filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                dgvProductos.DataSource = listaProductosbuscados;
+            }
+        }
     }
-       
+
 }

@@ -1,9 +1,6 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -11,8 +8,8 @@ namespace Negocio
     {
         public List<TProveedores> listarProveedores()
         {
-        AccesoDatos datos = new AccesoDatos();
-        List<TProveedores> lista = new List<TProveedores>();
+            AccesoDatos datos = new AccesoDatos();
+            List<TProveedores> lista = new List<TProveedores>();
 
             try
             {
@@ -45,39 +42,39 @@ namespace Negocio
                 throw;
             }
             finally { datos.cerrarConexion(); }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
-        public void agregarProveedor(TProveedores Proveedor) 
+        public void agregarProveedor(TProveedores Proveedor)
         {
-         AccesoDatos datos = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
 
-           
+
             try
             {
                 datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado) VALUES (@RazonSocial,@Direccion,@Ciudad,@Telefono,@Telefono2,@Activo,@Eliminado)");
-                datos.setearParametro("@RazonSocial",Proveedor.RazonSocial);
-                datos.setearParametro("@Direccion",Proveedor.Direccion);
-                datos.setearParametro("@Ciudad",Proveedor.Ciudad);
-                datos.setearParametro("@Telefono",Proveedor.Telefono);
-                datos.setearParametro("@Telefono2",Proveedor.Telefono2);
-                datos.setearParametro("@Activo",Proveedor.Activo);
-                datos.setearParametro("@Eliminado",Proveedor.Eliminado);
+                datos.setearParametro("@RazonSocial", Proveedor.RazonSocial);
+                datos.setearParametro("@Direccion", Proveedor.Direccion);
+                datos.setearParametro("@Ciudad", Proveedor.Ciudad);
+                datos.setearParametro("@Telefono", Proveedor.Telefono);
+                datos.setearParametro("@Telefono2", Proveedor.Telefono2);
+                datos.setearParametro("@Activo", Proveedor.Activo);
+                datos.setearParametro("@Eliminado", Proveedor.Eliminado);
 
                 datos.ejecutarAccion();
             }
@@ -87,9 +84,9 @@ namespace Negocio
                 throw;
             }
             finally { datos.cerrarConexion(); }
-        
-        
-        
+
+
+
         }
 
 

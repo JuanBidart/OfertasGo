@@ -1,11 +1,6 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -15,7 +10,7 @@ namespace Negocio
 
         public List<THistorialPrecio> listarhistorial()
         {
-            List<THistorialPrecio> listaHistorial = new List<THistorialPrecio>(); 
+            List<THistorialPrecio> listaHistorial = new List<THistorialPrecio>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
@@ -32,7 +27,7 @@ namespace Negocio
                     var fecha = datos.Lector.GetString(4);
                     aux.idProducto = datos.Lector.GetInt32(5);
 
-                    aux.FechaMod = DateTime.ParseExact(fecha,"dd/MM/yy",null); 
+                    aux.FechaMod = DateTime.ParseExact(fecha, "dd/MM/yy", null);
 
                     listaHistorial.Add(aux);
                 }
@@ -48,7 +43,7 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
-           
+
         }
         public List<THistorialPrecio> listarhistorialDesendiente()
         {
@@ -73,9 +68,9 @@ namespace Negocio
                     aux.FechaMod = DateTime.ParseExact(fecha, "dd/MM/yy", null);
 
                     listaHistorial.Add(aux);
-                    
+
                 }
-                
+
                 return listaHistorial;
 
             }

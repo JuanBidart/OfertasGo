@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 
 namespace Negocio
@@ -19,18 +15,18 @@ namespace Negocio
         }
 
 
-        public AccesoDatos() 
-    {
-           conexion = new SQLiteConnection($"data source= {rutaDatabase};Version=3");
+        public AccesoDatos()
+        {
+            conexion = new SQLiteConnection($"data source= {rutaDatabase};Version=3");
             comando = new SQLiteCommand();
-    }
+        }
 
         public void seterarConsulta(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
-        public void ejecutarLectura() 
+        public void ejecutarLectura()
         {
             comando.Connection = conexion;
             try
@@ -59,23 +55,23 @@ namespace Negocio
 
                 throw ex;
             }
-        
+
         }
 
-        public void setearParametro(string nombre, object valor) 
+        public void setearParametro(string nombre, object valor)
         {
 
-            comando.Parameters.AddWithValue(nombre,valor);
-        
+            comando.Parameters.AddWithValue(nombre, valor);
+
         }
-        public void cerrarConexion() 
+        public void cerrarConexion()
         {
             if (lector != null)
                 lector.Close();
             conexion.Close();
-        
+
         }
 
     }
-    
+
 }

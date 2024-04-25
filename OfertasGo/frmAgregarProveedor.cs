@@ -1,13 +1,6 @@
 ﻿using Dominio;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OfertasGo
@@ -23,18 +16,18 @@ namespace OfertasGo
         {
             this.Close();
         }
-        public bool validacionNumero(TextBox textbox) 
+        public bool validacionNumero(TextBox textbox)
         {
             string Texto = textbox.Text;
-            foreach (char T in Texto) 
+            foreach (char T in Texto)
             {
-                if (!char.IsNumber(T)) 
+                if (!char.IsNumber(T))
                 {
                     return false;
-                   
-                
+
+
                 };
-                           
+
             }
             return true;
 
@@ -51,11 +44,11 @@ namespace OfertasGo
                 MessageBox.Show("Ingrese solo numeros en los campos Numeros de Teléfono", "Error", MessageBoxButtons.OK);
                 txtTelefono.Focus();
             }
-            else 
+            else
             {
                 try
                 {
-                    
+
 
 
 
@@ -86,7 +79,7 @@ namespace OfertasGo
                 finally { datos.cerrarConexion(); }
 
             }
-           
+
 
         }
 

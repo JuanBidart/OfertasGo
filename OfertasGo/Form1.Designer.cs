@@ -44,6 +44,7 @@ namespace OfertasGo
             this.tsslFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btnBackupDB = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.sspBarradeEstado.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,7 @@ namespace OfertasGo
             this.btnProveedores.TabIndex = 1;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // toolStrip1
             // 
@@ -85,7 +87,7 @@ namespace OfertasGo
             this.tslAcercade});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(816, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(833, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -131,7 +133,7 @@ namespace OfertasGo
             this.sspBarradeEstado.Location = new System.Drawing.Point(0, 456);
             this.sspBarradeEstado.Name = "sspBarradeEstado";
             this.sspBarradeEstado.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.sspBarradeEstado.Size = new System.Drawing.Size(816, 22);
+            this.sspBarradeEstado.Size = new System.Drawing.Size(833, 22);
             this.sspBarradeEstado.TabIndex = 4;
             this.sspBarradeEstado.Text = "statusStrip1";
             // 
@@ -164,12 +166,28 @@ namespace OfertasGo
             // 
             this.timer2.Interval = 1000;
             // 
+            // btnBackupDB
+            // 
+            this.btnBackupDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBackupDB.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBackupDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackupDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackupDB.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBackupDB.Location = new System.Drawing.Point(631, 370);
+            this.btnBackupDB.Name = "btnBackupDB";
+            this.btnBackupDB.Size = new System.Drawing.Size(173, 72);
+            this.btnBackupDB.TabIndex = 5;
+            this.btnBackupDB.Text = "Backup DB";
+            this.btnBackupDB.UseVisualStyleBackColor = false;
+            this.btnBackupDB.Click += new System.EventHandler(this.btnBackupDB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(816, 478);
+            this.ClientSize = new System.Drawing.Size(833, 478);
+            this.Controls.Add(this.btnBackupDB);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
@@ -204,6 +222,7 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripStatusLabel tsslFecha;
         private System.Windows.Forms.ToolStripStatusLabel tssHora;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btnBackupDB;
     }
 }
 

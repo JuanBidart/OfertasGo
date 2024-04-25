@@ -2,12 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OfertasGo
@@ -16,23 +11,23 @@ namespace OfertasGo
     {
         TProductos productos = new TProductos();
         ConexionProductodb conexionProductodb = new ConexionProductodb();
-        List<TProductos> listaTotalProductos = new List<TProductos>();  
+        List<TProductos> listaTotalProductos = new List<TProductos>();
         public frmListaProductos()
         {
             InitializeComponent();
-            listaTotalProductos = conexionProductodb.listarProductos(true,true);
+            listaTotalProductos = conexionProductodb.listarProductos(true, true);
         }
 
         private void frmListaProductos_Load(object sender, EventArgs e)
         {
 
             refrescarLista(listaTotalProductos);
-           
+
         }
         private void refrescarLista(List<TProductos> listaProductos)
         {
 
-           
+
             lvLista.Items.Clear();
 
             foreach (var item in listaProductos)
@@ -54,11 +49,11 @@ namespace OfertasGo
             }
         }
 
-       
+
         private void btnActivar_Click(object sender, EventArgs e)
         {
-                   
-            
+
+
             foreach (ListViewItem item in lvLista.CheckedItems)
             {
                 TProductos productoSelecionado = new TProductos();
@@ -80,7 +75,7 @@ namespace OfertasGo
             }
             listaTotalProductos = conexionProductodb.listarProductos(true, true);
             refrescarLista(listaTotalProductos);
-            txtBuscar.Text= string.Empty;
+            txtBuscar.Text = string.Empty;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -89,7 +84,7 @@ namespace OfertasGo
             {
                 lvLista.Items.Clear();
                 List<TProductos> listaProductos2 = new List<TProductos>();
-                listaProductos2 = conexionProductodb.listarProductos(false,false);
+                listaProductos2 = conexionProductodb.listarProductos(false, false);
                 listaProductos2 = listaProductos2.FindAll(x => x.Descripcion.ToUpper() == txtBuscar.Text.ToUpper() || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
 
                 refrescarLista(listaProductos2);

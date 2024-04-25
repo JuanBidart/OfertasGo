@@ -1,13 +1,7 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
-using Dominio;
-using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 
 namespace Negocio
@@ -15,14 +9,14 @@ namespace Negocio
 
     public class ConexionProductodb
     {
-    string rutaDatabase = "./Database/dbofertas.db";
+        string rutaDatabase = "./Database/dbofertas.db";
 
 
         public List<TProductos> listarProductos(bool orden, bool ascendente)
         {
-            
 
-            if (orden==false) ascendente = false;
+
+            if (orden == false) ascendente = false;
 
             string consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
 
@@ -39,9 +33,9 @@ namespace Negocio
             List<TProductos> listaProductos = new List<TProductos>();
             // SENTENCIA QUE FUNCIONABA = SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos
             //                         0           1         2      3         4             5               6             7            8                  9                          10                            
-         
-         string cadenayconexion = $"data source= {rutaDatabase};Version=3";
-           
+
+            string cadenayconexion = $"data source= {rutaDatabase};Version=3";
+
 
             try
             {
@@ -52,7 +46,7 @@ namespace Negocio
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = consulta;
                 cmd.Connection = con;
-                
+
                 SQLiteDataReader lector = cmd.ExecuteReader();
 
                 while (lector.Read())
@@ -104,19 +98,19 @@ namespace Negocio
 
                 if (orden == true && ascendente == false)
                 {
-                    consulta += consulta.Replace(";","") + " ORDER BY Descripcion COLLATE NOCASE DESC;";
+                    consulta += consulta.Replace(";", "") + " ORDER BY Descripcion COLLATE NOCASE DESC;";
                 }
                 if (orden == true && ascendente == true)
                 {
-                    consulta += consulta.Replace(";","") + " ORDER BY Descripcion COLLATE NOCASE ASC;";
+                    consulta += consulta.Replace(";", "") + " ORDER BY Descripcion COLLATE NOCASE ASC;";
                 }
 
 
 
                 datos.seterarConsulta(consulta);
-                
-                
-                
+
+
+
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -143,7 +137,7 @@ namespace Negocio
                     productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
                     listaProductos.Add(productos);
 
-                    
+
                 }
                 return listaProductos;
 
@@ -154,7 +148,7 @@ namespace Negocio
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
-            
+
         }
         public void agregarProducto(TProductos productonuevo)
         {
@@ -162,13 +156,13 @@ namespace Negocio
             try
             {
                 //convertir datos duble en string para la base de datos(sqlite)
-                string costo = productonuevo.Costo.ToString().Replace(",",".");
+                string costo = productonuevo.Costo.ToString().Replace(",", ".");
                 string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
                 string final = productonuevo.Final.ToString().Replace(",", ".");
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','"+productonuevo.Activo+ "',@idRubro,@idProveedores)");
-                datos.setearParametro("@idProveedores",productonuevo.Proveedores.idProveedores);
-                datos.setearParametro("@idRubro",productonuevo.Rubro.idRubro);
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','" + productonuevo.Activo + "',@idRubro,@idProveedores)");
+                datos.setearParametro("@idProveedores", productonuevo.Proveedores.idProveedores);
+                datos.setearParametro("@idRubro", productonuevo.Rubro.idRubro);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -177,16 +171,16 @@ namespace Negocio
                 throw ex;
             }
             finally
-            { 
+            {
                 datos.cerrarConexion();
             }
-        
+
         }
         public void modificarProducto(TProductos productoModificar)
-        { 
-        AccesoDatos datos = new AccesoDatos();
-            
-            
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+
 
             try
             {
@@ -197,11 +191,11 @@ namespace Negocio
                 datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
 
 
-                datos.setearParametro("@Descripcion",productoModificar.Descripcion);
-                datos.setearParametro("@Costo",productoModificar.Costo);
-                datos.setearParametro("@Recargo",productoModificar.RecargoPorcentaje);
-                datos.setearParametro("@Final",productoModificar.Final);
-                datos.setearParametro("@FechaModificacion",productoModificar.FechaModificacion);
+                datos.setearParametro("@Descripcion", productoModificar.Descripcion);
+                datos.setearParametro("@Costo", productoModificar.Costo);
+                datos.setearParametro("@Recargo", productoModificar.RecargoPorcentaje);
+                datos.setearParametro("@Final", productoModificar.Final);
+                datos.setearParametro("@FechaModificacion", productoModificar.FechaModificacion);
                 datos.setearParametro("@Activo", productoModificar.Activo);
                 datos.setearParametro("@idRubro", productoModificar.Rubro.idRubro);
                 datos.setearParametro("@idProveedores", productoModificar.Proveedores.idProveedores);
@@ -218,7 +212,7 @@ namespace Negocio
             }
             finally { datos.cerrarConexion(); }
 
-           
+
 
         }
         public void desOactProducto(TProductos Producto, bool trueActivar_falseDesativar)
@@ -227,11 +221,11 @@ namespace Negocio
             try
             {
                 datos.seterarConsulta("UPDATE Productos SET Activo = @activo WHERE idProductos = @idProducto");
-                if (trueActivar_falseDesativar) 
-                { datos.setearParametro("activo", 1); } 
+                if (trueActivar_falseDesativar)
+                { datos.setearParametro("activo", 1); }
                 else { datos.setearParametro("activo", 0); };
-               
-                datos.setearParametro("idProducto",Producto.idProductos);
+
+                datos.setearParametro("idProducto", Producto.idProductos);
                 datos.ejecutarAccion();
 
             }
@@ -240,7 +234,7 @@ namespace Negocio
 
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }  
+            finally { datos.cerrarConexion(); }
 
 
         }

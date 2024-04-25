@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Dominio;
+﻿using Dominio;
 using Negocio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace OfertasGo
 {
@@ -18,17 +12,43 @@ namespace OfertasGo
     public partial class frmAgregarProducto : Form
     {
         public TProductos producto = null;
+        public bool paso = false;
         public frmAgregarProducto()
         {
+            
+            
+
             InitializeComponent();
+            lblinfofecha.Visible = false;
+            cbxRubro.DropDownStyle = ComboBoxStyle.DropDown;
+            cbxRubro.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbxRubro.AutoCompleteCustomSource = devolverdatos();
+            cbxRubro.AutoCompleteSource = AutoCompleteSource.CustomSource;
+           
+
+
         }
         public frmAgregarProducto(TProductos producto)
         {
-            
+
             InitializeComponent();
             this.producto = producto;
             this.Text = "Modificar Producto";
+           dtpFecha.Enabled = false;
+            lblinfofecha.Visible = true;
+            
 
+        }
+        private AutoCompleteStringCollection devolverdatos() 
+        {
+            AutoCompleteStringCollection autoCompleteStrings = new AutoCompleteStringCollection();
+            ConexionRubro conexionRubro = new ConexionRubro();
+           
+            foreach (var item in conexionRubro.listarRubro())
+            {
+                autoCompleteStrings.Add(item.Rubro);
+            }
+            return autoCompleteStrings;
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -37,7 +57,7 @@ namespace OfertasGo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+
             ConexionProductodb productodb = new ConexionProductodb();
 
 
@@ -59,14 +79,14 @@ namespace OfertasGo
                 }
                 else producto.Activo = 0;
 
-                producto.Rubro = (TRubro)cboRubro.SelectedItem;
+                producto.Rubro = (TRubro)cbxRubro.SelectedItem;
                 producto.Proveedores = (TProveedores)cbxProveedor.SelectedItem;
 
 
-                if (producto.idProductos != 0) 
+                if (producto.idProductos != 0)
                 {
                     productodb.modificarProducto(producto);
-                    MessageBox.Show("Modificado","OK");
+                    MessageBox.Show("Modificado", "OK");
                     Close();
 
                 }
@@ -77,7 +97,7 @@ namespace OfertasGo
                     MessageBox.Show("Agregado exitosamente");
                     Close();
                 }
-               
+
 
             }
             catch (Exception ex)
@@ -92,14 +112,14 @@ namespace OfertasGo
             frmAgregarRubro agregarRubro = new frmAgregarRubro();
             agregarRubro.ShowDialog();
             actComboBoxRubro();
-            cboRubro.Focus();
+            cbxRubro.Focus();
         }
         public void actComboBoxRubro()
         {
             ConexionRubro conexionRubro = new ConexionRubro();
             try
             {
-                cboRubro.DataSource = conexionRubro.listarRubro();
+                cbxRubro.DataSource = conexionRubro.listarRubro();
             }
             catch (Exception ex)
             {
@@ -137,15 +157,15 @@ namespace OfertasGo
 
 
 
-        
-            else 
+
+            else
             {
                 actComboBoxRubro();
                 actComboBoxProveedores();
                 cbxProveedor.ValueMember = "idProveedores";
                 cbxProveedor.DisplayMember = "RazonSocial";
-                cboRubro.ValueMember = "idRubro";
-                cboRubro.DisplayMember = "Rubro";
+                cbxRubro.ValueMember = "idRubro";
+                cbxRubro.DisplayMember = "Rubro";
 
                 txtDescripcion.Text = producto.Descripcion.ToString();
                 txtCosto.Text = producto.Costo.ToString();
@@ -153,21 +173,21 @@ namespace OfertasGo
                 txtFinal.Text = producto.Final.ToString();
                 dtpFecha.Text = producto.FechaModificacion;
                 cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
-                cboRubro.SelectedValue = producto.Rubro.idRubro;
+                cbxRubro.SelectedValue = producto.Rubro.idRubro;
 
-            }   
-            
+            }
+
         }
 
-        
 
-       
+
+
 
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
             try
-                
-                
+
+
 
             {
                 double costo;
@@ -185,13 +205,13 @@ namespace OfertasGo
                             txtFinal.Text = final.ToString();
                             txtFinal.ForeColor = Color.Red;
                         }
-                        else 
-                        { 
-                            
+                        else
+                        {
+
                             txtFinal.Text = txtCosto.Text;
                             txtFinal.ForeColor = Color.Red;
                         }
-                        
+
 
                     }
                 }
@@ -212,18 +232,18 @@ namespace OfertasGo
                         txtFinal.Text = final.ToString();
                         txtFinal.ForeColor = Color.Red;
                     }
-                    
+
 
                 }
-                
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-          
-           
+
+
         }
 
         private void txtRecargo_TextChanged(object sender, EventArgs e)
@@ -242,7 +262,7 @@ namespace OfertasGo
             }
             catch (FormatException)
             {
-                MessageBox.Show("Los datos ingresados son incorrectos","Error");            
+                MessageBox.Show("Los datos ingresados son incorrectos", "Error");
             }
 
 
@@ -251,8 +271,8 @@ namespace OfertasGo
 
                 throw ex;
             }
-           
-           
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -265,6 +285,13 @@ namespace OfertasGo
 
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cbxRubro_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = cbxRubro.Text.ToUpper();
+          
 
         }
     }

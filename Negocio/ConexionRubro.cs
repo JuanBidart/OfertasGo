@@ -1,18 +1,13 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SQLite;
-using Dominio;
-using Negocio;
 
 namespace Negocio
 {
-   public class ConexionRubro
+    public class ConexionRubro
     {
         //rubrexfhjhtdf
-        public List<TRubro> listarRubro() 
+        public List<TRubro> listarRubro()
         {
             List<TRubro> rubro = new List<TRubro>();
             AccesoDatos datos = new AccesoDatos();
@@ -23,16 +18,16 @@ namespace Negocio
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
-                    {
-                        TRubro aux = new TRubro();
-                        aux.idRubro =  datos.Lector.GetInt32(0);
-                        aux.Rubro = datos.Lector.GetString(1);
-                        aux.Activo = datos.Lector.GetByte(2);
-                        aux.Eliminado = datos.Lector.GetByte(3) ;
+                {
+                    TRubro aux = new TRubro();
+                    aux.idRubro = datos.Lector.GetInt32(0);
+                    aux.Rubro = datos.Lector.GetString(1);
+                    aux.Activo = datos.Lector.GetByte(2);
+                    aux.Eliminado = datos.Lector.GetByte(3);
 
-                        rubro.Add(aux);
-                    }
-                
+                    rubro.Add(aux);
+                }
+
 
 
                 return rubro;
@@ -47,15 +42,15 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
-        
+
         }
 
-        public void agregarRubro(TRubro nuevorubro) 
+        public void agregarRubro(TRubro nuevorubro)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.seterarConsulta("INSERT INTO Rubro(Rubro,Activo,Eliminado) VALUES ('"+nuevorubro.Rubro+"',1,0)");
+                datos.seterarConsulta("INSERT INTO Rubro(Rubro,Activo,Eliminado) VALUES ('" + nuevorubro.Rubro + "',1,0)");
                 datos.ejecutarAccion();
 
             }
@@ -65,8 +60,8 @@ namespace Negocio
                 throw ex;
             }
             finally
-            { 
-            datos .cerrarConexion();
+            {
+                datos.cerrarConexion();
             }
 
         }

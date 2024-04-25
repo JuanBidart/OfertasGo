@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using ConexionesExternas;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Negocio;
-using Dominio;
-using ConexionesExternas;
-using System.Reflection.Emit;
 using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace OfertasGo
 {
@@ -25,12 +17,12 @@ namespace OfertasGo
             InitializeComponent();
         }
 
-       
+
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-                frmProductos productos = new frmProductos();
-                productos.ShowDialog();
+            frmProductos productos = new frmProductos();
+            productos.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,11 +40,11 @@ namespace OfertasGo
         {
             tsslFecha.Spring = true;
             tsslFecha.TextAlign = ContentAlignment.TopRight;
-      
+
 
             tssHora.Spring = true;
             tssHora.TextAlign = ContentAlignment.TopRight;
-          
+
 
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
 
@@ -73,21 +65,21 @@ namespace OfertasGo
 
         public void recorrer()
         {
-            
+
             apiDolar dolar = new apiDolar();
             string texto = dolar.Moneda + " Blue " + dolar.Venta + "   " + dolar.Compra;
             string Text1 = texto.Replace("casa", "").Remove(0, 9);
             string Txt2 = Text1.Replace('"', ' ');
             tsslBarra.Text = Txt2.ToUpper();
 
-           
 
-            
+
+
             timer1.Stop();
             timer1.Dispose();
             timer1.Start();
             timer1.Tick += Timer1_Tick;
-           
+
 
         }
 
@@ -99,7 +91,7 @@ namespace OfertasGo
             tsslFecha.Text = ti.ToTitleCase(fechalarga);
 
 
-            if (DateTime.Now.Minute == 30 )
+            if (DateTime.Now.Minute == 30)
             {
                 apiDolar dolar = new apiDolar();
                 string texto = dolar.Moneda + " Blue " + dolar.Venta + "   " + dolar.Compra;
@@ -107,12 +99,58 @@ namespace OfertasGo
                 string Txt2 = Text1.Replace('"', ' ');
                 tsslBarra.Text = Txt2.ToUpper();
             }
-                               
+
 
 
         }
 
-        
-        
+        private void btnBackupDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog browserDialog = new FolderBrowserDialog();
+                browserDialog.ShowNewFolderButton = true;
+                browserDialog.ShowDialog();
+                
+                    string direccion = browserDialog.SelectedPath;
+                StreamWriter sw = new StreamWriter("./rutabackup.txt");
+                sw.Write(direccion);
+                sw.Close();
+
+                StreamReader sr = new StreamReader("./rutabackup.txt");  
+                string direccionleida = sr.ReadToEnd();
+                sr.Close();
+
+                string fecha = DateTime.Now.ToString("dd-MM-yy (HH mm)");
+                string direccionDatabase = "./Database";
+                
+                string copiaarchivo = "./Backup\\database" + fecha + ".db";
+
+               
+                string[] database = Directory.GetFiles(direccionDatabase);
+
+                
+                File.Copy(database[0],direccionleida+ "\\database" + fecha + ".db");
+
+
+                MessageBox.Show("Backup creado con Exito en " + direccionleida, "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
