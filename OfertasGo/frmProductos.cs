@@ -79,6 +79,7 @@ namespace OfertasGo
 
             listaProductosActivos.Clear();
             listaProductosActivos = listadeProductos;
+            lblCanPro.Text = dgvProductos.RowCount.ToString();
 
         }
         public void actualizaHistorial()

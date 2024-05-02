@@ -51,6 +51,8 @@
             this.cbxProveedor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPrecioFinal = new System.Windows.Forms.Label();
+            this.lblCanPro = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -341,6 +343,28 @@
             this.lblPrecioFinal.TabIndex = 22;
             this.lblPrecioFinal.Text = "00";
             // 
+            // lblCanPro
+            // 
+            this.lblCanPro.AutoSize = true;
+            this.lblCanPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCanPro.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCanPro.Location = new System.Drawing.Point(907, 50);
+            this.lblCanPro.Name = "lblCanPro";
+            this.lblCanPro.Size = new System.Drawing.Size(32, 24);
+            this.lblCanPro.TabIndex = 24;
+            this.lblCanPro.Text = "00";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label9.Location = new System.Drawing.Point(908, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 16);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Ctd. Productos";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +372,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1023, 642);
+            this.Controls.Add(this.lblCanPro);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblPrecioFinal);
             this.Controls.Add(this.label7);
             this.Controls.Add(label6);
@@ -407,5 +433,7 @@
         private System.Windows.Forms.ComboBox cbxProveedor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPrecioFinal;
+        private System.Windows.Forms.Label lblCanPro;
+        private System.Windows.Forms.Label label9;
     }
 }
