@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sHFgnId+/TpNMoG5NfadjqM5+z5YUId9f2e5TyTcDqo=</dsig:DigestValue>
+        <dsig:DigestValue>IvR0XSX4zh49ce/18oV8haa13f+UloW6cOOqld6O1Oc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vPV9R6CszdHd29oSi0sgLgQNRAZdxU8HnQkhWCdQagE=</dsig:DigestValue>
+        <dsig:DigestValue>R979C075Phqf2pKD0UMRMy5W/wkTSDZCF+TxWtvVSr8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="164336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="183280">
       <assemblyIdentity name="OfertasGo" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GKrgxqVwvA1wJy8HnUhJ2DDU8AFj88RXOVAUYIWapsc=</dsig:DigestValue>
+        <dsig:DigestValue>LsJcmn7UFZyvL7+AzgafoVlgPf3jX8wWnwLRr7FGuYI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -170,13 +170,13 @@
       <dsig:DigestValue>12nUZ1YA9m8yQ9hyRZHDoftilkgn6M6sCZICVQ8v7Pc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Database\dbofertas.db" size="53248">
+  <file name="Database\dbofertas.db" size="69632">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OmabQNJlafDVXpxjZIOgH4gPWefhNr+tNF1OWQk/yGM=</dsig:DigestValue>
+      <dsig:DigestValue>DYzmFz0oIk5nnXQCNOrkzQCscHvl2MwobW4XwkTFbrc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="OfertasGo.exe.config" size="1510">

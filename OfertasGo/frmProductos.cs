@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace OfertasGo
@@ -31,7 +32,11 @@ namespace OfertasGo
             actualizaHistorial();
             actComboBoxProveedor();
             cbxProveedor.SelectedIndex = -1;
-            dgvProductos.Columns[0].SortMode = DataGridViewColumnSortMode.Programmatic;
+            dgvProductos.Columns[4].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
+            dgvProductos.Columns["Final"].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
+
+
+
 
         }
         public void actComboBoxProveedor()
@@ -68,7 +73,7 @@ namespace OfertasGo
         }
         public void actualizaLista()
         {
-            var listadeProductos = conexionProductodb.listarProductosActivos(true, true, true);
+            var listadeProductos = conexionProductodb.listarProductosActivos(true, true);
 
             dgvProductos.DataSource = listadeProductos;
 
@@ -90,6 +95,7 @@ namespace OfertasGo
         public void cargarListaFiltrada()
         {
             var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            lblPrecioFinal.Text = productoSeleccionado.Final.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
             int idProductoSelec = productoSeleccionado.idProductos;
             List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorialDesendiente();
             List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
@@ -123,9 +129,10 @@ namespace OfertasGo
                 dgvHistorial.DataSource = ListaFiltradaObtenidda;
                 lblUltimaFechaAct.Text = obtenerUltimafechamod();
                 lblDiasPasados.Text = diasPasados().ToString();
-                lbIinflacionMen.Text = doubleAPorcentaje(inflacionMensual());
+                lbIinflacionMen.Text = doubleAPorcentaje(inflacion(30));
                 lblVarMen.Text = doubleAPorcentaje(variacionMensualAcumulada());
-
+                
+               
 
 
                 try
@@ -190,11 +197,11 @@ namespace OfertasGo
             return historialFiltroFecha;
         }
 
-        public double inflacionMensual()
+        public double inflacion(int diasContados)
         {
             try
             {
-                List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(30);
+                List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(diasContados);
                 double resultado = 0.0;
 
                 List<double> datosVariaciones = new List<double>();
@@ -368,6 +375,18 @@ namespace OfertasGo
                 listaProductosbuscados = listaProductosActivos.FindAll(x => filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
                 dgvProductos.DataSource = listaProductosbuscados;
             }
+        }
+
+        private void frmProductos_Resize(object sender, EventArgs e)
+        {
+            //1044; 653
+            int altura = this.Height;
+            int anchura = this.Width;
+
+            if (anchura < 1000) 
+            {
+            dgvHistorial.Visible = false;
+            }else dgvHistorial.Visible = true;
         }
     }
 

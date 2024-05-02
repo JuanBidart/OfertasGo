@@ -45,6 +45,7 @@ namespace OfertasGo
             this.tssHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btnBackupDB = new System.Windows.Forms.Button();
+            this.btnCargardb = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.sspBarradeEstado.SuspendLayout();
             this.SuspendLayout();
@@ -181,12 +182,28 @@ namespace OfertasGo
             this.btnBackupDB.UseVisualStyleBackColor = false;
             this.btnBackupDB.Click += new System.EventHandler(this.btnBackupDB_Click);
             // 
+            // btnCargardb
+            // 
+            this.btnCargardb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCargardb.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCargardb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargardb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargardb.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCargardb.Location = new System.Drawing.Point(631, 292);
+            this.btnCargardb.Name = "btnCargardb";
+            this.btnCargardb.Size = new System.Drawing.Size(173, 72);
+            this.btnCargardb.TabIndex = 6;
+            this.btnCargardb.Text = "Cargar DB";
+            this.btnCargardb.UseVisualStyleBackColor = false;
+            this.btnCargardb.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(833, 478);
+            this.Controls.Add(this.btnCargardb);
             this.Controls.Add(this.btnBackupDB);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnProveedores);
@@ -223,6 +240,7 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripStatusLabel tssHora;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btnBackupDB;
+        private System.Windows.Forms.Button btnCargardb;
     }
 }
 

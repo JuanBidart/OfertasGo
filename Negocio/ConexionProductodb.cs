@@ -85,7 +85,7 @@ namespace Negocio
             }
             finally { }
         }
-        public List<TProductos> listarProductosActivos(bool activo_desactivo, bool orden, bool ascendente)
+        public List<TProductos> listarProductosActivos(bool activo_desactivo, bool orden)
         {
             string act = "";
             string consulta = "";
@@ -94,16 +94,17 @@ namespace Negocio
             try
             {
                 if (activo_desactivo == true) { act = "1"; } else { act = "0"; }
-                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + " ;";
+                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + "";
 
-                if (orden == true && ascendente == false)
+                if (orden == true)
                 {
-                    consulta += consulta.Replace(";", "") + " ORDER BY Descripcion COLLATE NOCASE DESC;";
+                    consulta.Replace(";","");
+                    consulta += " ORDER BY Productos.Descripcion COLLATE NOCASE ASC;";
                 }
-                if (orden == true && ascendente == true)
-                {
-                    consulta += consulta.Replace(";", "") + " ORDER BY Descripcion COLLATE NOCASE ASC;";
-                }
+                //if (orden == true && ascendente == true)
+                //{
+                //    consulta += consulta.Replace(";", "") + " ORDER BY Productos.Descripcion COLLATE NOCASE ASC;";
+                //}
 
 
 

@@ -18,7 +18,6 @@ C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.csproj.Core
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.pdb

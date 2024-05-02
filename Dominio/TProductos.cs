@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Globalization;
+using System.Security.Cryptography;
 
 namespace Dominio
 {
@@ -11,6 +13,7 @@ namespace Dominio
         public TRubro Rubro { get; set; }
         [DisplayName("Provedor")]
         public TProveedores Proveedores { get; set; }
+      
         public double Costo { get; set; }
         [DisplayName("% Desc.")]
         public int DescuentoCostoProcentaje { get; set; }

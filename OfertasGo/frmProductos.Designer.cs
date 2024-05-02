@@ -49,6 +49,8 @@
             this.btnDesactivar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.cbxProveedor = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblPrecioFinal = new System.Windows.Forms.Label();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -58,11 +60,12 @@
             // 
             // lblHistorial
             // 
-            lblHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            lblHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             lblHistorial.AutoSize = true;
             lblHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblHistorial.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lblHistorial.Location = new System.Drawing.Point(730, 340);
+            lblHistorial.Location = new System.Drawing.Point(729, 340);
             lblHistorial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblHistorial.Name = "lblHistorial";
             lblHistorial.Size = new System.Drawing.Size(191, 24);
@@ -71,11 +74,10 @@
             // 
             // label4
             // 
-            label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            label4.Location = new System.Drawing.Point(11, 44);
+            label4.Location = new System.Drawing.Point(8, 44);
             label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(80, 24);
@@ -84,11 +86,10 @@
             // 
             // label6
             // 
-            label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            label6.Location = new System.Drawing.Point(436, 44);
+            label6.Location = new System.Drawing.Point(435, 44);
             label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(107, 24);
@@ -109,7 +110,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1003, 250);
+            this.dgvProductos.Size = new System.Drawing.Size(999, 250);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
@@ -134,7 +135,7 @@
             this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Location = new System.Drawing.Point(632, 366);
+            this.dgvHistorial.Location = new System.Drawing.Point(628, 366);
             this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 51;
@@ -172,7 +173,7 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificar.Location = new System.Drawing.Point(229, 335);
+            this.btnModificar.Location = new System.Drawing.Point(12, 416);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(194, 77);
             this.btnModificar.TabIndex = 6;
@@ -277,7 +278,7 @@
             this.btnActDes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnActDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActDes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnActDes.Location = new System.Drawing.Point(12, 558);
+            this.btnActDes.Location = new System.Drawing.Point(12, 586);
             this.btnActDes.Name = "btnActDes";
             this.btnActDes.Size = new System.Drawing.Size(194, 44);
             this.btnActDes.TabIndex = 15;
@@ -292,7 +293,7 @@
             this.btnDesactivar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDesactivar.Location = new System.Drawing.Point(12, 416);
+            this.btnDesactivar.Location = new System.Drawing.Point(12, 503);
             this.btnDesactivar.Name = "btnDesactivar";
             this.btnDesactivar.Size = new System.Drawing.Size(194, 77);
             this.btnDesactivar.TabIndex = 16;
@@ -318,13 +319,37 @@
             this.cbxProveedor.TabIndex = 18;
             this.cbxProveedor.SelectionChangeCommitted += new System.EventHandler(this.cbxProveedor_SelectionChangeCommitted);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label7.Location = new System.Drawing.Point(243, 340);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Precio Final";
+            // 
+            // lblPrecioFinal
+            // 
+            this.lblPrecioFinal.AutoSize = true;
+            this.lblPrecioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioFinal.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblPrecioFinal.Location = new System.Drawing.Point(242, 366);
+            this.lblPrecioFinal.Name = "lblPrecioFinal";
+            this.lblPrecioFinal.Size = new System.Drawing.Size(32, 24);
+            this.lblPrecioFinal.TabIndex = 22;
+            this.lblPrecioFinal.Text = "00";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1027, 614);
+            this.ClientSize = new System.Drawing.Size(1023, 642);
+            this.Controls.Add(this.lblPrecioFinal);
+            this.Controls.Add(this.label7);
             this.Controls.Add(label6);
             this.Controls.Add(label4);
             this.Controls.Add(this.cbxProveedor);
@@ -343,16 +368,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(lblHistorial);
-            this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.dgvHistorial);
             this.ForeColor = System.Drawing.Color.Black;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1043, 613);
             this.Name = "frmProductos";
             this.Text = "Productos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProductos_FormClosing);
             this.Load += new System.EventHandler(this.frmProductos_Load);
+            this.Resize += new System.EventHandler(this.frmProductos_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.ResumeLayout(false);
@@ -380,5 +405,7 @@
         private System.Windows.Forms.Button btnDesactivar;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.ComboBox cbxProveedor;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPrecioFinal;
     }
 }

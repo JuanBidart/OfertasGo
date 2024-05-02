@@ -34,8 +34,8 @@ C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.d
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\acercade.png
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
