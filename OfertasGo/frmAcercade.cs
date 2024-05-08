@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,7 +20,7 @@ namespace OfertasGo
             this.Width = bmp.Width;
             this.BackgroundImage = bmp;
 
-
+           
 
         }
 

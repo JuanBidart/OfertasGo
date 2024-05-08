@@ -48,10 +48,6 @@ namespace OfertasGo
             {
                 try
                 {
-
-
-
-
                     proveedor.RazonSocial = txtRazonSocial.Text;
                     proveedor.Direccion = txtDireccion.Text;
                     proveedor.Ciudad = txtCiudad.Text;

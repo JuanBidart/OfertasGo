@@ -53,6 +53,7 @@
             this.lblPrecioFinal = new System.Windows.Forms.Label();
             this.lblCanPro = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -365,6 +366,21 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Ctd. Productos";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(299, 586);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 44);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Grafica";
+            this.button1.UseMnemonic = false;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +388,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1023, 642);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCanPro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblPrecioFinal);
@@ -435,5 +452,6 @@
         private System.Windows.Forms.Label lblPrecioFinal;
         private System.Windows.Forms.Label lblCanPro;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }

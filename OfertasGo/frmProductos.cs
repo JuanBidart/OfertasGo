@@ -34,7 +34,8 @@ namespace OfertasGo
             cbxProveedor.SelectedIndex = -1;
             dgvProductos.Columns[4].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
             dgvProductos.Columns["Final"].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
-
+            dgvProductos.RowHeadersVisible = false;
+            dgvHistorial.RowHeadersVisible = false;
 
 
 
@@ -388,6 +389,13 @@ namespace OfertasGo
             {
             dgvHistorial.Visible = false;
             }else dgvHistorial.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grafica grafica = new grafica(ListaFiltradaObtenidda);
+            grafica.Show();
+            grafica.TopMost = true;
         }
     }
 
