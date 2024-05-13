@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aLNFBYiYKGSU+reoNBBpFRjKt+kwvSg7a0/Z0Wa0JmE=</dsig:DigestValue>
+        <dsig:DigestValue>tO+2SJoEOCmdK3DCR+Ok6Q8gGl5kekZYin0x8I6PnZA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="185840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="186864">
       <assemblyIdentity name="OfertasGo" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LP7VMvnMHOE3nrPchzIlcrcs8xs3f4qrgzyODllpJTU=</dsig:DigestValue>
+        <dsig:DigestValue>+d6ojRofwsfrjZExijgc2YhzV1qBdodhfi6uJMROSLg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

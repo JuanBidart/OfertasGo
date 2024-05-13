@@ -1,4 +1,6 @@
 ﻿using ConexionesExternas;
+using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -164,6 +166,12 @@ namespace OfertasGo
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+            ConexionProveedores conexionProveedores = new ConexionProveedores();
+            List<TProveedores> listapr = new List<TProveedores>();
+            listapr =  conexionProveedores.listarProveedores();
+            TProveedores proveedores = listapr[0];
+            frmAgregarProveedor frmAgregarProveedor = new frmAgregarProveedor(proveedores);
+            frmAgregarProveedor.ShowDialog();
 
         }
 

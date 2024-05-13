@@ -13,7 +13,7 @@ namespace Negocio
 
             try
             {
-                datos.seterarConsulta("SELECT IdProveedores,RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado FROM Proveedores");
+                datos.seterarConsulta("SELECT IdProveedores,RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado FROM Proveedores ORDER BY RazonSocial ASC");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

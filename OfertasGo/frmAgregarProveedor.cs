@@ -7,11 +7,17 @@ namespace OfertasGo
 {
     public partial class frmAgregarProveedor : Form
     {
+        TProveedores Proveedor = null;
         public frmAgregarProveedor()
         {
             InitializeComponent();
         }
-
+        public frmAgregarProveedor(TProveedores ProovedoorRecibido) 
+        {
+            InitializeComponent();
+            Proveedor = ProovedoorRecibido;
+        
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,7 +84,35 @@ namespace OfertasGo
 
 
         }
+        private void cargardgvLista() 
+        {
+            ConexionProveedores conexionProveedores = new ConexionProveedores();
+            dgvListaProveedores.DataSource = conexionProveedores.listarProveedores();
+        
+        }
+
+        private void frmAgregarProveedor_Load(object sender, EventArgs e)
+        {
+            if (Proveedor != null) 
+            {
+                this.Width = 900;
+                this.Height = 580;
+                dgvListaProveedores.Visible = true;
+                lblListaProvedores.Visible = true;
+                btnDesactivar.Visible = true;
+                cargardgvLista();
 
 
+
+            }
+            else
+            {
+                btnDesactivar.Visible = false;
+                lblListaProvedores.Visible = false;
+                dgvListaProveedores.Visible = false;
+                this.Width = 630;
+                this.Height = 580;
+            }
+        }
     }
 }
