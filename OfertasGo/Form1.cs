@@ -24,6 +24,7 @@ namespace OfertasGo
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
             frmProductos productos = new frmProductos();
             productos.ShowDialog();
         }

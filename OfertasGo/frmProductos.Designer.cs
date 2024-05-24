@@ -54,6 +54,7 @@
             this.lblCanPro = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -103,7 +104,8 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.DodgerBlue;
@@ -115,6 +117,7 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(999, 250);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProductos_ColumnHeaderMouseClick);
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // btnAgregar
@@ -134,10 +137,12 @@
             // 
             // dgvHistorial
             // 
-            this.dgvHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHistorial.Location = new System.Drawing.Point(628, 366);
             this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHistorial.Name = "dgvHistorial";
@@ -381,6 +386,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImprimir.Location = new System.Drawing.Point(299, 539);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(194, 44);
+            this.btnImprimir.TabIndex = 26;
+            this.btnImprimir.Text = "Imprimir Lista Actual";
+            this.btnImprimir.UseMnemonic = false;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +408,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1023, 642);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCanPro);
             this.Controls.Add(this.label9);
@@ -453,5 +474,6 @@
         private System.Windows.Forms.Label lblCanPro;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

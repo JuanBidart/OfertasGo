@@ -49,6 +49,7 @@
             this.btnNuevoProveedor = new System.Windows.Forms.Button();
             this.lblinfofecha = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbxIva = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +115,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(28, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(547, 26);
-            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCosto
@@ -123,7 +124,7 @@
             this.txtCosto.Location = new System.Drawing.Point(196, 229);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(101, 26);
-            this.txtCosto.TabIndex = 6;
+            this.txtCosto.TabIndex = 5;
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCosto.TextChanged += new System.EventHandler(this.txtCosto_TextChanged);
             // 
@@ -154,7 +155,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(45, 448);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(164, 75);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -168,7 +169,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(386, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 75);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -178,7 +179,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(198, 396);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 9;
+            this.dtpFecha.TabIndex = 8;
             // 
             // cbxRubro
             // 
@@ -189,7 +190,7 @@
             this.cbxRubro.Location = new System.Drawing.Point(198, 177);
             this.cbxRubro.Name = "cbxRubro";
             this.cbxRubro.Size = new System.Drawing.Size(191, 28);
-            this.cbxRubro.TabIndex = 4;
+            this.cbxRubro.TabIndex = 3;
             this.cbxRubro.TextChanged += new System.EventHandler(this.cbxRubro_TextChanged);
             // 
             // label6
@@ -212,7 +213,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(395, 175);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(108, 31);
-            this.btnNuevo.TabIndex = 5;
+            this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "Nuevo Rubro";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -240,7 +241,7 @@
             this.cbxProveedor.Location = new System.Drawing.Point(198, 130);
             this.cbxProveedor.Name = "cbxProveedor";
             this.cbxProveedor.Size = new System.Drawing.Size(191, 28);
-            this.cbxProveedor.TabIndex = 2;
+            this.cbxProveedor.TabIndex = 1;
             // 
             // label7
             // 
@@ -262,7 +263,7 @@
             this.btnNuevoProveedor.Location = new System.Drawing.Point(395, 126);
             this.btnNuevoProveedor.Name = "btnNuevoProveedor";
             this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 31);
-            this.btnNuevoProveedor.TabIndex = 3;
+            this.btnNuevoProveedor.TabIndex = 2;
             this.btnNuevoProveedor.Text = "Nuevo Prov.";
             this.btnNuevoProveedor.UseVisualStyleBackColor = false;
             this.btnNuevoProveedor.Click += new System.EventHandler(this.button1_Click);
@@ -284,9 +285,19 @@
             this.label8.ForeColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(327, 232);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 20);
+            this.label8.Size = new System.Drawing.Size(53, 20);
             this.label8.TabIndex = 20;
-            this.label8.Text = "Iva";
+            this.label8.Text = "Iva %";
+            // 
+            // cbxIva
+            // 
+            this.cbxIva.FormattingEnabled = true;
+            this.cbxIva.Location = new System.Drawing.Point(377, 231);
+            this.cbxIva.Name = "cbxIva";
+            this.cbxIva.Size = new System.Drawing.Size(52, 21);
+            this.cbxIva.TabIndex = 6;
+            this.cbxIva.TextUpdate += new System.EventHandler(this.cbxIva_SelectedValueChanged);
+            this.cbxIva.SelectedValueChanged += new System.EventHandler(this.cbxIva_SelectedValueChanged);
             // 
             // frmAgregarProducto
             // 
@@ -294,6 +305,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(587, 551);
+            this.Controls.Add(this.cbxIva);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblinfofecha);
             this.Controls.Add(this.btnNuevoProveedor);
@@ -347,5 +359,6 @@
         private System.Windows.Forms.Button btnNuevoProveedor;
         private System.Windows.Forms.Label lblinfofecha;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbxIva;
     }
 }

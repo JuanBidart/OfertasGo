@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Drawing;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace OfertasGo
@@ -20,7 +21,9 @@ namespace OfertasGo
             this.Width = bmp.Width;
             this.BackgroundImage = bmp;
 
-           
+                        
+            lblVersion.Text = ProductVersion.ToString(); 
+            
 
         }
 

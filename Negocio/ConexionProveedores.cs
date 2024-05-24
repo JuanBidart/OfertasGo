@@ -44,20 +44,6 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
         public void agregarProveedor(TProveedores Proveedor)
@@ -88,8 +74,57 @@ namespace Negocio
 
 
         }
+        public void modificarproveedor(TProveedores Proveedor) 
+        {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+               // int seleccion;
+                
 
+                datos.seterarConsulta("UPDATE Proveedores SET RazonSocial = @RazonSocial, Direccion=@Direccion, Ciudad=@Ciudad, Telefono=@Telefono, Telefono2=@Telefono2, Activo=@Activo WHERE idProveedores = @idProveedores;");
+
+                datos.setearParametro("idProveedores",Proveedor.idProveedores);
+                datos.setearParametro("@RazonSocial",Proveedor.RazonSocial);
+                datos.setearParametro("@Direccion", Proveedor.Direccion);
+                datos.setearParametro("@Ciudad", Proveedor.Ciudad);
+                datos.setearParametro("@Telefono", Proveedor.Telefono);
+                datos.setearParametro("@Telefono2", Proveedor.Telefono2);
+                datos.setearParametro("@Activo", Proveedor.Activo);
+                
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { datos.cerrarConexion(); }
+
+        }
+        public void desactivar(TProveedores Proveedor) 
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.seterarConsulta("UPDATE Proveedores SET Activo = @Activo WHERE idProveedores = @idProveedores;");
+
+                datos.setearParametro("@idProveedores", Proveedor.idProveedores);
+                datos.setearParametro("@Activo",0);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { datos.cerrarConexion(); }
+            
+        }
 
 
     }

@@ -6,6 +6,8 @@ namespace Dominio
 {
     public class TProductos
     {
+        public int IndiceFila;
+
         [DisplayName("Id")]
         public int idProductos { get; set; }
         [DisplayName("Descripción")]

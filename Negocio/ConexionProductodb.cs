@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Data.SqlTypes;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -85,7 +87,7 @@ namespace Negocio
             }
             finally { }
         }
-        public List<TProductos> listarProductosActivos(bool activo_desactivo, bool orden)
+        public List<TProductos> listarProductosActivos(bool activo_desactivo = true, bool orden=true, bool ascOdes=true)
         {
             string act = "";
             string consulta = "";
@@ -94,12 +96,20 @@ namespace Negocio
             try
             {
                 if (activo_desactivo == true) { act = "1"; } else { act = "0"; }
-                consulta = "SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + "";
+                consulta = "SELECT idProductos,Descripcion,Costo,Iva,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + "";
 
                 if (orden == true)
                 {
-                    consulta.Replace(";","");
-                    consulta += " ORDER BY Productos.Descripcion COLLATE NOCASE ASC;";
+                    consulta.Replace(";", "");
+                    consulta += " ORDER BY Productos.Descripcion ";
+                    if(ascOdes == true) 
+                    {
+                        consulta += "COLLATE NOCASE ASC;";
+                    }
+                    else
+                    {
+                        consulta += "COLLATE NOCASE DESC;";
+                    }
                 }
                 //if (orden == true && ascendente == true)
                 //{
@@ -120,19 +130,25 @@ namespace Negocio
                     productos.idProductos = datos.Lector.GetInt32(0);
                     productos.Descripcion = (string)datos.Lector["Descripcion"];
                     productos.Costo = (double)datos.Lector["Costo"];
-                    productos.RecargoPorcentaje = datos.Lector.GetDouble(3);
+
+                    if (!datos.Lector.IsDBNull(datos.Lector.GetOrdinal("Iva")))
+                    {
+                        productos.Iva = datos.Lector.GetDouble(3);
+                    }
+                    
+                    productos.RecargoPorcentaje = datos.Lector.GetDouble(4);
                     productos.Final = (double)datos.Lector["Final"];
-                    productos.FechaModificacion = datos.Lector.GetString(5);
-                    productos.Activo = datos.Lector.GetByte(6);
+                    productos.FechaModificacion = datos.Lector.GetString(6);
+                    productos.Activo = datos.Lector.GetByte(7);
 
                     TRubro rubro = new TRubro();
                     productos.Rubro = rubro;
-                    rubro.idRubro = datos.Lector.GetInt32(7);
-                    rubro.Rubro = datos.Lector.GetString(8);
+                    rubro.idRubro = datos.Lector.GetInt32(8);
+                    rubro.Rubro = datos.Lector.GetString(9);
                     TProveedores proveedores = new TProveedores();
                     productos.Proveedores = proveedores;
-                    proveedores.idProveedores = datos.Lector.GetInt32(9);
-                    proveedores.RazonSocial = datos.Lector.GetString(10);
+                    proveedores.idProveedores = datos.Lector.GetInt32(10);
+                    proveedores.RazonSocial = datos.Lector.GetString(11);
 
 
                     productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
@@ -151,6 +167,11 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
 
         }
+        public List<TProductos> ordenarSegunColumna(string Columna)
+        {
+            List<TProductos> temp = null;
+            return  temp;
+        }
         public void agregarProducto(TProductos productonuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -160,12 +181,15 @@ namespace Negocio
                 string costo = productonuevo.Costo.ToString().Replace(",", ".");
                 string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
                 string final = productonuevo.Final.ToString().Replace(",", ".");
+                string iva = productonuevo.Iva.ToString().Replace(",", ".");    
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','" + productonuevo.Activo + "',@idRubro,@idProveedores)");
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,Iva,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "', '"+ iva +"' ,'"+ recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','" + productonuevo.Activo + "',@idRubro,@idProveedores)");
+                
                 datos.setearParametro("@idProveedores", productonuevo.Proveedores.idProveedores);
                 datos.setearParametro("@idRubro", productonuevo.Rubro.idRubro);
                 datos.ejecutarAccion();
             }
+            catch (System.NullReferenceException) { return; }
             catch (Exception ex)
             {
 
@@ -189,11 +213,12 @@ namespace Negocio
                 //string costo = productoModificar.Costo.ToString().Replace(",", ".");
                 //string recargoPorcentaje = productoModificar.RecargoPorcentaje.ToString().Replace(",", ".");
                 //string final = productoModificar.Final.ToString().Replace(",", ".");
-                datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
+                datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo, Iva = @Iva, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
 
 
                 datos.setearParametro("@Descripcion", productoModificar.Descripcion);
                 datos.setearParametro("@Costo", productoModificar.Costo);
+                datos.setearParametro("@Iva",productoModificar.Iva);
                 datos.setearParametro("@Recargo", productoModificar.RecargoPorcentaje);
                 datos.setearParametro("@Final", productoModificar.Final);
                 datos.setearParametro("@FechaModificacion", productoModificar.FechaModificacion);
@@ -239,6 +264,7 @@ namespace Negocio
 
 
         }
+        
 
     }
 }

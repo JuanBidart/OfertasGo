@@ -1,11 +1,13 @@
 ﻿using Dominio;
 using Negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace OfertasGo
@@ -17,6 +19,7 @@ namespace OfertasGo
         List<THistorialPrecio> ListaFiltradaObtenidda = new List<THistorialPrecio>();
         List<TProductos> listaProductosActivos = new List<TProductos>();
         bool paso = false;
+        bool paso2 = true;
 
         public frmProductos()
         {
@@ -28,17 +31,25 @@ namespace OfertasGo
         private void frmProductos_Load(object sender, EventArgs e)
         {
 
-            actualizaLista();
+            actualizaLista(true,true,true);
             actualizaHistorial();
             actComboBoxProveedor();
+            prop_dgvProductos();
             cbxProveedor.SelectedIndex = -1;
-            dgvProductos.Columns[4].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
-            dgvProductos.Columns["Final"].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
-            dgvProductos.RowHeadersVisible = false;
+           
             dgvHistorial.RowHeadersVisible = false;
 
 
 
+        }
+        private void prop_dgvProductos() 
+        
+        {
+            lblCanPro.Text = dgvProductos.RowCount.ToString();
+            dgvProductos.Columns[4].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
+            dgvProductos.Columns["Final"].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
+            dgvProductos.RowHeadersVisible = false;
+            
         }
         public void actComboBoxProveedor()
         {
@@ -57,12 +68,31 @@ namespace OfertasGo
         {
             try
             {
+                this.WindowState = FormWindowState.Minimized;
                 frmAgregarProducto agregarProducto = new frmAgregarProducto();
+                Thread.Sleep(100);
                 agregarProducto.ShowDialog();
-                actualizaLista();
-                dgvProductos.CurrentRow.Selected = false;
-                actComboBoxProveedor();
-                cbxProveedor.SelectedIndex = -1;
+                
+                if (txtbuscar.Text =="") 
+                {
+                    actualizaLista(true, true, true);
+                    dgvProductos.CurrentRow.Selected = false;
+                    actComboBoxProveedor();
+                    cbxProveedor.SelectedIndex = -1;
+                }
+                else
+                {
+
+                    actualizaLista();
+                    string texto = txtbuscar.Text;
+
+                    txtbuscar.Text = "";
+
+                    txtbuscar.Text = texto;
+                    txtbuscar.Focus();
+                }
+                
+                
             }
             catch (NullReferenceException)
             {
@@ -72,16 +102,16 @@ namespace OfertasGo
 
 
         }
-        public void actualizaLista()
+        public void actualizaLista(bool activo=true ,bool orden = true, bool ascOdsc = true)
         {
-            var listadeProductos = conexionProductodb.listarProductosActivos(true, true);
+            var listadeProductos = conexionProductodb.listarProductosActivos(activo, orden,ascOdsc);
 
             dgvProductos.DataSource = listadeProductos;
 
             listaProductosActivos.Clear();
             listaProductosActivos = listadeProductos;
-            lblCanPro.Text = dgvProductos.RowCount.ToString();
 
+            prop_dgvProductos();
         }
         public void actualizaHistorial()
         {
@@ -290,9 +320,24 @@ namespace OfertasGo
                 var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
                 frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
                 frmAgregarProducto.ShowDialog();
-                dgvProductos.DataSource = null;
-                actualizaLista();
-                dgvProductos.CurrentRow.Selected = false;
+
+                if (txtbuscar.Text == "")
+                {
+                    dgvProductos.DataSource = null;
+                    actualizaLista(true, true, true);
+                    dgvProductos.CurrentRow.Selected = false;
+                }
+                else
+                {
+                    actualizaLista();
+                    string texto = txtbuscar.Text;
+
+                    txtbuscar.Text="";
+                   
+                    txtbuscar.Text=texto;
+                    txtbuscar.Focus();
+                }
+
             }
             catch (NullReferenceException)
             {
@@ -313,14 +358,14 @@ namespace OfertasGo
         {
             frmListaProductos frmListaProductos = new frmListaProductos();
             frmListaProductos.ShowDialog();
-            actualizaLista();
+            actualizaLista(true, true, true);
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
             var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
             conexionProductodb.desOactProducto(productoSeleccionado, false);
-            actualizaLista();
+            actualizaLista(true, true, true);
 
         }
 
@@ -347,15 +392,16 @@ namespace OfertasGo
                     dgvProductos.DataSource = listaProductosbuscados;
                 }
 
-
+                
 
             }
             else
             {
                 dgvProductos.DataSource = null;
-                actualizaLista();
+                actualizaLista(true, true, true);
 
             }
+            prop_dgvProductos();
         }
 
         private void cbxProveedor_SelectionChangeCommitted(object sender, EventArgs e)
@@ -377,6 +423,7 @@ namespace OfertasGo
                 listaProductosbuscados = listaProductosActivos.FindAll(x => filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
                 dgvProductos.DataSource = listaProductosbuscados;
             }
+            prop_dgvProductos();
         }
 
         private void frmProductos_Resize(object sender, EventArgs e)
@@ -396,6 +443,122 @@ namespace OfertasGo
             grafica grafica = new grafica(ListaFiltradaObtenidda);
             grafica.Show();
             grafica.TopMost = true;
+        }
+
+        private void dgvProductos_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            DataGridView dataGridView = dgvProductos; // Referencia al DataGridView;
+            List <TProductos> productosVisualizados = new List<TProductos>();
+
+            if (dataGridView.DataSource != null)
+            {
+                // Convertir la fuente de datos a una lista de objetos Producto
+                List<TProductos> productosOriginales = (List<TProductos>)dataGridView.DataSource;
+
+                // Recorrer la lista de objetos Producto y agregarlos a la nueva lista
+                foreach (TProductos producto in productosOriginales)
+                {
+                    if (dataGridView.Rows[producto.IndiceFila].Visible) // Filtrar por filas visibles
+                    {
+                        productosVisualizados.Add(producto);
+                    }
+                }
+            }
+
+            // La lista 'productosVisualizados' contiene los datos que se muestran en el DataGridView
+
+
+            List<TProductos> listactual = new List<TProductos>();
+            listactual = productosVisualizados;
+            IEnumerable<TProductos> listaordenada =null;
+            switch (e.ColumnIndex)
+            {
+                case 0: //ordenar por id
+                    if (paso2)
+                    {
+                        listaordenada = listactual.OrderBy(x => x.idProductos);
+                        paso2 = false;
+                    }
+                    else
+                    {
+                        listaordenada = listactual.OrderByDescending(x => x.idProductos);
+                        paso2 = true;
+                    }
+                    break;
+                case 1: //ordenar por descripcion
+
+                    if (paso2)
+                    {
+                        listaordenada = listactual.OrderBy(x => x.Descripcion);
+                        paso2 = false;
+                    }
+                    else
+                    {
+                        listaordenada = listactual.OrderByDescending(x => x.Descripcion);
+                        paso2 = true;
+                    }
+                    break;
+                case 2:
+                    listaordenada=listactual.OrderBy(x => x.Rubro.ToString());
+                    break;
+                case 3:
+                    listaordenada=listactual.OrderBy(x => x.Proveedores.ToString());
+                    break;
+                case 10: //Ordenar por fecha
+                    if (paso2)
+                    { 
+                        listaordenada = listactual.OrderBy(x =>
+                        {
+                            DateTime fechaModificacion;
+                            if (DateTime.TryParseExact(x.FechaModificacion, "dd/MM/yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out fechaModificacion))
+                            {
+                                return fechaModificacion;
+                            }
+                            else
+                            {
+                                // Manejar el caso de error si la cadena de fecha no tiene el formato esperado
+                                return DateTime.MinValue;
+                            }
+                        });
+                        paso2 = false;
+                    }
+                    else
+                    {
+                        listaordenada = listactual.OrderByDescending(x =>
+                        {
+                            DateTime fechaModificacion;
+                            if (DateTime.TryParseExact(x.FechaModificacion, "dd/MM/yy", CultureInfo.InvariantCulture,DateTimeStyles.None, out fechaModificacion))
+                            {
+                                return fechaModificacion;
+                            }
+                            else
+                            {
+                                // Manejar el caso de error si la cadena de fecha no tiene el formato esperado
+                                return DateTime.MinValue;
+                            }
+                        });
+
+                        paso2 = true;
+                    }
+                    break;
+
+                default: return;
+            }
+            List<TProductos> listafinal = new List<TProductos>();
+            foreach (TProductos producto in listaordenada)
+            {
+                listafinal.Add(producto);
+            }
+            dgvProductos.DataSource = listafinal;
+         
+            
+              
+        }//Click en los encabezado de columna para ordenar
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
