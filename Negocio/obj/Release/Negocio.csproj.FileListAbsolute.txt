@@ -1,4 +1,3 @@
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.dll.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\Negocio.pdb

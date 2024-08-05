@@ -31,13 +31,19 @@ namespace OfertasGo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tslConfiguracion = new System.Windows.Forms.ToolStripLabel();
+            this.tslConfiguracion = new System.Windows.Forms.ToolStripDropDownButton();
+            this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargarDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sentenciaDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tslAcercade = new System.Windows.Forms.ToolStripLabel();
+            this.tslVersion = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sspBarradeEstado = new System.Windows.Forms.StatusStrip();
             this.tsslBarra = new System.Windows.Forms.ToolStripStatusLabel();
@@ -85,7 +91,8 @@ namespace OfertasGo
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.tslConfiguracion,
-            this.tslAcercade});
+            this.tslAcercade,
+            this.tslVersion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(833, 25);
@@ -109,9 +116,42 @@ namespace OfertasGo
             // 
             // tslConfiguracion
             // 
+            this.tslConfiguracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.baseDeDatosToolStripMenuItem});
             this.tslConfiguracion.Name = "tslConfiguracion";
-            this.tslConfiguracion.Size = new System.Drawing.Size(83, 22);
+            this.tslConfiguracion.Size = new System.Drawing.Size(96, 22);
             this.tslConfiguracion.Text = "Configuración";
+            // 
+            // baseDeDatosToolStripMenuItem
+            // 
+            this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargarDBToolStripMenuItem,
+            this.backupDBToolStripMenuItem,
+            this.sentenciaDBToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
+            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.baseDeDatosToolStripMenuItem.Text = "Base de datos";
+            // 
+            // cargarDBToolStripMenuItem
+            // 
+            this.cargarDBToolStripMenuItem.Name = "cargarDBToolStripMenuItem";
+            this.cargarDBToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cargarDBToolStripMenuItem.Text = "Cargar DB";
+            this.cargarDBToolStripMenuItem.Click += new System.EventHandler(this.cargarDBToolStripMenuItem_Click);
+            // 
+            // backupDBToolStripMenuItem
+            // 
+            this.backupDBToolStripMenuItem.Name = "backupDBToolStripMenuItem";
+            this.backupDBToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.backupDBToolStripMenuItem.Text = "Backup DB";
+            this.backupDBToolStripMenuItem.Click += new System.EventHandler(this.backupDBToolStripMenuItem_Click);
+            // 
+            // sentenciaDBToolStripMenuItem
+            // 
+            this.sentenciaDBToolStripMenuItem.Name = "sentenciaDBToolStripMenuItem";
+            this.sentenciaDBToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.sentenciaDBToolStripMenuItem.Text = "Sentencia DB";
+            this.sentenciaDBToolStripMenuItem.Click += new System.EventHandler(this.sentenciaDBToolStripMenuItem_Click);
             // 
             // tslAcercade
             // 
@@ -119,6 +159,12 @@ namespace OfertasGo
             this.tslAcercade.Size = new System.Drawing.Size(43, 22);
             this.tslAcercade.Text = "Acerca";
             this.tslAcercade.Click += new System.EventHandler(this.tslAcercade_Click);
+            // 
+            // tslVersion
+            // 
+            this.tslVersion.Name = "tslVersion";
+            this.tslVersion.Size = new System.Drawing.Size(45, 22);
+            this.tslVersion.Text = "version";
             // 
             // timer1
             // 
@@ -209,6 +255,7 @@ namespace OfertasGo
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.sspBarradeEstado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(562, 343);
             this.Name = "Form1";
@@ -229,7 +276,6 @@ namespace OfertasGo
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel tslConfiguracion;
         private System.Windows.Forms.ToolStripLabel tslAcercade;
         private System.Windows.Forms.ToolStripDropDownButton toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
@@ -241,6 +287,12 @@ namespace OfertasGo
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btnBackupDB;
         private System.Windows.Forms.Button btnCargardb;
+        private System.Windows.Forms.ToolStripLabel tslVersion;
+        private System.Windows.Forms.ToolStripDropDownButton tslConfiguracion;
+        private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargarDBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupDBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sentenciaDBToolStripMenuItem;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblHistorial;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label6;
@@ -53,13 +54,19 @@
             this.lblPrecioFinal = new System.Windows.Forms.Label();
             this.lblCanPro = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCambiarPorLotes = new System.Windows.Forms.Button();
+            this.btnVermas = new System.Windows.Forms.Button();
+            this.btnVermenos = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prueba2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimir = new System.Windows.Forms.Button();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHistorial
@@ -69,7 +76,7 @@
             lblHistorial.AutoSize = true;
             lblHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblHistorial.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lblHistorial.Location = new System.Drawing.Point(729, 340);
+            lblHistorial.Location = new System.Drawing.Point(748, 340);
             lblHistorial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblHistorial.Name = "lblHistorial";
             lblHistorial.Size = new System.Drawing.Size(191, 24);
@@ -93,7 +100,7 @@
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            label6.Location = new System.Drawing.Point(435, 44);
+            label6.Location = new System.Drawing.Point(367, 44);
             label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(107, 24);
@@ -104,8 +111,7 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.DodgerBlue;
@@ -115,8 +121,9 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(999, 250);
+            this.dgvProductos.Size = new System.Drawing.Size(1055, 250);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
             this.dgvProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProductos_ColumnHeaderMouseClick);
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
@@ -128,7 +135,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAgregar.Location = new System.Drawing.Point(12, 335);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(194, 77);
+            this.btnAgregar.Size = new System.Drawing.Size(170, 77);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseMnemonic = false;
@@ -137,8 +144,6 @@
             // 
             // dgvHistorial
             // 
-            this.dgvHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,7 +155,7 @@
             this.dgvHistorial.RowTemplate.Height = 24;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.ShowCellToolTips = false;
-            this.dgvHistorial.Size = new System.Drawing.Size(384, 171);
+            this.dgvHistorial.Size = new System.Drawing.Size(439, 171);
             this.dgvHistorial.TabIndex = 2;
             // 
             // lblPorcentaje
@@ -158,7 +163,7 @@
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorcentaje.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPorcentaje.Location = new System.Drawing.Point(523, 394);
+            this.lblPorcentaje.Location = new System.Drawing.Point(657, 556);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(32, 24);
             this.lblPorcentaje.TabIndex = 4;
@@ -169,7 +174,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(515, 366);
+            this.label1.Location = new System.Drawing.Point(625, 539);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 5;
@@ -181,9 +186,9 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificar.Location = new System.Drawing.Point(12, 416);
+            this.btnModificar.Location = new System.Drawing.Point(12, 418);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(194, 77);
+            this.btnModificar.Size = new System.Drawing.Size(170, 77);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseMnemonic = false;
@@ -195,7 +200,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(481, 429);
+            this.label2.Location = new System.Drawing.Point(625, 580);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 16);
             this.label2.TabIndex = 7;
@@ -206,7 +211,7 @@
             this.lblUltimaFechaAct.AutoSize = true;
             this.lblUltimaFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimaFechaAct.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUltimaFechaAct.Location = new System.Drawing.Point(519, 445);
+            this.lblUltimaFechaAct.Location = new System.Drawing.Point(624, 596);
             this.lblUltimaFechaAct.Name = "lblUltimaFechaAct";
             this.lblUltimaFechaAct.Size = new System.Drawing.Size(24, 24);
             this.lblUltimaFechaAct.TabIndex = 8;
@@ -217,7 +222,7 @@
             this.lbld555.AutoSize = true;
             this.lbld555.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbld555.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lbld555.Location = new System.Drawing.Point(515, 477);
+            this.lbld555.Location = new System.Drawing.Point(770, 539);
             this.lbld555.Name = "lbld555";
             this.lbld555.Size = new System.Drawing.Size(105, 16);
             this.lbld555.TabIndex = 9;
@@ -228,7 +233,7 @@
             this.lblDiasPasados.AutoSize = true;
             this.lblDiasPasados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiasPasados.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDiasPasados.Location = new System.Drawing.Point(544, 493);
+            this.lblDiasPasados.Location = new System.Drawing.Point(799, 559);
             this.lblDiasPasados.Name = "lblDiasPasados";
             this.lblDiasPasados.Size = new System.Drawing.Size(32, 24);
             this.lblDiasPasados.TabIndex = 10;
@@ -239,7 +244,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(640, 573);
+            this.label3.Location = new System.Drawing.Point(899, 580);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 32);
             this.label3.TabIndex = 11;
@@ -251,7 +256,7 @@
             this.lblVarMen.AutoSize = true;
             this.lblVarMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVarMen.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblVarMen.Location = new System.Drawing.Point(654, 547);
+            this.lblVarMen.Location = new System.Drawing.Point(907, 556);
             this.lblVarMen.Name = "lblVarMen";
             this.lblVarMen.Size = new System.Drawing.Size(32, 24);
             this.lblVarMen.TabIndex = 12;
@@ -262,7 +267,7 @@
             this.lbIinflacionMen.AutoSize = true;
             this.lbIinflacionMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIinflacionMen.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbIinflacionMen.Location = new System.Drawing.Point(758, 547);
+            this.lbIinflacionMen.Location = new System.Drawing.Point(1004, 556);
             this.lbIinflacionMen.Name = "lbIinflacionMen";
             this.lbIinflacionMen.Size = new System.Drawing.Size(32, 24);
             this.lbIinflacionMen.TabIndex = 13;
@@ -273,7 +278,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(758, 574);
+            this.label5.Location = new System.Drawing.Point(1005, 580);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 32);
             this.label5.TabIndex = 14;
@@ -286,7 +291,7 @@
             this.btnActDes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnActDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActDes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnActDes.Location = new System.Drawing.Point(12, 586);
+            this.btnActDes.Location = new System.Drawing.Point(371, 529);
             this.btnActDes.Name = "btnActDes";
             this.btnActDes.Size = new System.Drawing.Size(194, 44);
             this.btnActDes.TabIndex = 15;
@@ -301,9 +306,9 @@
             this.btnDesactivar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDesactivar.Location = new System.Drawing.Point(12, 503);
+            this.btnDesactivar.Location = new System.Drawing.Point(12, 501);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(194, 77);
+            this.btnDesactivar.Size = new System.Drawing.Size(170, 77);
             this.btnDesactivar.TabIndex = 16;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.UseMnemonic = false;
@@ -314,14 +319,14 @@
             // 
             this.txtbuscar.Location = new System.Drawing.Point(96, 48);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(327, 20);
+            this.txtbuscar.Size = new System.Drawing.Size(266, 20);
             this.txtbuscar.TabIndex = 17;
             this.txtbuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // cbxProveedor
             // 
             this.cbxProveedor.FormattingEnabled = true;
-            this.cbxProveedor.Location = new System.Drawing.Point(548, 49);
+            this.cbxProveedor.Location = new System.Drawing.Point(479, 48);
             this.cbxProveedor.Name = "cbxProveedor";
             this.cbxProveedor.Size = new System.Drawing.Size(121, 21);
             this.cbxProveedor.TabIndex = 18;
@@ -354,7 +359,7 @@
             this.lblCanPro.AutoSize = true;
             this.lblCanPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCanPro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCanPro.Location = new System.Drawing.Point(907, 50);
+            this.lblCanPro.Location = new System.Drawing.Point(461, 366);
             this.lblCanPro.Name = "lblCanPro";
             this.lblCanPro.Size = new System.Drawing.Size(32, 24);
             this.lblCanPro.TabIndex = 24;
@@ -365,26 +370,81 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label9.Location = new System.Drawing.Point(908, 24);
+            this.label9.Location = new System.Drawing.Point(440, 340);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 16);
             this.label9.TabIndex = 23;
             this.label9.Text = "Ctd. Productos";
             // 
-            // button1
+            // btnCambiarPorLotes
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(299, 586);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 44);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Grafica";
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCambiarPorLotes.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCambiarPorLotes.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnCambiarPorLotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarPorLotes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCambiarPorLotes.Location = new System.Drawing.Point(371, 479);
+            this.btnCambiarPorLotes.Name = "btnCambiarPorLotes";
+            this.btnCambiarPorLotes.Size = new System.Drawing.Size(194, 44);
+            this.btnCambiarPorLotes.TabIndex = 25;
+            this.btnCambiarPorLotes.Text = "Cambiar precio de lote";
+            this.btnCambiarPorLotes.UseMnemonic = false;
+            this.btnCambiarPorLotes.UseVisualStyleBackColor = false;
+            this.btnCambiarPorLotes.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnVermas
+            // 
+            this.btnVermas.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVermas.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnVermas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVermas.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVermas.Location = new System.Drawing.Point(371, 585);
+            this.btnVermas.Name = "btnVermas";
+            this.btnVermas.Size = new System.Drawing.Size(86, 44);
+            this.btnVermas.TabIndex = 27;
+            this.btnVermas.Text = "Ver mas datos >>";
+            this.btnVermas.UseMnemonic = false;
+            this.btnVermas.UseVisualStyleBackColor = false;
+            this.btnVermas.Click += new System.EventHandler(this.btnVermas_Click);
+            // 
+            // btnVermenos
+            // 
+            this.btnVermenos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVermenos.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnVermenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVermenos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVermenos.Location = new System.Drawing.Point(479, 585);
+            this.btnVermenos.Name = "btnVermenos";
+            this.btnVermenos.Size = new System.Drawing.Size(86, 44);
+            this.btnVermenos.TabIndex = 28;
+            this.btnVermenos.Text = "Ver Menos datos <<";
+            this.btnVermenos.UseMnemonic = false;
+            this.btnVermenos.UseVisualStyleBackColor = false;
+            this.btnVermenos.Click += new System.EventHandler(this.btnVermenos_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pruebaToolStripMenuItem,
+            this.prueba2ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            this.contextMenuStrip1.Text = "HOla";
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // pruebaToolStripMenuItem
+            // 
+            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.pruebaToolStripMenuItem.Text = "Prueba";
+            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
+            // 
+            // prueba2ToolStripMenuItem
+            // 
+            this.prueba2ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
+            this.prueba2ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.prueba2ToolStripMenuItem.Name = "prueba2ToolStripMenuItem";
+            this.prueba2ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.prueba2ToolStripMenuItem.Text = "Prueba2";
             // 
             // btnImprimir
             // 
@@ -392,7 +452,7 @@
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnImprimir.Location = new System.Drawing.Point(299, 539);
+            this.btnImprimir.Location = new System.Drawing.Point(371, 429);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(194, 44);
             this.btnImprimir.TabIndex = 26;
@@ -407,9 +467,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1023, 642);
+            this.ClientSize = new System.Drawing.Size(1070, 641);
+            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.btnVermenos);
+            this.Controls.Add(this.btnVermas);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCambiarPorLotes);
             this.Controls.Add(this.lblCanPro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblPrecioFinal);
@@ -444,6 +507,7 @@
             this.Resize += new System.EventHandler(this.frmProductos_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +537,12 @@
         private System.Windows.Forms.Label lblPrecioFinal;
         private System.Windows.Forms.Label lblCanPro;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCambiarPorLotes;
+        private System.Windows.Forms.Button btnVermas;
+        private System.Windows.Forms.Button btnVermenos;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prueba2ToolStripMenuItem;
         private System.Windows.Forms.Button btnImprimir;
     }
 }

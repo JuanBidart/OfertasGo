@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace OfertasGo
 {
@@ -27,10 +28,13 @@ namespace OfertasGo
 
 
         }
+        
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Normal;
+            this.TopLevel = true;
+            
             actualizaLista(true,true,true);
             actualizaHistorial();
             actComboBoxProveedor();
@@ -38,13 +42,15 @@ namespace OfertasGo
             cbxProveedor.SelectedIndex = -1;
            
             dgvHistorial.RowHeadersVisible = false;
-
+           
 
 
         }
         private void prop_dgvProductos() 
         
         {
+            dgvProductos.Columns[11].Visible = false;
+            dgvProductos.Columns[12].Visible = false;
             lblCanPro.Text = dgvProductos.RowCount.ToString();
             dgvProductos.Columns[4].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
             dgvProductos.Columns["Final"].DefaultCellStyle.Format = new CultureInfo("es-AR").NumberFormat.CurrencySymbol + "#,##0.00";
@@ -56,7 +62,7 @@ namespace OfertasGo
             ConexionProveedores conexionProveedores = new ConexionProveedores();
             try
             {
-                cbxProveedor.DataSource = conexionProveedores.listarProveedores();
+                cbxProveedor.DataSource = conexionProveedores.listarProveedores(true);
             }
             catch (Exception ex)
             {
@@ -70,9 +76,9 @@ namespace OfertasGo
             {
                 this.WindowState = FormWindowState.Minimized;
                 frmAgregarProducto agregarProducto = new frmAgregarProducto();
-                Thread.Sleep(100);
+                Thread.Sleep(10);
                 agregarProducto.ShowDialog();
-                
+                this.WindowState = FormWindowState.Normal;
                 if (txtbuscar.Text =="") 
                 {
                     actualizaLista(true, true, true);
@@ -317,26 +323,33 @@ namespace OfertasGo
         {
             try
             {
+                int indexcbxproveedor = cbxProveedor.SelectedIndex;
                 var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+
+                int index = dgvProductos.CurrentRow.Index;
                 frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
                 frmAgregarProducto.ShowDialog();
 
-                if (txtbuscar.Text == "")
+                if (txtbuscar.Text == string.Empty && cbxProveedor.SelectedIndex == -1)
                 {
                     dgvProductos.DataSource = null;
                     actualizaLista(true, true, true);
-                    dgvProductos.CurrentRow.Selected = false;
+                    //dgvProductos.CurrentRow.Selected = false;
                 }
                 else
                 {
                     actualizaLista();
                     string texto = txtbuscar.Text;
 
-                    txtbuscar.Text="";
-                   
-                    txtbuscar.Text=texto;
+                    txtbuscar.Text = "";
+
+                    txtbuscar.Text = texto;
                     txtbuscar.Focus();
+                    cbxProveedor.SelectedIndex = -1;
+                    cbxProveedor.SelectedIndex = indexcbxproveedor;
                 }
+                dgvProductos.Rows[0].Selected = false;
+                dgvProductos.Rows[index].Selected = true;
 
             }
             catch (NullReferenceException)
@@ -344,7 +357,7 @@ namespace OfertasGo
 
                 MessageBox.Show("Debe haber un elemento seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            //finally { cbxProveedor = null; }
 
 
         }
@@ -383,12 +396,14 @@ namespace OfertasGo
                 if (index >= 0 && provedor != null)
                 {
                     listaProductosbuscados = listaProductosActivos.FindAll(x => (filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper())) &&  x.Proveedores.idProveedores == provedor.idProveedores);
-                    
+                  
+
                     dgvProductos.DataSource = listaProductosbuscados;
                 }
                 else
                 {
                     listaProductosbuscados = listaProductosActivos.FindAll(x => filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                   
                     dgvProductos.DataSource = listaProductosbuscados;
                 }
 
@@ -411,10 +426,12 @@ namespace OfertasGo
 
             List<TProductos> listaProductosbuscados;
             string filtro = txtbuscar.Text;
+            
 
             dgvProductos.DataSource = null;
             if (index >= 0)
             {
+                
                 listaProductosbuscados = listaProductosActivos.FindAll(x => (filtro.ToUpper() == x.Descripcion.ToUpper() || x.Descripcion.ToUpper().Contains(filtro.ToUpper())) && x.Proveedores.idProveedores == provedor.idProveedores);
                 dgvProductos.DataSource = listaProductosbuscados;
             }
@@ -440,9 +457,19 @@ namespace OfertasGo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            grafica grafica = new grafica(ListaFiltradaObtenidda);
-            grafica.Show();
-            grafica.TopMost = true;
+            List<TProductos> listaSelecionados = new List<TProductos>();
+            for (int i = 0; i < dgvProductos.SelectedRows.Count; i++)
+            {
+                var seleccion = (TProductos)dgvProductos.SelectedRows[i].DataBoundItem;
+                listaSelecionados.Add(seleccion);
+            }
+
+
+
+            Lista listaa = new Lista(listaSelecionados);
+            listaa.Show();
+            actualizaLista();
+            actualizaHistorial();
         }
 
         private void dgvProductos_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -559,6 +586,34 @@ namespace OfertasGo
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVermas_Click(object sender, EventArgs e)
+        {
+            int ancho = this.Width = 1100;
+            
+        }
+
+        private void btnVermenos_Click(object sender, EventArgs e)
+        {
+            this.Width = 630;
+            this.Height = 680;
+        }
+
+        private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TProductos productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            MessageBox.Show(productoSeleccionado.Descripcion +"\n"+"$"+productoSeleccionado.Final,"Producto",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1,MessageBoxOptions.DefaultDesktopOnly);
+        }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
         }
     }
 

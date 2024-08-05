@@ -1,6 +1,5 @@
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\Database\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\acercade.png
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\dbofertas.db
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\SQLite.Interop.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\OfertasGo.exe.config
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Release\OfertasGo.exe.manifest
@@ -43,3 +42,4 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\Oferta
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.csproj.CopyComplete
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.exe
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.grafica.resources

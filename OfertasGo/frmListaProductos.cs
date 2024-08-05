@@ -15,7 +15,7 @@ namespace OfertasGo
         public frmListaProductos()
         {
             InitializeComponent();
-            listaTotalProductos = conexionProductodb.listarProductos(true, true);
+            listaTotalProductos = conexionProductodb.listarProductosActivos();
         }
 
         private void frmListaProductos_Load(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace OfertasGo
                 productoSelecionado.idProductos = int.Parse(item.Text);
                 conexionProductodb.desOactProducto(productoSelecionado, true);
             }
-            listaTotalProductos = conexionProductodb.listarProductos(true, true);
+            listaTotalProductos = conexionProductodb.listarProductosActivos();
             refrescarLista(listaTotalProductos);
             txtBuscar.Text = string.Empty;
         }
@@ -73,7 +73,7 @@ namespace OfertasGo
                 productoSelecionado.idProductos = int.Parse(item.Text);
                 conexionProductodb.desOactProducto(productoSelecionado, false);
             }
-            listaTotalProductos = conexionProductodb.listarProductos(true, true);
+            listaTotalProductos = conexionProductodb.listarProductosActivos();
             refrescarLista(listaTotalProductos);
             txtBuscar.Text = string.Empty;
         }
@@ -84,7 +84,7 @@ namespace OfertasGo
             {
                 lvLista.Items.Clear();
                 List<TProductos> listaProductos2 = new List<TProductos>();
-                listaProductos2 = conexionProductodb.listarProductos(false, false);
+                listaProductos2 = conexionProductodb.listarProductosActivos();
                 listaProductos2 = listaProductos2.FindAll(x => x.Descripcion.ToUpper() == txtBuscar.Text.ToUpper() || x.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
 
                 refrescarLista(listaProductos2);

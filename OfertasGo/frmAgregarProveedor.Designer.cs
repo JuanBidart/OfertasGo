@@ -46,6 +46,8 @@
             this.btnDesactivar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +103,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(33, 209);
+            this.label4.Location = new System.Drawing.Point(33, 248);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 23);
@@ -113,7 +115,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(17, 249);
+            this.label5.Location = new System.Drawing.Point(17, 288);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 23);
@@ -128,7 +130,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(386, 26);
-            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TabIndex = 1;
             this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCiudad
@@ -139,29 +141,29 @@
             this.txtCiudad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(274, 26);
-            this.txtCiudad.TabIndex = 7;
+            this.txtCiudad.TabIndex = 2;
             this.txtCiudad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtTelefono.Location = new System.Drawing.Point(134, 209);
+            this.txtTelefono.Location = new System.Drawing.Point(134, 248);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(274, 26);
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTelefono2
             // 
             this.txtTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtTelefono2.Location = new System.Drawing.Point(134, 249);
+            this.txtTelefono2.Location = new System.Drawing.Point(134, 288);
             this.txtTelefono2.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(274, 26);
-            this.txtTelefono2.TabIndex = 9;
+            this.txtTelefono2.TabIndex = 5;
             this.txtTelefono2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAceptar
@@ -173,7 +175,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(232, 374);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(164, 75);
-            this.btnAceptar.TabIndex = 11;
+            this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -187,7 +189,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(606, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 75);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -199,7 +201,7 @@
             this.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxActivo.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.cbxActivo.Location = new System.Drawing.Point(331, 280);
+            this.cbxActivo.Location = new System.Drawing.Point(331, 320);
             this.cbxActivo.Name = "cbxActivo";
             this.cbxActivo.Size = new System.Drawing.Size(77, 24);
             this.cbxActivo.TabIndex = 13;
@@ -279,12 +281,37 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtEmail.Location = new System.Drawing.Point(134, 208);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(274, 26);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEmail.Location = new System.Drawing.Point(60, 208);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(70, 23);
+            this.lblEmail.TabIndex = 19;
+            this.lblEmail.Text = "Email:";
+            // 
             // frmAgregarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(802, 539);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnDesactivar);
@@ -334,5 +361,7 @@
         private System.Windows.Forms.Button btnDesactivar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

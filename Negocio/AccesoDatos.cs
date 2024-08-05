@@ -9,6 +9,7 @@ namespace Negocio
         private SQLiteConnection conexion;
         private SQLiteCommand comando;
         private SQLiteDataReader lector;
+        
         public SQLiteDataReader Lector
         {
             get { return lector; }
@@ -25,6 +26,7 @@ namespace Negocio
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
+            
         }
         public void ejecutarLectura()
         {
@@ -72,7 +74,7 @@ namespace Negocio
             conexion.Close();
 
         }
-
+    
     }
 
 }

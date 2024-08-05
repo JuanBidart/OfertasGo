@@ -18,29 +18,6 @@ C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.csproj.Core
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\Negocio\obj\Debug\Negocio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll.config
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Dominio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.batteries_v2.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.core.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Buffers.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Data.SQLite.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Memory.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Dominio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Buffers.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Data.SQLite.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Memory.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.pdb
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\bin\Debug\Negocio.dll.config
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\bin\Debug\Negocio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\bin\Debug\Negocio.pdb
@@ -64,3 +41,26 @@ C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\obj\Debug\Negocio.c
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\obj\Debug\Negocio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll.config
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Dominio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Buffers.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Data.SQLite.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Memory.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Buffers.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Data.SQLite.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Memory.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Debug\Negocio.pdb

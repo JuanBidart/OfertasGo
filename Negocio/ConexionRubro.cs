@@ -14,7 +14,7 @@ namespace Negocio
 
             try
             {
-                datos.seterarConsulta("SELECT idRubro,Rubro,Activo,Eliminado FROM Rubro");
+                datos.seterarConsulta("SELECT idRubro,Rubro,Activo,Eliminado FROM Rubro ORDER BY rubro ASC");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

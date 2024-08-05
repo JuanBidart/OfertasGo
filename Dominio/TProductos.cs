@@ -7,6 +7,7 @@ namespace Dominio
     public class TProductos
     {
         public int IndiceFila;
+        //private double descuentoCostoPorcentaje;
 
         [DisplayName("Id")]
         public int idProductos { get; set; }
@@ -17,8 +18,18 @@ namespace Dominio
         public TProveedores Proveedores { get; set; }
       
         public double Costo { get; set; }
-        [DisplayName("% Desc.")]
-        public int DescuentoCostoProcentaje { get; set; }
+
+        public double DescuentoCostoPorcentaje { get; set; }
+        //public double GetDescuentoCostoPorcentaje()
+        //{
+        //    return descuentoCostoPorcentaje;
+        //}
+
+        //public void SetDescuentoCostoPorcentaje(double value)
+        //{
+        //    descuentoCostoPorcentaje = value;
+        //}
+
         public double Iva { get; set; }
         public double RecargoPesos { get; set; }
         [DisplayName("% Recargo")]

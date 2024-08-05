@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace OfertasGo
 {
     public partial class Form1 : Form
     {
-
+        
         string fechalarga;
         string Hora;
         public Form1()
@@ -27,6 +28,7 @@ namespace OfertasGo
             this.WindowState = FormWindowState.Minimized;
             frmProductos productos = new frmProductos();
             productos.ShowDialog();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +50,9 @@ namespace OfertasGo
 
             tssHora.Spring = true;
             tssHora.TextAlign = ContentAlignment.TopRight;
+
+            tslVersion.Text = "Vers." + ProductVersion.ToString();
+            tslVersion.Alignment = ToolStripItemAlignment.Right;
 
 
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
@@ -71,7 +76,7 @@ namespace OfertasGo
         {
 
             apiDolar dolar = new apiDolar();
-            string texto = dolar.Moneda + " Blue " + dolar.Venta + "   " + dolar.Compra;
+            string texto = dolar.Moneda + " Blue " + dolar.Venta + "   ";//+ dolar.Compra;
             string Text1 = texto.Replace("casa", "").Remove(0, 9);
             string Txt2 = Text1.Replace('"', ' ');
             tsslBarra.Text = Txt2.ToUpper();
@@ -98,7 +103,7 @@ namespace OfertasGo
             if (DateTime.Now.Minute == 30)
             {
                 apiDolar dolar = new apiDolar();
-                string texto = dolar.Moneda + " Blue " + dolar.Venta + "   " + dolar.Compra;
+                string texto = dolar.Moneda + " Blue " + dolar.Venta; //+ "   " + dolar.Compra;
                 string Text1 = texto.Replace("casa", "").Remove(0, 9);
                 string Txt2 = Text1.Replace('"', ' ');
                 tsslBarra.Text = Txt2.ToUpper();
@@ -108,7 +113,7 @@ namespace OfertasGo
 
         }
 
-        private void btnBackupDB_Click(object sender, EventArgs e)
+        public void btnBackupDB_Click(object sender, EventArgs e)
         {
             try
             {
@@ -169,7 +174,7 @@ namespace OfertasGo
         {
             ConexionProveedores conexionProveedores = new ConexionProveedores();
             List<TProveedores> listapr = new List<TProveedores>();
-            listapr =  conexionProveedores.listarProveedores();
+            listapr =  conexionProveedores.listarProveedores(false);
             TProveedores proveedores = listapr[0];
             frmAgregarProveedor frmAgregarProveedor = new frmAgregarProveedor(proveedores);
             frmAgregarProveedor.ShowDialog();
@@ -229,5 +234,25 @@ namespace OfertasGo
            
         }
 
-       }
+        private void cargarDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           button1_Click(sender, e);
+        }
+
+        private void backupDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnBackupDB_Click(sender, e);
+        }
+
+       
+
+        private void sentenciaDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Opacity = 20;
+
+            frmEjecutarSentenciaSql frmEjecutarSentenciaSql = new frmEjecutarSentenciaSql();
+            frmEjecutarSentenciaSql.ShowDialog();
+            this.Opacity = 100;
+        }
+    }
 }

@@ -6,14 +6,20 @@ namespace Negocio
 {
     public class ConexionProveedores
     {
-        public List<TProveedores> listarProveedores()
+        public List<TProveedores> listarProveedores(bool activo)
         {
+           
             AccesoDatos datos = new AccesoDatos();
             List<TProveedores> lista = new List<TProveedores>();
-
+            string consulta = "SELECT IdProveedores,RazonSocial,Direccion,Ciudad,Email,Telefono,Telefono2,Activo,Eliminado FROM Proveedores";
+            if (activo)
+            {
+                consulta += " WHERE Activo = 1";
+            }
+            consulta += " ORDER BY RazonSocial ASC";
             try
             {
-                datos.seterarConsulta("SELECT IdProveedores,RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado FROM Proveedores ORDER BY RazonSocial ASC");
+                datos.seterarConsulta(consulta);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -23,10 +29,11 @@ namespace Negocio
                     aux.RazonSocial = datos.Lector.GetString(1);
                     aux.Direccion = datos.Lector.GetString(2);
                     aux.Ciudad = datos.Lector.GetString(3);
-                    aux.Telefono = datos.Lector.GetString(4);
-                    aux.Telefono2 = datos.Lector.GetString(5);
-                    aux.Activo = datos.Lector.GetByte(6);
-                    aux.Eliminado = datos.Lector.GetByte(7);
+                    aux.Email = datos.Lector.GetString(4);
+                    aux.Telefono = datos.Lector.GetString(5);
+                    aux.Telefono2 = datos.Lector.GetString(6);
+                    aux.Activo = datos.Lector.GetByte(7);
+                    aux.Eliminado = datos.Lector.GetByte(8);
 
                     lista.Add(aux);
 
@@ -53,10 +60,11 @@ namespace Negocio
 
             try
             {
-                datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Telefono,Telefono2,Activo,Eliminado) VALUES (@RazonSocial,@Direccion,@Ciudad,@Telefono,@Telefono2,@Activo,@Eliminado)");
+                datos.seterarConsulta("INSERT INTO Proveedores (RazonSocial,Direccion,Ciudad,Email,Telefono,Telefono2,Activo,Eliminado) VALUES (@RazonSocial,@Direccion,@Ciudad,@Email,@Telefono,@Telefono2,@Activo,@Eliminado)");
                 datos.setearParametro("@RazonSocial", Proveedor.RazonSocial);
                 datos.setearParametro("@Direccion", Proveedor.Direccion);
                 datos.setearParametro("@Ciudad", Proveedor.Ciudad);
+                datos.setearParametro("@Email", Proveedor.Email);
                 datos.setearParametro("@Telefono", Proveedor.Telefono);
                 datos.setearParametro("@Telefono2", Proveedor.Telefono2);
                 datos.setearParametro("@Activo", Proveedor.Activo);
@@ -83,12 +91,13 @@ namespace Negocio
                // int seleccion;
                 
 
-                datos.seterarConsulta("UPDATE Proveedores SET RazonSocial = @RazonSocial, Direccion=@Direccion, Ciudad=@Ciudad, Telefono=@Telefono, Telefono2=@Telefono2, Activo=@Activo WHERE idProveedores = @idProveedores;");
+                datos.seterarConsulta("UPDATE Proveedores SET RazonSocial = @RazonSocial, Direccion=@Direccion, Ciudad=@Ciudad, Email=@Email, Telefono=@Telefono, Telefono2=@Telefono2, Activo=@Activo WHERE idProveedores = @idProveedores;");
 
                 datos.setearParametro("idProveedores",Proveedor.idProveedores);
                 datos.setearParametro("@RazonSocial",Proveedor.RazonSocial);
                 datos.setearParametro("@Direccion", Proveedor.Direccion);
                 datos.setearParametro("@Ciudad", Proveedor.Ciudad);
+                datos.setearParametro("@Email",Proveedor.Email);
                 datos.setearParametro("@Telefono", Proveedor.Telefono);
                 datos.setearParametro("@Telefono2", Proveedor.Telefono2);
                 datos.setearParametro("@Activo", Proveedor.Activo);

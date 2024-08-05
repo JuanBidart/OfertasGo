@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
@@ -68,6 +69,7 @@ namespace OfertasGo
                 }
                 producto.Descripcion = txtDescripcion.Text;
                 producto.Costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                //producto.DescuentoCostoPorcentaje = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text.Replace(".", ","));
                 producto.Final = double.Parse(txtFinal.Text.Replace(".", ","));
                 producto.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy"); // dtpFecha.Value.Date.ToString("dd/MM/yy");
@@ -146,7 +148,7 @@ namespace OfertasGo
             ConexionProveedores conexionProveedores = new ConexionProveedores();
             try
             {
-                cbxProveedor.DataSource = conexionProveedores.listarProveedores();
+                cbxProveedor.DataSource = conexionProveedores.listarProveedores(true);
             }
             catch (Exception ex)
             {
@@ -162,6 +164,7 @@ namespace OfertasGo
             if (producto == null)
             {
                 txtCosto.Text = "0";
+                txtPorcentajeDescuento.Text = "0";
                 txtRecargo.Text = "0";
                 txtFinal.Text = "0";
                 txtDescripcion.Focus();
@@ -202,13 +205,15 @@ namespace OfertasGo
                 }
 
                 txtDescripcion.Text = producto.Descripcion.ToString();
-                txtCosto.Text = producto.Costo.ToString();
-                txtRecargo.Text = producto.RecargoPorcentaje.ToString();
-                txtFinal.Text = producto.Final.ToString();
+                txtCosto.Text = producto.Costo.ToString();//if (txtCosto.Text == string.Empty) { txtCosto.Text = "0"; };
+                txtPorcentajeDescuento.Text = producto.DescuentoCostoPorcentaje.ToString(); if (txtPorcentajeDescuento.Text == string.Empty) { txtPorcentajeDescuento.Text = "0"; };
+                txtRecargo.Text = producto.RecargoPorcentaje.ToString(); if (txtRecargo.Text == string.Empty) { txtRecargo.Text = "0"; };
+                txtFinal.Text = producto.Final.ToString(); if (txtFinal.Text == string.Empty) { txtFinal.Text = "0"; };
                 dtpFecha.Text = producto.FechaModificacion;
                 cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
                 cbxRubro.SelectedValue = producto.Rubro.idRubro;
-                
+                paso = true;
+                    
 
             }
 
@@ -216,106 +221,99 @@ namespace OfertasGo
 
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (paso) calcularResultadoFinal(txtCosto);
 
-            {
-                double costo;
-                double recargo;
-                double iva;
-                double costo_iva;
-                double final;
-                if (producto == null)
-                {
-                    if (txtCosto.Text != "0" && txtCosto.Text != "")
-                    {
-                        if (txtRecargo.Text != "0" && txtRecargo.Text != "")
-                        {
-                            costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                            iva = double.Parse(cbxIva.Text.Replace(".",","));
-                            recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+            //try
 
-                            costo_iva = ((costo * iva) / 100) + costo;
-                            final = ((costo_iva * recargo) / 100) + costo_iva;
-                            txtFinal.Text = final.ToString();
-                            txtFinal.ForeColor = Color.Red;
-                        }
-                        else
-                        {
+            //{
+            //    double costo;
+            //    double porcentajeDescuento;
+            //    double costo_porcentajeDescuento;
+            //    double recargo;
+            //    double iva;
+            //    double costo_iva;
+            //    double final;
+            //    if (producto == null)
+            //    {
+            //        if (txtCosto.Text != "0" && txtCosto.Text != "")
+            //        {
+            //            if (txtRecargo.Text != "0" && txtRecargo.Text != "")
+            //            {
+            //                if (txtPorcentajeDescuento.Text != "0" && txtPorcentajeDescuento.Text != "")
+            //                {
+            //                    costo = double.Parse(txtCosto.Text.Replace(".", ","));
+            //                    porcentajeDescuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
+            //                    iva = double.Parse(cbxIva.Text.Replace(".", ","));
+            //                    recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
 
-                            txtFinal.Text = txtCosto.Text;
-                            txtFinal.ForeColor = Color.Red;
-                        }
+            //                    costo_porcentajeDescuento = ((costo * porcentajeDescuento) / 100);
+            //                    costo_iva = ((costo * iva) / 100) + costo;
+            //                    final = ((costo_iva * recargo) / 100) + costo_iva - costo_porcentajeDescuento;
+            //                    txtFinal.Text = final.ToString();
+            //                    txtFinal.ForeColor = Color.Red;
 
-                    }
-                }
-                else
-                {
-                    if (txtCosto.Text != "0" && txtCosto.Text != "")
-                    {
-                        costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                        if (txtRecargo.Text == "")
-                        {
-                            recargo = producto.RecargoPorcentaje;
-                            iva = producto.Iva;
-                            cbxIva.Items.Add(iva);
-                        }
-                        else
-                        {
-                            recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
-                            iva = double.Parse(cbxIva.Text.Replace(".",","));
-                        }
-                        
+            //                }
+            //                costo = double.Parse(txtCosto.Text.Replace(".", ","));
 
-                        costo_iva = ((costo * iva) / 100) + costo;
-                        final = ((costo_iva * recargo) / 100) + costo_iva;
-                        txtFinal.Text = final.ToString();
-                        txtFinal.ForeColor = Color.Red;
-                    }
+            //                iva = double.Parse(cbxIva.Text.Replace(".",","));
+            //                recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
 
 
-                }
+            //                costo_iva = ((costo * iva) / 100) + costo;
+            //                final = ((costo_iva * recargo) / 100) + costo_iva;
+            //                txtFinal.Text = final.ToString();
+            //                txtFinal.ForeColor = Color.Red;
+            //            }
+            //            else
+            //            {
 
-            }
-            catch (System.FormatException){ MessageBox.Show("El tipo de dato ingresado no es un numero", "ERROR -ingrese nuevamente-", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            catch (Exception ex)
-            {
+            //                txtFinal.Text = txtCosto.Text;
+            //                txtFinal.ForeColor = Color.Red;
+            //            }
 
-                throw ex;
-            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (txtCosto.Text != "0" && txtCosto.Text != "")
+            //        {
+            //            costo = double.Parse(txtCosto.Text.Replace(".", ","));
+            //            if (txtRecargo.Text == "")
+            //            {
+            //                porcentajeDescuento = producto.DescuentoCostoProcentaje;
+            //                recargo = producto.RecargoPorcentaje;
+            //                iva = producto.Iva;
+            //                cbxIva.Items.Add(iva);
+            //            }
+            //            else
+            //            {
+            //                porcentajeDescuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
+            //                recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+            //                iva = double.Parse(cbxIva.Text.Replace(".",","));
+            //            }
+
+            //            costo_porcentajeDescuento = ((costo * porcentajeDescuento) / 100);
+            //            costo_iva = ((costo * iva) / 100) + costo;
+            //            final = ((costo_iva * recargo) / 100) + costo_iva - costo_porcentajeDescuento;
+            //            txtFinal.Text = final.ToString();
+            //            txtFinal.ForeColor = Color.Red;
+            //        }
+
+
+            //        }
+
+            //}
+            //catch (System.FormatException){ MessageBox.Show("El tipo de dato ingresado no es un numero", "ERROR -ingrese nuevamente-", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            //catch (Exception ex)
+            //{
+
+            //    throw ex;
+            //}
         }
 
         private void txtRecargo_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtRecargo.Text != "0" && txtRecargo.Text != "")
-                {
-                    double costo_iva;
-                    double final;
-
-                    double costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                    double iva = double.Parse(cbxIva.Text.Replace(".", ","));
-                    double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
-
-                    costo_iva = ((costo * iva) / 100) + costo;
-                    final = ((costo_iva * recargo) / 100) + costo_iva;
-
-                    cbxIva.Text = iva.ToString();
-                    txtFinal.Text = final.ToString();
-                    txtFinal.ForeColor = Color.Red;
-                }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Los datos ingresados son incorrectos", "Error");
-            }
-
-
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            if (paso) calcularResultadoFinal(txtRecargo);
 
 
         }
@@ -328,11 +326,7 @@ namespace OfertasGo
             cbxProveedor.Focus();
         }
 
-        private void btnDesactivar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void cbxRubro_TextChanged(object sender, EventArgs e)
         {
             string filtro = cbxRubro.Text.ToUpper();
@@ -342,19 +336,71 @@ namespace OfertasGo
 
         private void cbxIva_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (paso)
+            {
+                try
+                {
+                    if (txtRecargo.Text != "" && cbxIva.Text != "")
+                    {
+                        double costo_porcentajeDescuento;
+                        double costo_iva;
+                        double final;
+
+                        double costo = double.Parse(txtCosto.Text.Replace(".", ","));
+                        double descuentoPorcentaje = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
+                        double iva = double.Parse(cbxIva.Text.Replace(".", ","));
+                        double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+
+                        costo_porcentajeDescuento = ((costo * descuentoPorcentaje) / 100);
+                        costo_iva = ((costo * iva) / 100) + costo;
+                        final = ((costo_iva * recargo) / 100) + costo_iva - costo_porcentajeDescuento;
+
+                        cbxIva.Text = iva.ToString();
+                        txtFinal.Text = final.ToString();
+                        txtFinal.ForeColor = Color.Red;
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Los datos ingresados son incorrectos", "Error");
+                }
+
+
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+
+        private void txtPorcentajeDescuento_TextChanged(object sender, EventArgs e)
+        {
+            if (paso) calcularResultadoFinal(txtPorcentajeDescuento);
+
+           
+        }
+        private void calcularResultadoFinal(TextBox textBox) 
+        {
+
             try
             {
-                if (txtRecargo.Text != "" && txtRecargo.Text != "" && cbxIva.Text!="")
+                if (textBox.Text != "0" && textBox.Text != "")
                 {
                     double costo_iva;
                     double final;
+                    double costodescuento;
+                    double costorecargo;
 
+                    double descuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                     double costo = double.Parse(txtCosto.Text.Replace(".", ","));
                     double iva = double.Parse(cbxIva.Text.Replace(".", ","));
                     double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
 
-                    costo_iva = ((costo * iva) / 100) + costo;
-                    final = ((costo_iva * recargo) / 100) + costo_iva;
+                    costodescuento = ((costo * descuento) / 100);
+                    costo_iva = ((costo * iva) / 100);
+                    costorecargo = ((costo * recargo) / 100);
+                    final = costo - costodescuento + costo_iva + costorecargo;
 
                     cbxIva.Text = iva.ToString();
                     txtFinal.Text = final.ToString();
@@ -372,6 +418,8 @@ namespace OfertasGo
 
                 throw ex;
             }
+
+
         }
     }
 }

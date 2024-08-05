@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6C0F2C81E57E4873B22C680390B31233"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_855DAC27C47C9F91EA9FEA9E4561D26E"
         "OwnerKey" = "8:_F7D60615779D42E209390E19AEC96FBB"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,6 +101,12 @@
         {
         "MsmKey" = "8:_CC41475855A7986D719178B6A231D559"
         "OwnerKey" = "8:_56D4ADA4CCB64F8DB5DD400E4709DAB2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D8A2B40E840D4372B95B8279BD0244A4"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -238,6 +250,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -392,6 +412,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6C0F2C81E57E4873B22C680390B31233"
+            {
+            "SourcePath" = "8:..\\..\\..\\Ofertas go\\Ofertas de la semana A4_papeles.jpg"
+            "TargetName" = "8:Ofertas de la semana A4_papeles.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_DCE4D07E94B04FEF89D158B9977CA2C7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_855DAC27C47C9F91EA9FEA9E4561D26E"
             {
             "AssemblyRegister" = "3:1"
@@ -516,6 +556,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D8A2B40E840D4372B95B8279BD0244A4"
+            {
+            "SourcePath" = "8:..\\logoofertagopng.ico"
+            "TargetName" = "8:logoofertagopng.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_DCE4D07E94B04FEF89D158B9977CA2C7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EF78FAC78FC1B6A1043500858A982B8A"
             {
             "AssemblyRegister" = "3:1"
@@ -634,15 +694,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupOfertasGoProgram"
-        "ProductCode" = "8:{FCA56EBC-89A8-48E5-BD4C-2302C36D0ED1}"
-        "PackageCode" = "8:{392FB8DF-123E-4058-9BCE-B7CED0A42109}"
+        "ProductCode" = "8:{6D2CF2CB-3A90-44A2-BEE7-844967DC71F7}"
+        "PackageCode" = "8:{63CEC63F-462C-406C-9409-5BDBF41D73F0}"
         "UpgradeCode" = "8:{3CFD7266-D6E0-4369-9789-BA85BF9E10A2}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.4"
+        "ProductVersion" = "8:1.0.8"
         "Manufacturer" = "8:JuanDIego"
         "ARPHELPTELEPHONE" = "8:3777591966"
         "ARPHELPLINK" = "8:"
@@ -755,6 +815,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B4493941B97245D1A143ED36E5B083C3"
+            {
+            "Name" = "8:Ofertas Go"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_56D4ADA4CCB64F8DB5DD400E4709DAB2"
+            "Folder" = "8:_0C526503A4F04EFAA34762F252CFC1F4"
+            "WorkingFolder" = "8:_DCE4D07E94B04FEF89D158B9977CA2C7"
+            "Icon" = "8:_D8A2B40E840D4372B95B8279BD0244A4"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -804,7 +878,7 @@
                 {
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_68ED4552D9ED4EEC992BDDD21F6823DF"
                     {
-                    "Sequence" = "3:200"
+                    "Sequence" = "3:300"
                     "DisplayName" = "8:Carpeta de instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
@@ -837,9 +911,45 @@
                             }
                         }
                     }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_88BBE920715A47C898A1DFC982AF3F4A"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:Pantalla de inicio"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdSplashDlg.wid"
+                        "Properties"
+                        {
+                            "SplashBitmap"
+                            {
+                            "Name" = "8:SplashBitmap"
+                            "DisplayName" = "8:#1013"
+                            "Description" = "8:#1113"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_6C0F2C81E57E4873B22C680390B31233"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Sunken"
+                            {
+                            "Name" = "8:Sunken"
+                            "DisplayName" = "8:#1007"
+                            "Description" = "8:#1107"
+                            "Type" = "3:5"
+                            "ContextData" = "8:4;True=4;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:0"
+                            "DefaultValue" = "3:4"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_903216ABB1B346C1A8DBA1D4E4162120"
                     {
-                    "Sequence" = "3:300"
+                    "Sequence" = "3:400"
                     "DisplayName" = "8:Confirmar instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
@@ -861,7 +971,7 @@
                     }
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_F148D70F0308474DB86B81D9FEFF3823"
                     {
-                    "Sequence" = "3:100"
+                    "Sequence" = "3:200"
                     "DisplayName" = "8:Pantalla de bienvenida"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"

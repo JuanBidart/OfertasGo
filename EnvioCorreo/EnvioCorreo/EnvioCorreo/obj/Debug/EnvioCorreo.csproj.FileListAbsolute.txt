@@ -1,0 +1,21 @@
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.exe.config
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.exe
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.pdb
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.AssemblyReference.cache
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.SuggestedBindingRedirects.cache
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.Form1.resources
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.Properties.Resources.resources
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.GenerateResource.cache
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.CoreCompileInputs.cache
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.exe
+C:\Users\LuisOsvaldoJuanesHin\Documents\Git\Juanes projects\Envio correo CSharp\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.exe.config
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.exe
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\bin\Debug\EnvioCorreo.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.AssemblyReference.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.Form1.resources
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.Properties.Resources.resources
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.GenerateResource.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.exe
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\EnvioCorreo\EnvioCorreo\EnvioCorreo\obj\Debug\EnvioCorreo.pdb

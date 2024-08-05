@@ -4,15 +4,15 @@ C:\Users\juand\Desktop\Programas\OfertasGo\Dominio\obj\Debug\Dominio.csproj.Asse
 C:\Users\juand\Desktop\Programas\OfertasGo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\juand\Desktop\Programas\OfertasGo\Dominio\obj\Debug\Dominio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\Dominio\obj\Debug\Dominio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\bin\Debug\Dominio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\bin\Debug\Dominio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.pdb
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\bin\Debug\Dominio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\bin\Debug\Dominio.pdb
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\obj\Debug\Dominio.dll
 C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\bin\Debug\Dominio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.dll
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Debug\Dominio.pdb
