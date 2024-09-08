@@ -18,6 +18,6 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\System.N
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.csproj.AssemblyReference.cache
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.csproj.CopyComplete
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Negocio\obj\Release\Negocio.csproj.Up2Date

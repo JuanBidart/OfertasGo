@@ -39,7 +39,9 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\Oferta
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.TrustInfo.xml
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.exe.manifest
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.application
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.csproj.CopyComplete
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.exe
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.grafica.resources
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.frmEjecutarSentenciaSql.resources
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.Lista.resources
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.csproj.Up2Date
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Release\OfertasGo.ListaProductos.resources

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
@@ -19,28 +20,32 @@ namespace OfertasGo
         public ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
         List<THistorialPrecio> ListaFiltradaObtenidda = new List<THistorialPrecio>();
         List<TProductos> listaProductosActivos = new List<TProductos>();
-        bool paso = false;
+        bool    paso = false;
         bool paso2 = true;
+        
 
         public frmProductos()
         {
             InitializeComponent();
 
+            actualizaLista(true, true, true);
+            actualizaHistorial();
+            actComboBoxProveedor();
+            prop_dgvProductos();
+
+            
 
         }
-        
+
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             this.TopLevel = true;
-            
-            actualizaLista(true,true,true);
-            actualizaHistorial();
-            actComboBoxProveedor();
-            prop_dgvProductos();
+
+
+
             cbxProveedor.SelectedIndex = -1;
-           
             dgvHistorial.RowHeadersVisible = false;
            
 
@@ -49,6 +54,7 @@ namespace OfertasGo
         private void prop_dgvProductos() 
         
         {
+            
             dgvProductos.Columns[11].Visible = false;
             dgvProductos.Columns[12].Visible = false;
             lblCanPro.Text = dgvProductos.RowCount.ToString();
@@ -110,6 +116,7 @@ namespace OfertasGo
         }
         public void actualizaLista(bool activo=true ,bool orden = true, bool ascOdsc = true)
         {
+            
             var listadeProductos = conexionProductodb.listarProductosActivos(activo, orden,ascOdsc);
 
             dgvProductos.DataSource = listadeProductos;
@@ -118,21 +125,23 @@ namespace OfertasGo
             listaProductosActivos = listadeProductos;
 
             prop_dgvProductos();
+           
         }
         public void actualizaHistorial()
         {
+            
             var listaHistorial = historialPrecios.listarhistorialDesendiente();
 
             dgvHistorial.DataSource = listaHistorial;
 
             dgvHistorial.Columns[0].Visible = false;
 
-            paso = true;
-
+            
         }
         public void cargarListaFiltrada()
         {
             var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
+            
             lblPrecioFinal.Text = productoSeleccionado.Final.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
             int idProductoSelec = productoSeleccionado.idProductos;
             List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorialDesendiente();
@@ -140,7 +149,22 @@ namespace OfertasGo
 
 
             ListaFiltradaObtenidda = listaFiltrada;
-            paso = true;
+
+
+        }
+        public void cargarListaFiltrada(TProductos productoSelecionadoIngresado)
+        {
+            var productoSeleccionado = productoSelecionadoIngresado;
+
+            lblPrecioFinal.Text = productoSeleccionado.Final.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
+            int idProductoSelec = productoSeleccionado.idProductos;
+            List<THistorialPrecio> listaHistorioal = historialPrecios.listarhistorialDesendiente();
+            List<THistorialPrecio> listaFiltrada = listaHistorioal.FindAll(n => idProductoSelec == n.idProducto);
+
+
+            ListaFiltradaObtenidda = listaFiltrada;
+
+
         }
         public string doubleAPorcentaje(double funcion)
         {
@@ -158,10 +182,14 @@ namespace OfertasGo
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
+            if (dgvProductos.Focused)
+            {
+                paso = true;
+            } 
             //cada vez que seleciono un producto de la tabla producto
             //if (dgvProductos.CurrentRow.Index != 0) //para que al abrir el formulario no intente con los datos aun no cargados
-            if (paso != false && dgvProductos.CurrentRow != null)
-
+            if (paso == true && dgvProductos.CurrentRow != null)
+                
             {
                 cargarListaFiltrada(); //carga la lista a la propiedad de la clase
                 dgvHistorial.DataSource = ListaFiltradaObtenidda;
@@ -216,7 +244,7 @@ namespace OfertasGo
 
                     throw ex;
                 }
-                finally { }
+                finally { paso = false; }
             }
         }
         private List<THistorialPrecio> listaFiltradaporFecha(int DiasPasados) //Funcion que devuelve una nueva lista solo de los objetos con fecha dentro de los dias pasados por parametros
@@ -306,50 +334,92 @@ namespace OfertasGo
         }
         public int diasPasados()
         {
-            THistorialPrecio ultimofechaleida = ListaFiltradaObtenidda[0];
-            DateTime ultimafecha = ultimofechaleida.FechaMod;
-            DateTime fechaActual = DateTime.Now;
-            TimeSpan dias = fechaActual - ultimafecha;
-            return dias.Days;
+            try
+            {
+                THistorialPrecio ultimofechaleida = ListaFiltradaObtenidda[0];
+                DateTime ultimafecha = ultimofechaleida.FechaMod;
+                DateTime fechaActual = DateTime.Now;
+                TimeSpan dias = fechaActual - ultimafecha;
+                return dias.Days;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+            
         }
         public string obtenerUltimafechamod()
         {
-            THistorialPrecio ultimaFecha = ListaFiltradaObtenidda[0];
-            return ultimaFecha.FechaMod.ToString("dd/MM/yy");
+            try
+            {
+                THistorialPrecio ultimaFecha = ListaFiltradaObtenidda[0];
+                return ultimaFecha.FechaMod.ToString("dd/MM/yy");
+            }
+            catch (Exception)
+            {
+
+                return "";
+            }
+            
 
 
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            int index = dgvProductos.CurrentCell.RowIndex;
             try
             {
-                int indexcbxproveedor = cbxProveedor.SelectedIndex;
+                var indexcbxproveedor = cbxProveedor.SelectedItem;
                 var productoSeleccionado = (TProductos)dgvProductos.CurrentRow.DataBoundItem;
 
-                int index = dgvProductos.CurrentRow.Index;
+                
+                this.WindowState = FormWindowState.Minimized;
                 frmAgregarProducto frmAgregarProducto = new frmAgregarProducto(productoSeleccionado);
                 frmAgregarProducto.ShowDialog();
+                frmAgregarProducto.Dispose();
+
+                this.WindowState = FormWindowState.Normal;
+                
+
 
                 if (txtbuscar.Text == string.Empty && cbxProveedor.SelectedIndex == -1)
                 {
                     dgvProductos.DataSource = null;
                     actualizaLista(true, true, true);
-                    //dgvProductos.CurrentRow.Selected = false;
+                    
                 }
                 else
                 {
                     actualizaLista();
+                    //actualizaHistorial();
                     string texto = txtbuscar.Text;
 
                     txtbuscar.Text = "";
 
                     txtbuscar.Text = texto;
                     txtbuscar.Focus();
-                    cbxProveedor.SelectedIndex = -1;
-                    cbxProveedor.SelectedIndex = indexcbxproveedor;
+                    cbxProveedor.Focus();
+                    cbxProveedor.SelectedItem = -1;
+                    cbxProveedor.SelectedItem = indexcbxproveedor;
+                    
+                    cbxProveedor_SelectionChangeCommitted(sender, e);
+                   
+                    dgvProductos.Focus();
+
                 }
+                
+                actualizaHistorial();
+
+                paso=false;
                 dgvProductos.Rows[0].Selected = false;
                 dgvProductos.Rows[index].Selected = true;
+                cargarListaFiltrada(productoSeleccionado);
+                dgvHistorial.DataSource = ListaFiltradaObtenidda;
+
+
+
+
 
             }
             catch (NullReferenceException)
@@ -357,8 +427,10 @@ namespace OfertasGo
 
                 MessageBox.Show("Debe haber un elemento seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //finally { cbxProveedor = null; }
+            finally {  }
 
+            
+            
 
         }
 
@@ -467,7 +539,7 @@ namespace OfertasGo
 
 
             Lista listaa = new Lista(listaSelecionados);
-            listaa.Show();
+            listaa.ShowDialog();
             actualizaLista();
             actualizaHistorial();
         }
@@ -583,10 +655,7 @@ namespace OfertasGo
               
         }//Click en los encabezado de columna para ordenar
 
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnVermas_Click(object sender, EventArgs e)
         {
@@ -615,6 +684,56 @@ namespace OfertasGo
         {
             
         }
+
+        private void btnBorrarDatosHistorial_Click(object sender, EventArgs e)
+        {
+            var Seleccionado = (THistorialPrecio)dgvHistorial.CurrentRow.DataBoundItem;          
+            var selecionproducto = dgvProductos.CurrentCell.RowIndex;
+            ConexionHistorialPrecios historialPrecios = new ConexionHistorialPrecios();
+            historialPrecios.borrarRegistros(Seleccionado);
+
+            actualizaHistorial();
+            
+            dgvProductos.Rows[0].Selected = true;
+            dgvProductos.Rows[0].Selected = false;
+            dgvProductos.Rows[selecionproducto].Selected = true; // = selecionproducto;
+            
+
+
+            #region Usar este codigo si en la base de datos se modificaron todos los datos juntos de la db y el historial carga estos datos de mas
+
+            //List<THistorialPrecio> ListaHitorial = historialPrecios.listarhistorialDesendiente();
+            //int cant = ListaHitorial.Count;
+            //PBR1.Minimum = 0;
+            //PBR1.Maximum = cant;
+            //PBR1.Value = 0;
+            //for (int i = 0; i < cant; i++)
+            //{
+            //    List<THistorialPrecio> listaxProducto = new List<THistorialPrecio>();
+            //    foreach (var item in ListaHitorial)
+            //    {
+            //        if (item.idProducto == i)
+            //        {
+            //            listaxProducto.Add(item);
+            //        }
+            //    }
+
+
+            //    if (listaxProducto.Count > 1)
+            //    {
+            //        int cuenta = listaxProducto.Count - 1;
+            //        historialPrecios.borrarRegistros(listaxProducto[0]);
+
+            //    }
+            //    PBR1.Value += 1;
+            //}
+            //MessageBox.Show("Concluido");
+            //btnBorrarDatosHistorial.Enabled = false;
+
+            #endregion
+        }
+
+       
     }
 
 }

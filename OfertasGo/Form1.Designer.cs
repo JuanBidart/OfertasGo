@@ -52,6 +52,7 @@ namespace OfertasGo
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btnBackupDB = new System.Windows.Forms.Button();
             this.btnCargardb = new System.Windows.Forms.Button();
+            this.btnListaProductos = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.sspBarradeEstado.SuspendLayout();
             this.SuspendLayout();
@@ -60,13 +61,13 @@ namespace OfertasGo
             // 
             this.btnProductos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Font = new System.Drawing.Font("Tabarra Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.Transparent;
             this.btnProductos.Location = new System.Drawing.Point(12, 48);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(386, 125);
+            this.btnProductos.Size = new System.Drawing.Size(364, 115);
             this.btnProductos.TabIndex = 0;
-            this.btnProductos.Text = "Productos";
+            this.btnProductos.Text = "Config. Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -75,11 +76,11 @@ namespace OfertasGo
             this.btnProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnProveedores.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.Font = new System.Drawing.Font("Tabarra Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.Transparent;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 370);
+            this.btnProveedores.Location = new System.Drawing.Point(12, 289);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(173, 72);
+            this.btnProveedores.Size = new System.Drawing.Size(364, 115);
             this.btnProveedores.TabIndex = 1;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
@@ -218,14 +219,15 @@ namespace OfertasGo
             this.btnBackupDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBackupDB.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBackupDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackupDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackupDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackupDB.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBackupDB.Location = new System.Drawing.Point(631, 370);
+            this.btnBackupDB.Location = new System.Drawing.Point(703, 407);
             this.btnBackupDB.Name = "btnBackupDB";
-            this.btnBackupDB.Size = new System.Drawing.Size(173, 72);
+            this.btnBackupDB.Size = new System.Drawing.Size(101, 35);
             this.btnBackupDB.TabIndex = 5;
             this.btnBackupDB.Text = "Backup DB";
             this.btnBackupDB.UseVisualStyleBackColor = false;
+            this.btnBackupDB.Visible = false;
             this.btnBackupDB.Click += new System.EventHandler(this.btnBackupDB_Click);
             // 
             // btnCargardb
@@ -233,15 +235,30 @@ namespace OfertasGo
             this.btnCargardb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCargardb.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCargardb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargardb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargardb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargardb.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCargardb.Location = new System.Drawing.Point(631, 292);
+            this.btnCargardb.Location = new System.Drawing.Point(703, 366);
             this.btnCargardb.Name = "btnCargardb";
-            this.btnCargardb.Size = new System.Drawing.Size(173, 72);
+            this.btnCargardb.Size = new System.Drawing.Size(101, 35);
             this.btnCargardb.TabIndex = 6;
             this.btnCargardb.Text = "Cargar DB";
             this.btnCargardb.UseVisualStyleBackColor = false;
+            this.btnCargardb.Visible = false;
             this.btnCargardb.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnListaProductos
+            // 
+            this.btnListaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnListaProductos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnListaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaProductos.Font = new System.Drawing.Font("Tabarra Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListaProductos.ForeColor = System.Drawing.Color.Transparent;
+            this.btnListaProductos.Location = new System.Drawing.Point(440, 48);
+            this.btnListaProductos.Name = "btnListaProductos";
+            this.btnListaProductos.Size = new System.Drawing.Size(364, 115);
+            this.btnListaProductos.TabIndex = 7;
+            this.btnListaProductos.Text = "Lista de Productos";
+            this.btnListaProductos.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -249,6 +266,7 @@ namespace OfertasGo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(833, 478);
+            this.Controls.Add(this.btnListaProductos);
             this.Controls.Add(this.btnCargardb);
             this.Controls.Add(this.btnBackupDB);
             this.Controls.Add(this.toolStrip1);
@@ -293,6 +311,7 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripMenuItem cargarDBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupDBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sentenciaDBToolStripMenuItem;
+        private System.Windows.Forms.Button btnListaProductos;
     }
 }
 

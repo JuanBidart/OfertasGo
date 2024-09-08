@@ -18,7 +18,7 @@ namespace Dominio
         public TProveedores Proveedores { get; set; }
       
         public double Costo { get; set; }
-
+        [DisplayName("Desc.%")]
         public double DescuentoCostoPorcentaje { get; set; }
         //public double GetDescuentoCostoPorcentaje()
         //{

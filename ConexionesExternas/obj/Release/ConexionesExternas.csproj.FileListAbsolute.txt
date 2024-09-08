@@ -4,6 +4,6 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Relea
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\bin\Release\Newtonsoft.Json.xml
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.csproj.AssemblyReference.cache
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.csproj.CoreCompileInputs.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.csproj.CopyComplete
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.pdb
+C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\Conexion.FB0232AB.Up2Date

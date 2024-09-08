@@ -59,7 +59,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
@@ -73,7 +73,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;

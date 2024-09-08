@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="OfertasGo.exe" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="OfertasGo" version="1.0.0.9" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="OfertasGo" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="OfertasGo.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConexionesExternas.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConexionesExternas.dll" size="6144">
       <assemblyIdentity name="ConexionesExternas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cdeybHJB+fYZLKyZUus0Al8VwgSmsyS88cEB1PLgW5c=</dsig:DigestValue>
+        <dsig:DigestValue>iccdqbxSCayX6KOoEHxnoq7t4FW4pN51pfFesXtVMq0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PZcGRnhDgayK7K05bLegbJTfM7Pdu9Z0UOjV10v+qWU=</dsig:DigestValue>
+        <dsig:DigestValue>gOg0Uw9yMj21kutH9XKChw6YvW+HkoVqHGrBh+fCLnk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="15872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="18944">
       <assemblyIdentity name="Negocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4cXY1ZYP6s0f6fGNbAxb0rY4/UNfNdhf1IRLuOhARGA=</dsig:DigestValue>
+        <dsig:DigestValue>1UILN6Ta3begdK3fNW7CkKhQgTEJbiUeIZ93/tLn/bo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="395760">
-      <assemblyIdentity name="OfertasGo" version="1.0.0.9" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="397808">
+      <assemblyIdentity name="OfertasGo" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jRrw/zcfIfFCRwWuR6JdDDcvd3LbgusxjvzcLa/kdGY=</dsig:DigestValue>
+        <dsig:DigestValue>BO+8+hQAXY92mVFNWO7ux194xYDp02oXTLYsDRsRqko=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

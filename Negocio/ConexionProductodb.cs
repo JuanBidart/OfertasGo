@@ -11,83 +11,83 @@ namespace Negocio
 
     public class ConexionProductodb
     {
-        //string rutaDatabase = "./Database/dbofertas.db";
+        string rutaDatabase = "./Database/dbofertas.db";
 
 
-        //public List<TProductos> listarProductos(bool orden, bool ascendente)
-        //{
+        public List<TProductos> listarProductosTodos(bool orden, bool ascendente)
+        {
 
 
-        //    if (orden == false) ascendente = false;
+            if (orden == false) ascendente = false;
 
-        //    string consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
+            string consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores;";
 
-        //    if (orden == true && ascendente == false)
-        //    {
-        //        consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE DESC;";
-        //    }
-        //    if (orden == true && ascendente == true)
-        //    {
-        //        consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE ASC;";
-        //    }
-
-
-        //    List<TProductos> listaProductos = new List<TProductos>();
-        //    // SENTENCIA QUE FUNCIONABA = SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos
-        //    //                                       0           1         2      3         4             5               6             7            8                  9                          10                            
-
-        //    string cadenayconexion = $"data source= {rutaDatabase};Version=3";
+            if (orden == true && ascendente == false)
+            {
+                consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE DESC;";
+            }
+            if (orden == true && ascendente == true)
+            {
+                consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores ORDER BY Descripcion COLLATE NOCASE ASC;";
+            }
 
 
-        //    try
-        //    {
-        //        SQLiteConnection con = new SQLiteConnection(cadenayconexion);
+            List<TProductos> listaProductos = new List<TProductos>();
+            // SENTENCIA QUE FUNCIONABA = SELECT idProductos,Descripcion,Costo,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores from Productos
+            //                                       0           1         2      3         4             5               6             7            8                  9                          10                            
 
-        //        SQLiteCommand cmd = new SQLiteCommand();
-        //        con.Open();
-        //        cmd.CommandType = System.Data.CommandType.Text;
-        //        cmd.CommandText = consulta;
-        //        cmd.Connection = con;
-
-        //        SQLiteDataReader lector = cmd.ExecuteReader();
-
-        //        while (lector.Read())
-        //        {
-        //            TProductos productos = new TProductos();
-        //            productos.idProductos = lector.GetInt32(0);
-        //            productos.Descripcion = (string)lector["Descripcion"];
-        //            productos.Costo = (double)lector["Costo"];
-        //            productos.DescuentoCostoPorcentaje = lector.GetDouble(3);
-        //            productos.RecargoPorcentaje = lector.GetDouble(4);
-        //            productos.Final = (double)lector["Final"];
-        //            productos.FechaModificacion = lector.GetString(6);
-        //            productos.Activo = lector.GetByte(7);
-
-        //            TRubro rubro = new TRubro();
-        //            productos.Rubro = rubro;
-        //            rubro.idRubro = lector.GetInt32(8);
-        //            rubro.Rubro = lector.GetString(9);
-        //            TProveedores proveedores = new TProveedores();
-        //            productos.Proveedores = proveedores;
-        //            proveedores.idProveedores = lector.GetInt32(10);
-        //            proveedores.RazonSocial = lector.GetString(11);
-
-        //            productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
-        //            listaProductos.Add(productos);
-
-        //        }
+            string cadenayconexion = $"data source= {rutaDatabase};Version=3";
 
 
-        //        con.Close();
-        //        return listaProductos;
-        //    }
-        //    catch (Exception)
-        //    {
+            try
+            {
+                SQLiteConnection con = new SQLiteConnection(cadenayconexion);
 
-        //        throw;
-        //    }
-        //    finally { }
-        //}
+                SQLiteCommand cmd = new SQLiteCommand();
+                con.Open();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = consulta;
+                cmd.Connection = con;
+
+                SQLiteDataReader lector = cmd.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    TProductos productos = new TProductos();
+                    productos.idProductos = lector.GetInt32(0);
+                    productos.Descripcion = (string)lector["Descripcion"];
+                    productos.Costo = (double)lector["Costo"];
+                    productos.DescuentoCostoPorcentaje = lector.GetDouble(3);
+                    productos.RecargoPorcentaje = lector.GetDouble(4);
+                    productos.Final = (double)lector["Final"];
+                    productos.FechaModificacion = lector.GetString(6);
+                    productos.Activo = lector.GetByte(7);
+
+                    TRubro rubro = new TRubro();
+                    productos.Rubro = rubro;
+                    rubro.idRubro = lector.GetInt32(8);
+                    rubro.Rubro = lector.GetString(9);
+                    TProveedores proveedores = new TProveedores();
+                    productos.Proveedores = proveedores;
+                    proveedores.idProveedores = lector.GetInt32(10);
+                    proveedores.RazonSocial = lector.GetString(11);
+
+                    productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
+                    listaProductos.Add(productos);
+
+                }
+
+
+                con.Close();
+                return listaProductos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { }
+        }
         public List<TProductos> listarProductosActivos(bool activo_desactivo = true, bool orden=true, bool ascOdes=true)
         {
             string act = "";

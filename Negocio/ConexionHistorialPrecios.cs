@@ -84,5 +84,16 @@ namespace Negocio
             }
 
         }
+
+        public void borrarRegistros(THistorialPrecio historial) 
+        {
+        AccesoDatos datos = new AccesoDatos();
+
+            datos.seterarConsulta("DELETE FROM HistorialPrecios WHERE idHistorial ="+historial.idHistorial+";");
+
+            datos.ejecutarAccion();
+            datos.cerrarConexion();
+        
+        }
     }
 }

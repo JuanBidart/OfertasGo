@@ -69,7 +69,7 @@ namespace OfertasGo
                 }
                 producto.Descripcion = txtDescripcion.Text;
                 producto.Costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                //producto.DescuentoCostoPorcentaje = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
+                producto.DescuentoCostoPorcentaje = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                 producto.RecargoPorcentaje = double.Parse(txtRecargo.Text.Replace(".", ","));
                 producto.Final = double.Parse(txtFinal.Text.Replace(".", ","));
                 producto.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy"); // dtpFecha.Value.Date.ToString("dd/MM/yy");
@@ -89,7 +89,8 @@ namespace OfertasGo
                     {
                         productodb.modificarProducto(producto);
                         MessageBox.Show("Modificado", "OK");
-                        Close();
+                        Dispose();
+                       Close();
 
                     }
                     else
@@ -104,6 +105,7 @@ namespace OfertasGo
                         {
                         MessageBox.Show("No se Pudo agregar \n Verifique el campo RUBRO","ERROR DEL RUBRO",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
+                    Dispose();
                     Close();
 
                     }
@@ -175,6 +177,7 @@ namespace OfertasGo
 
                 actComboBoxRubro();
                 actComboBoxProveedores();
+                paso=true;
             }
 
             else

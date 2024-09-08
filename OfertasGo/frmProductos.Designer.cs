@@ -61,6 +61,8 @@
             this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prueba2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnBorrarDatosHistorial = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -133,9 +135,9 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 335);
+            this.btnAgregar.Location = new System.Drawing.Point(10, 335);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(170, 77);
+            this.btnAgregar.Size = new System.Drawing.Size(121, 77);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseMnemonic = false;
@@ -186,9 +188,9 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificar.Location = new System.Drawing.Point(12, 418);
+            this.btnModificar.Location = new System.Drawing.Point(132, 335);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(170, 77);
+            this.btnModificar.Size = new System.Drawing.Size(121, 77);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseMnemonic = false;
@@ -244,7 +246,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(899, 580);
+            this.label3.Location = new System.Drawing.Point(899, 539);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 32);
             this.label3.TabIndex = 11;
@@ -256,7 +258,7 @@
             this.lblVarMen.AutoSize = true;
             this.lblVarMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVarMen.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblVarMen.Location = new System.Drawing.Point(907, 556);
+            this.lblVarMen.Location = new System.Drawing.Point(898, 574);
             this.lblVarMen.Name = "lblVarMen";
             this.lblVarMen.Size = new System.Drawing.Size(32, 24);
             this.lblVarMen.TabIndex = 12;
@@ -267,7 +269,7 @@
             this.lbIinflacionMen.AutoSize = true;
             this.lbIinflacionMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIinflacionMen.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbIinflacionMen.Location = new System.Drawing.Point(1004, 556);
+            this.lbIinflacionMen.Location = new System.Drawing.Point(1004, 574);
             this.lbIinflacionMen.Name = "lbIinflacionMen";
             this.lbIinflacionMen.Size = new System.Drawing.Size(32, 24);
             this.lbIinflacionMen.TabIndex = 13;
@@ -278,7 +280,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(1005, 580);
+            this.label5.Location = new System.Drawing.Point(1005, 539);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 32);
             this.label5.TabIndex = 14;
@@ -306,9 +308,9 @@
             this.btnDesactivar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDesactivar.Location = new System.Drawing.Point(12, 501);
+            this.btnDesactivar.Location = new System.Drawing.Point(254, 335);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(170, 77);
+            this.btnDesactivar.Size = new System.Drawing.Size(121, 77);
             this.btnDesactivar.TabIndex = 16;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.UseMnemonic = false;
@@ -337,7 +339,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label7.Location = new System.Drawing.Point(243, 340);
+            this.label7.Location = new System.Drawing.Point(12, 415);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 16);
             this.label7.TabIndex = 21;
@@ -346,11 +348,11 @@
             // lblPrecioFinal
             // 
             this.lblPrecioFinal.AutoSize = true;
-            this.lblPrecioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioFinal.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPrecioFinal.Location = new System.Drawing.Point(242, 366);
+            this.lblPrecioFinal.Location = new System.Drawing.Point(21, 437);
             this.lblPrecioFinal.Name = "lblPrecioFinal";
-            this.lblPrecioFinal.Size = new System.Drawing.Size(32, 24);
+            this.lblPrecioFinal.Size = new System.Drawing.Size(38, 25);
             this.lblPrecioFinal.TabIndex = 22;
             this.lblPrecioFinal.Text = "00";
             // 
@@ -359,7 +361,7 @@
             this.lblCanPro.AutoSize = true;
             this.lblCanPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCanPro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCanPro.Location = new System.Drawing.Point(461, 366);
+            this.lblCanPro.Location = new System.Drawing.Point(475, 351);
             this.lblCanPro.Name = "lblCanPro";
             this.lblCanPro.Size = new System.Drawing.Size(32, 24);
             this.lblCanPro.TabIndex = 24;
@@ -370,7 +372,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label9.Location = new System.Drawing.Point(440, 340);
+            this.label9.Location = new System.Drawing.Point(457, 335);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 16);
             this.label9.TabIndex = 23;
@@ -459,7 +461,31 @@
             this.btnImprimir.Text = "Imprimir Lista Actual";
             this.btnImprimir.UseMnemonic = false;
             this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnBorrarDatosHistorial
+            // 
+            this.btnBorrarDatosHistorial.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBorrarDatosHistorial.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnBorrarDatosHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarDatosHistorial.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBorrarDatosHistorial.Location = new System.Drawing.Point(833, 601);
+            this.btnBorrarDatosHistorial.Name = "btnBorrarDatosHistorial";
+            this.btnBorrarDatosHistorial.Size = new System.Drawing.Size(234, 33);
+            this.btnBorrarDatosHistorial.TabIndex = 29;
+            this.btnBorrarDatosHistorial.Text = "Borrar dato selecionado de historial";
+            this.btnBorrarDatosHistorial.UseMnemonic = false;
+            this.btnBorrarDatosHistorial.UseVisualStyleBackColor = false;
+            this.btnBorrarDatosHistorial.Click += new System.EventHandler(this.btnBorrarDatosHistorial_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("GRIFTER", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(127, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(413, 26);
+            this.lblTitulo.TabIndex = 32;
+            this.lblTitulo.Text = "Configuracion y datos de productos";
             // 
             // frmProductos
             // 
@@ -469,6 +495,8 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1070, 641);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.btnBorrarDatosHistorial);
             this.Controls.Add(this.btnVermenos);
             this.Controls.Add(this.btnVermas);
             this.Controls.Add(this.btnImprimir);
@@ -544,5 +572,7 @@
         private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prueba2ToolStripMenuItem;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnBorrarDatosHistorial;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

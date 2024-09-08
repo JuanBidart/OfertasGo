@@ -168,7 +168,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
@@ -182,7 +182,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
@@ -213,7 +213,7 @@
             this.dgvListaProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListaProveedores.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvListaProveedores.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaProveedores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaProveedores.Location = new System.Drawing.Point(429, 52);
@@ -241,7 +241,7 @@
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDesactivar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnDesactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.Transparent;
@@ -255,7 +255,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Transparent;
@@ -269,7 +269,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.Transparent;

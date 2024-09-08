@@ -72,7 +72,7 @@ namespace OfertasGo
                     ActualizarLista();
 
                     MessageBox.Show("Tarea realizada con exito", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    this.Close();
                 }
             }
             catch (Exception)
