@@ -32,7 +32,7 @@ namespace OfertasGo
             actualizaHistorial();
             actComboBoxProveedor();
             prop_dgvProductos();
-
+            
             
 
         }
@@ -42,14 +42,14 @@ namespace OfertasGo
         {
             this.WindowState = FormWindowState.Normal;
             this.TopLevel = true;
-
+            this.TopMost = true;
 
 
             cbxProveedor.SelectedIndex = -1;
             dgvHistorial.RowHeadersVisible = false;
            
-
-
+            btnVermenos_Click(sender, e);
+            this.Activate();
         }
         private void prop_dgvProductos() 
         
@@ -82,7 +82,7 @@ namespace OfertasGo
             {
                 this.WindowState = FormWindowState.Minimized;
                 frmAgregarProducto agregarProducto = new frmAgregarProducto();
-                Thread.Sleep(10);
+                //Thread.Sleep(10);
                 agregarProducto.ShowDialog();
                 this.WindowState = FormWindowState.Normal;
                 if (txtbuscar.Text =="") 
@@ -733,7 +733,10 @@ namespace OfertasGo
             #endregion
         }
 
-       
+        private void frmProductos_MouseLeave(object sender, EventArgs e)
+        {
+            this.TopMost = false;
+        }
     }
 
 }

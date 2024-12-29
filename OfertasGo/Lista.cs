@@ -59,11 +59,34 @@ namespace OfertasGo
                             double finalNuevo;
 
                             costoConRecargo = ((costoactual * numeroIngresado) / 100) + costoactual;
-                            finalNuevo = ((costoConRecargo * porcentajeActual) / 100 ) + costoConRecargo;
+                            finalNuevo = ((costoConRecargo * porcentajeActual) / 100) + costoConRecargo;
 
                             item.FechaModificacion = item.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy");
                             item.Costo = costoConRecargo;
                             item.Final = finalNuevo;
+                        }
+                        if (robPeso.Checked)
+                        {
+                            double finalactual = item.Final;
+                            double costoactual = item.Costo;
+                            double porcentajeActual = item.RecargoPorcentaje;
+
+                            double costoConRecargo;
+
+                            double finalNuevo;
+
+                            costoConRecargo = (costoactual + numeroIngresado);
+                            finalNuevo = ((costoConRecargo * porcentajeActual) / 100) + costoConRecargo;
+
+                            item.FechaModificacion = item.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy");
+                            item.Costo = costoConRecargo;
+                            item.Final = finalNuevo;
+                        }
+                        if (!(robPeso.Checked) && !(robPorcentaje.Checked))
+                        {
+                            MessageBox.Show("Selecione unna opcion de cambio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           
+                            return;
                         }
                         productodb.modificarProducto(item);
 
@@ -73,6 +96,9 @@ namespace OfertasGo
 
                     MessageBox.Show("Tarea realizada con exito", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                }
+                else {
+                    MessageBox.Show("Ingrese un dato en la caja de texto","Dato vacio");
                 }
             }
             catch (Exception)

@@ -480,10 +480,11 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("GRIFTER", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTitulo.Location = new System.Drawing.Point(127, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(413, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(386, 25);
             this.lblTitulo.TabIndex = 32;
             this.lblTitulo.Text = "Configuracion y datos de productos";
             // 
@@ -532,6 +533,7 @@
             this.Text = "Productos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProductos_FormClosing);
             this.Load += new System.EventHandler(this.frmProductos_Load);
+            this.MouseLeave += new System.EventHandler(this.frmProductos_MouseLeave);
             this.Resize += new System.EventHandler(this.frmProductos_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();

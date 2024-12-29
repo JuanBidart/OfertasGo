@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionesExternas", "Conex
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupOfertasGoProgram", "SetupOfertasGoProgram\SetupOfertasGoProgram.vdproj", "{3247DA2F-E701-450A-B347-DBBEA2185D66}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfertasgoSetup", "OfertasgoSetup\OfertasgoSetup.vdproj", "{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -57,6 +59,10 @@ Global
 		{3247DA2F-E701-450A-B347-DBBEA2185D66}.Debug|Any CPU.ActiveCfg = Debug
 		{3247DA2F-E701-450A-B347-DBBEA2185D66}.DefaultBuild|Any CPU.ActiveCfg = Debug
 		{3247DA2F-E701-450A-B347-DBBEA2185D66}.Release|Any CPU.ActiveCfg = Release
+		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.All|Any CPU.ActiveCfg = Debug
+		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.Debug|Any CPU.ActiveCfg = Debug
+		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.DefaultBuild|Any CPU.ActiveCfg = Debug
+		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

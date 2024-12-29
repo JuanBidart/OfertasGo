@@ -259,6 +259,7 @@ namespace OfertasGo
             this.btnListaProductos.TabIndex = 7;
             this.btnListaProductos.Text = "Lista de Productos";
             this.btnListaProductos.UseVisualStyleBackColor = false;
+            this.btnListaProductos.Click += new System.EventHandler(this.btnListaProductos_Click);
             // 
             // Form1
             // 

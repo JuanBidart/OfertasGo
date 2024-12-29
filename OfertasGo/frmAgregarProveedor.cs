@@ -15,6 +15,7 @@ namespace OfertasGo
         public frmAgregarProveedor()
         {
             InitializeComponent();
+            this.TopLevel = true;
         }
         public frmAgregarProveedor(TProveedores ProovedoorRecibido)
         {

@@ -21,11 +21,15 @@ namespace OfertasGo
         public frmAgregarProducto()
         {
             InitializeComponent();
+            this.TopLevel= true;
+            this.TopMost = true;
             lblinfofecha.Visible = false;
             cbxRubro.DropDownStyle = ComboBoxStyle.DropDown;
             cbxRubro.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbxRubro.AutoCompleteCustomSource = devolverdatos();
             cbxRubro.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            
+            
         }
         public frmAgregarProducto(TProductos producto)
         {
@@ -35,10 +39,13 @@ namespace OfertasGo
             this.Text = "Modificar Producto";
            dtpFecha.Enabled = false;
             lblinfofecha.Visible = true;
+            this.TopLevel = true;
+            this.TopMost = true;
+            ;
+            
 
-
-              
         }
+        
         private AutoCompleteStringCollection devolverdatos() 
         {
             AutoCompleteStringCollection autoCompleteStrings = new AutoCompleteStringCollection();
@@ -161,10 +168,12 @@ namespace OfertasGo
         }
         private void frmAgregarProducto_Load(object sender, EventArgs e)
         {
+            this.Activate();
 
 
             if (producto == null)
             {
+                txtAjuste.Text = "0";
                 txtCosto.Text = "0";
                 txtPorcentajeDescuento.Text = "0";
                 txtRecargo.Text = "0";
@@ -213,6 +222,7 @@ namespace OfertasGo
                 txtRecargo.Text = producto.RecargoPorcentaje.ToString(); if (txtRecargo.Text == string.Empty) { txtRecargo.Text = "0"; };
                 txtFinal.Text = producto.Final.ToString(); if (txtFinal.Text == string.Empty) { txtFinal.Text = "0"; };
                 dtpFecha.Text = producto.FechaModificacion;
+                txtAjuste.Text = producto.AjustePesos.ToString();
                 cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
                 cbxRubro.SelectedValue = producto.Rubro.idRubro;
                 paso = true;
@@ -345,18 +355,22 @@ namespace OfertasGo
                 {
                     if (txtRecargo.Text != "" && cbxIva.Text != "")
                     {
-                        double costo_porcentajeDescuento;
                         double costo_iva;
                         double final;
+                        double costodescuento;
+                        double costorecargo;
 
+
+                        double descuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                         double costo = double.Parse(txtCosto.Text.Replace(".", ","));
-                        double descuentoPorcentaje = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                         double iva = double.Parse(cbxIva.Text.Replace(".", ","));
                         double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+                        double ajuste = double.Parse(txtAjuste.Text.Replace(".", ","));
 
-                        costo_porcentajeDescuento = ((costo * descuentoPorcentaje) / 100);
-                        costo_iva = ((costo * iva) / 100) + costo;
-                        final = ((costo_iva * recargo) / 100) + costo_iva - costo_porcentajeDescuento;
+                        costodescuento = ((costo * descuento) / 100);
+                        costo_iva = ((costo * iva) / 100);
+                        costorecargo = ((costo * recargo) / 100);
+                        final = costo - costodescuento + (costo_iva + costorecargo) + ajuste;
 
                         cbxIva.Text = iva.ToString();
                         txtFinal.Text = final.ToString();
@@ -388,22 +402,24 @@ namespace OfertasGo
 
             try
             {
-                if (textBox.Text != "0" && textBox.Text != "")
+                if (textBox.Text != "" /*&& textBox.Text != ""*/)
                 {
                     double costo_iva;
                     double final;
                     double costodescuento;
                     double costorecargo;
+                    
 
                     double descuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                     double costo = double.Parse(txtCosto.Text.Replace(".", ","));
                     double iva = double.Parse(cbxIva.Text.Replace(".", ","));
                     double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
+                    double ajuste = double.Parse(txtAjuste.Text.Replace(".", ","));
 
                     costodescuento = ((costo * descuento) / 100);
                     costo_iva = ((costo * iva) / 100);
                     costorecargo = ((costo * recargo) / 100);
-                    final = costo - costodescuento + costo_iva + costorecargo;
+                    final = costo - costodescuento + (costo_iva + costorecargo)+ajuste;
 
                     cbxIva.Text = iva.ToString();
                     txtFinal.Text = final.ToString();
@@ -421,8 +437,28 @@ namespace OfertasGo
 
                 throw ex;
             }
+            
 
 
+        }
+
+        private void txtAjuste_TextChanged(object sender, EventArgs e)
+        {
+            string tecleado = txtAjuste.Text;
+            foreach (char item in tecleado)
+            {
+                if (char.IsNumber(item))
+                {
+                    if (paso) calcularResultadoFinal(txtAjuste);
+                }
+                else {
+                    int cont = tecleado.Length;
+                    tecleado.Remove(cont-1);
+                    txtAjuste.Text = tecleado;
+                }
+            }
+            
+            
         }
     }
 }

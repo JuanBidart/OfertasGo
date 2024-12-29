@@ -20,18 +20,10 @@ namespace Dominio
         public double Costo { get; set; }
         [DisplayName("Desc.%")]
         public double DescuentoCostoPorcentaje { get; set; }
-        //public double GetDescuentoCostoPorcentaje()
-        //{
-        //    return descuentoCostoPorcentaje;
-        //}
-
-        //public void SetDescuentoCostoPorcentaje(double value)
-        //{
-        //    descuentoCostoPorcentaje = value;
-        //}
-
+        
         public double Iva { get; set; }
-        public double RecargoPesos { get; set; }
+        [DisplayName("Ajuste")]
+        public double AjustePesos { get; set; }
         [DisplayName("% Recargo")]
         public double RecargoPorcentaje { get; set; }
         public double Final { get; set; }
@@ -42,10 +34,6 @@ namespace Dominio
         public string Observaciones { get; set; }
 
 
-        //public override string ToString()
-        //{
-        //    return Costo.ToString(CultureInfo.CreateSpecificCulture("ES-AR"));
-        //}
 
 
     }

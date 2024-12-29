@@ -7,3 +7,12 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Relea
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.pdb
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\ConexionesExternas\obj\Release\Conexion.FB0232AB.Up2Date
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\bin\Release\ConexionesExternas.dll
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\bin\Release\ConexionesExternas.pdb
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\bin\Release\Newtonsoft.Json.dll
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\bin\Release\Newtonsoft.Json.xml
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.csproj.AssemblyReference.cache
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.csproj.CoreCompileInputs.cache
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\obj\Release\Conexion.FB0232AB.Up2Date
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.dll
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\ConexionesExternas\obj\Release\ConexionesExternas.pdb

@@ -97,7 +97,7 @@ namespace Negocio
             try
             {
                 if (activo_desactivo == true) { act = "1"; } else { act = "0"; }
-                consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],Iva,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + "";
+                consulta = "SELECT idProductos,Descripcion,Costo,[DescuentoCosto%],Iva,AjustePesos,[Recargo%],Final,FechaModificacion,Productos.Activo,Rubro.IdRubro,Rubro.Rubro,Proveedores.idProveedores,Proveedores.RazonSocial from Productos, Rubro, Proveedores WHERE Rubro.IdRubro=Productos.idRubro AND Proveedores.idProveedores=Productos.idProveedores AND Productos.activo = " + act + "";
 
                 if (orden == true)
                 {
@@ -132,9 +132,9 @@ namespace Negocio
                     productos.Descripcion = (string)datos.Lector["Descripcion"];
                     productos.Costo = (double)datos.Lector["Costo"];
                    
-                    if (!datos.Lector.IsDBNull(datos.Lector.GetOrdinal("[DescuentoCosto%]")))
+                    if (!datos.Lector.IsDBNull(datos.Lector.GetOrdinal("DescuentoCosto%")))
                     {
-                        productos.DescuentoCostoPorcentaje = (datos.Lector.GetDouble(3));
+                        productos.DescuentoCostoPorcentaje = datos.Lector.GetDouble(3);
                     }
                    
 
@@ -142,20 +142,24 @@ namespace Negocio
                     {
                         productos.Iva = datos.Lector.GetDouble(4);
                     }
-                    
-                    productos.RecargoPorcentaje = datos.Lector.GetDouble(5);
+                    if (!datos.Lector.IsDBNull(datos.Lector.GetOrdinal("AjustePesos")))
+                    {
+                        productos.AjustePesos = datos.Lector.GetDouble(5);
+                    }
+
+                    productos.RecargoPorcentaje = datos.Lector.GetDouble(6);
                     productos.Final = (double)datos.Lector["Final"];
-                    productos.FechaModificacion = datos.Lector.GetString(7);
-                    productos.Activo = datos.Lector.GetByte(8);
+                    productos.FechaModificacion = datos.Lector.GetString(8);
+                    productos.Activo = datos.Lector.GetByte(9);
 
                     TRubro rubro = new TRubro();
                     productos.Rubro = rubro;
-                    rubro.idRubro = datos.Lector.GetInt32(9);
-                    rubro.Rubro = datos.Lector.GetString(10);
+                    rubro.idRubro = datos.Lector.GetInt32(10);
+                    rubro.Rubro = datos.Lector.GetString(11);
                     TProveedores proveedores = new TProveedores();
                     productos.Proveedores = proveedores;
-                    proveedores.idProveedores = datos.Lector.GetInt32(11);
-                    proveedores.RazonSocial = datos.Lector.GetString(12);
+                    proveedores.idProveedores = datos.Lector.GetInt32(12);
+                    proveedores.RazonSocial = datos.Lector.GetString(13);
 
 
                     productos.Costo.ToString("C2", CultureInfo.CreateSpecificCulture("ES-ar"));
@@ -189,9 +193,10 @@ namespace Negocio
                 string descuentoCostoPorcentaje = productonuevo.DescuentoCostoPorcentaje.ToString().Replace(",",".");
                 string recargoPorcentaje = productonuevo.RecargoPorcentaje.ToString().Replace(",", ".");
                 string final = productonuevo.Final.ToString().Replace(",", ".");
-                string iva = productonuevo.Iva.ToString().Replace(",", ".");    
+                string iva = productonuevo.Iva.ToString().Replace(",", ".");
+                string ajustePesos = productonuevo.AjustePesos.ToString().Replace(",", ".");
 
-                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[DescuentoCosto%],Iva,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','"+ descuentoCostoPorcentaje +"','"+ iva +"' ,'"+ recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','" + productonuevo.Activo + "',@idRubro,@idProveedores)");
+                datos.seterarConsulta("INSERT INTO Productos (Descripcion,Costo,[DescuentoCosto%],Iva,AjustePesos,[Recargo%],Final,FechaModificacion,Activo,idRubro,idProveedores) VALUES ('" + productonuevo.Descripcion + "','" + costo + "','"+ descuentoCostoPorcentaje +"','"+ iva + "' ,'"+ ajustePesos +"' ,'" + recargoPorcentaje + "','" + final + "','" + productonuevo.FechaModificacion + "','" + productonuevo.Activo + "',@idRubro,@idProveedores)");
                 
                 datos.setearParametro("@idProveedores", productonuevo.Proveedores.idProveedores);
                 datos.setearParametro("@idRubro", productonuevo.Rubro.idRubro);
@@ -221,13 +226,14 @@ namespace Negocio
                 //string costo = productoModificar.Costo.ToString().Replace(",", ".");
                 //string recargoPorcentaje = productoModificar.RecargoPorcentaje.ToString().Replace(",", ".");
                 //string final = productoModificar.Final.ToString().Replace(",", ".");
-                datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo,[DescuentoCosto%] = @DescuentoCosto, Iva = @Iva, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
+                datos.seterarConsulta("UPDATE Productos SET Descripcion = @Descripcion, Costo = @Costo,[DescuentoCosto%] = @DescuentoCosto, Iva = @Iva, AjustePesos = @AjustePesos, [Recargo%] = @Recargo, Final = @Final, FechaModificacion = @FechaModificacion, Activo = @Activo, idRubro = @idRubro, idProveedores = @idProveedores WHERE idProductos = @idProducto");
 
 
                 datos.setearParametro("@Descripcion", productoModificar.Descripcion);
                 datos.setearParametro("@Costo", productoModificar.Costo);
                 datos.setearParametro("@DescuentoCosto", productoModificar.DescuentoCostoPorcentaje);
                 datos.setearParametro("@Iva",productoModificar.Iva);
+                datos.setearParametro("@AjustePesos", productoModificar.AjustePesos);
                 datos.setearParametro("@Recargo", productoModificar.RecargoPorcentaje);
                 datos.setearParametro("@Final", productoModificar.Final);
                 datos.setearParametro("@FechaModificacion", productoModificar.FechaModificacion);

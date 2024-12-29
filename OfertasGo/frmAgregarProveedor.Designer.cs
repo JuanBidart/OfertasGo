@@ -333,7 +333,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAgregarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "Agregar Proveedor";
+            this.Text = "    ";
             this.Load += new System.EventHandler(this.frmAgregarProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProveedores)).EndInit();
             this.ResumeLayout(false);

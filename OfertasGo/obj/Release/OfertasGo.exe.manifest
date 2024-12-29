@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="OfertasGo.exe" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="OfertasGo.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="OfertasGo" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OY5ErGdp75hpIS0Vzf5WHUAaMl1R3ElcHnD+GgKbnFY=</dsig:DigestValue>
+        <dsig:DigestValue>SgcMb6D++L/i5U7OapLPpvCYSay9CTFZjNzBv4uCrYg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GzcD9Hc1QkI5Ygw21A3343gOWvgTU9VifAsE0mXhY08=</dsig:DigestValue>
+        <dsig:DigestValue>pHSK1BYWaVKJRGjDfRWOrhNCpBA82DUqPl/T7/3jSsA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="18432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="18944">
       <assemblyIdentity name="Negocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UHcsTtthuEHmiEPxycSSOpSVJI107xl+XdTJ5QgAN9s=</dsig:DigestValue>
+        <dsig:DigestValue>qTYefEjaKgTT/cYseKoRdFZcIq2F9I8zPLf3u+ypimA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="394736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="396272">
       <assemblyIdentity name="OfertasGo" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RxREb7tolNOZ1AF6w53yCYptKzQB6yidb/s+Ui4HEpc=</dsig:DigestValue>
+        <dsig:DigestValue>BYY687Sf8rJQQ61JCdXe4b4nXWq/VjFh3UzgEtO+d+Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -170,22 +170,13 @@
       <dsig:DigestValue>O8MyiaF5DnDlnss5zcIWrAdqiSicbtUbt6ops4I4mcA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Database\dbofertas.db" size="77824">
+  <file name="OfertasGo.exe.config" size="2345">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EfbDDkIemeEHf3rqzBYq6iSXGaFJw3XF1SVDdC/D91k=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="OfertasGo.exe.config" size="2355">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x7v8dTJygGgfe3aKloMge1B43t0f/1pPhr5NCv7rIuE=</dsig:DigestValue>
+      <dsig:DigestValue>0yPF9/BzFfBXzzM4jnAbgXN/pMDtFsV8H6E99Ywnbb8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SQLite.Interop.dll" size="1491632">

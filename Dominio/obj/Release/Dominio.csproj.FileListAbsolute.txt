@@ -4,3 +4,9 @@ C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Release\Dominio.
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Release\Dominio.dll
 C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\Dominio\obj\Release\Dominio.pdb
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\bin\Release\Dominio.dll
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\bin\Release\Dominio.pdb
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\obj\Release\Dominio.csproj.AssemblyReference.cache
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\obj\Release\Dominio.dll
+C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\Dominio\obj\Release\Dominio.pdb

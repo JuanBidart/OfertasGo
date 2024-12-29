@@ -1,30 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\",
+  "WorkspaceRootPath": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juan diego\\desktop\\prueba visual\\ofertasgo\\ofertasgo\\listaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\listaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juan diego\\desktop\\prueba visual\\ofertasgo\\ofertasgo\\listaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\listaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\ofertasgo\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\ofertasgo\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\ofertasgo\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juandi\\desktop\\ofertasgo-master\\ofertasgo\\ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,76 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ListaProductos.cs",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\ListaProductos.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\ListaProductos.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\ListaProductos.cs",
-              "RelativeToolTip": "OfertasGo\\ListaProductos.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAYwBUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T22:27:52.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmProductos.cs",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmProductos.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\frmProductos.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmProductos.cs",
-              "RelativeToolTip": "OfertasGo\\frmProductos.cs",
-              "ViewState": "AQIAAL8BAAAAAAAAAAAowE4BAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T02:10:09.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmProductos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmProductos.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\frmProductos.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmProductos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "OfertasGo\\frmProductos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T02:10:06.779Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Lista.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\Lista.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\Lista.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\Lista.cs [Dise\u00F1o]",
-              "RelativeToolTip": "OfertasGo\\Lista.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T04:30:02.881Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAgregarProducto.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
+              "Title": "frmAgregarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
               "RelativeDocumentMoniker": "OfertasGo\\frmAgregarProducto.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs [Dise\u00F1o]",
-              "RelativeToolTip": "OfertasGo\\frmAgregarProducto.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
+              "RelativeToolTip": "OfertasGo\\frmAgregarProducto.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAqwGUBAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T03:39:15.74Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ListaProductos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\ListaProductos.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\ListaProductos.cs",
-              "ToolTip": "C:\\Users\\Juan Diego\\Desktop\\prueba visual\\OfertasGo\\OfertasGo\\ListaProductos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "OfertasGo\\ListaProductos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T04:42:12.186Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-12-07T02:44:59.933Z",
+              "EditorCaption": ""
             }
           ]
         }

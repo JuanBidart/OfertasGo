@@ -53,6 +53,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPorcentajeDescuento = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtAjuste = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(56, 339);
+            this.label4.Location = new System.Drawing.Point(59, 390);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
@@ -105,7 +107,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(57, 396);
+            this.label5.Location = new System.Drawing.Point(433, 379);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 4;
@@ -145,9 +147,9 @@
             // txtFinal
             // 
             this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFinal.Location = new System.Drawing.Point(120, 340);
+            this.txtFinal.Location = new System.Drawing.Point(123, 391);
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(101, 26);
+            this.txtFinal.Size = new System.Drawing.Size(128, 26);
             this.txtFinal.TabIndex = 9;
             // 
             // btnAceptar
@@ -180,7 +182,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(122, 395);
+            this.dtpFecha.Location = new System.Drawing.Point(495, 379);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 8;
@@ -276,7 +278,7 @@
             // 
             this.lblinfofecha.AutoSize = true;
             this.lblinfofecha.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lblinfofecha.Location = new System.Drawing.Point(63, 379);
+            this.lblinfofecha.Location = new System.Drawing.Point(411, 402);
             this.lblinfofecha.Name = "lblinfofecha";
             this.lblinfofecha.Size = new System.Drawing.Size(284, 13);
             this.lblinfofecha.TabIndex = 19;
@@ -334,12 +336,34 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
+            // txtAjuste
+            // 
+            this.txtAjuste.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAjuste.Location = new System.Drawing.Point(121, 341);
+            this.txtAjuste.Name = "txtAjuste";
+            this.txtAjuste.Size = new System.Drawing.Size(128, 26);
+            this.txtAjuste.TabIndex = 25;
+            this.txtAjuste.TextChanged += new System.EventHandler(this.txtAjuste_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(57, 340);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 20);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Ajuste";
+            // 
             // frmAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(702, 551);
+            this.Controls.Add(this.txtAjuste);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPorcentajeDescuento);
             this.Controls.Add(this.label9);
@@ -402,5 +426,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPorcentajeDescuento;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtAjuste;
+        private System.Windows.Forms.Label label10;
     }
 }

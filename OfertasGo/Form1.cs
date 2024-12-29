@@ -44,6 +44,8 @@ namespace OfertasGo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            btnCargardb.Enabled = false;
+
             tsslFecha.Spring = true;
             tsslFecha.TextAlign = ContentAlignment.TopRight;
 
@@ -253,6 +255,13 @@ namespace OfertasGo
             frmEjecutarSentenciaSql frmEjecutarSentenciaSql = new frmEjecutarSentenciaSql();
             frmEjecutarSentenciaSql.ShowDialog();
             this.Opacity = 100;
+        }
+
+        private void btnListaProductos_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            ListaProductos listaProductos = new ListaProductos();
+            listaProductos.ShowDialog();
         }
     }
 }
