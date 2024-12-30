@@ -362,9 +362,9 @@ namespace OfertasGo
                         double recargo = double.Parse(txtRecargo.Text.Replace(".", ","));
                         double ajuste = double.Parse(txtAjuste.Text.Replace(".", ","));
 
-                        costodescuento = ((costo * descuento) / 100);
-                        costo_iva = ((costo * iva) / 100);
-                        costorecargo = ((costo * recargo) / 100);
+                        costodescuento = (costo * descuento) / 100;
+                        costo_iva = (costo * iva) / 100;
+                        costorecargo = (costo * recargo) / 100;
                         final = costo - costodescuento + (costo_iva + costorecargo) + ajuste;
 
                         cbxIva.Text = iva.ToString();
