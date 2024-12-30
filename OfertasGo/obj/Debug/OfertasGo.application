@@ -7,14 +7,14 @@
     <framework targetVersion="4.8.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="OfertasGo.exe.manifest" size="11541">
+    <dependentAssembly dependencyType="install" codebase="OfertasGo.exe.manifest" size="14328">
       <assemblyIdentity name="OfertasGo.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gvWs7Wb86h/bOzEUv8eKt6c6ICNueNE2NQEjg1wY6vw=</dsig:DigestValue>
+        <dsig:DigestValue>njqM3Mvr4TW2+OZV7Q1ydOtgTAnJzLBkE94ptmIBXKk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

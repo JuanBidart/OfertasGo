@@ -1,13 +1,8 @@
-﻿using Dominio;
-using Negocio;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
+﻿using System;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace OfertasGo
 {
@@ -16,20 +11,20 @@ namespace OfertasGo
     {
         public TProductos producto = null;
         public bool paso = false;
-        public double[] ivaparacbx = { 0, 10.5,21,27};
+        public double[] ivaparacbx = { 0, 10.5, 21, 27 };
 
         public frmAgregarProducto()
         {
             InitializeComponent();
-            this.TopLevel= true;
+            this.TopLevel = true;
             this.TopMost = true;
             lblinfofecha.Visible = false;
             cbxRubro.DropDownStyle = ComboBoxStyle.DropDown;
             cbxRubro.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbxRubro.AutoCompleteCustomSource = devolverdatos();
             cbxRubro.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            
-            
+
+
         }
         public frmAgregarProducto(TProductos producto)
         {
@@ -37,20 +32,20 @@ namespace OfertasGo
             InitializeComponent();
             this.producto = producto;
             this.Text = "Modificar Producto";
-           dtpFecha.Enabled = false;
+            dtpFecha.Enabled = false;
             lblinfofecha.Visible = true;
             this.TopLevel = true;
             this.TopMost = true;
             ;
-            
+
 
         }
-        
-        private AutoCompleteStringCollection devolverdatos() 
+
+        private AutoCompleteStringCollection devolverdatos()
         {
             AutoCompleteStringCollection autoCompleteStrings = new AutoCompleteStringCollection();
             ConexionRubro conexionRubro = new ConexionRubro();
-           
+
             foreach (var item in conexionRubro.listarRubro())
             {
                 autoCompleteStrings.Add(item.Rubro);
@@ -91,37 +86,37 @@ namespace OfertasGo
                 producto.Rubro = (TRubro)cbxRubro.SelectedItem;
                 producto.Proveedores = (TProveedores)cbxProveedor.SelectedItem;
 
-                
-                    if (producto.idProductos != 0)
+
+                if (producto.idProductos != 0)
+                {
+                    productodb.modificarProducto(producto);
+                    MessageBox.Show("Modificado", "OK");
+                    Dispose();
+                    Close();
+
+                }
+                else
+                {
+                    productodb.agregarProducto(producto);
+                    if (producto.Rubro != null)
                     {
-                        productodb.modificarProducto(producto);
-                        MessageBox.Show("Modificado", "OK");
-                        Dispose();
-                       Close();
+                        MessageBox.Show("Agregado exitosamente");
 
                     }
                     else
                     {
-                        productodb.agregarProducto(producto);
-                        if (producto.Rubro != null)
-                        {
-                        MessageBox.Show("Agregado exitosamente");
-
-                        }
-                        else
-                        {
-                        MessageBox.Show("No se Pudo agregar \n Verifique el campo RUBRO","ERROR DEL RUBRO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("No se Pudo agregar \n Verifique el campo RUBRO", "ERROR DEL RUBRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     Dispose();
                     Close();
 
-                    }
-                        
-                       
-                    
-                
+                }
 
-                
+
+
+
+
+
 
 
             }
@@ -181,12 +176,12 @@ namespace OfertasGo
                 txtDescripcion.Focus();
 
                 cbxIva.Items.Add("0"); cbxIva.Items.Add("10.5"); cbxIva.Items.Add("21"); cbxIva.Items.Add("27");
-                cbxIva.SelectedIndex=0 ;
+                cbxIva.SelectedIndex = 0;
 
 
                 actComboBoxRubro();
                 actComboBoxProveedores();
-                paso=true;
+                paso = true;
             }
 
             else
@@ -197,7 +192,7 @@ namespace OfertasGo
                 cbxProveedor.DisplayMember = "RazonSocial";
                 cbxRubro.ValueMember = "idRubro";
                 cbxRubro.DisplayMember = "Rubro";
-                
+
                 switch (cbxIva.Text = producto.Iva.ToString())
                 {
                     case "0":
@@ -226,7 +221,7 @@ namespace OfertasGo
                 cbxProveedor.SelectedValue = producto.Proveedores.idProveedores;
                 cbxRubro.SelectedValue = producto.Rubro.idRubro;
                 paso = true;
-                    
+
 
             }
 
@@ -339,11 +334,11 @@ namespace OfertasGo
             cbxProveedor.Focus();
         }
 
-        
+
         private void cbxRubro_TextChanged(object sender, EventArgs e)
         {
             string filtro = cbxRubro.Text.ToUpper();
-          
+
 
         }
 
@@ -395,9 +390,9 @@ namespace OfertasGo
         {
             if (paso) calcularResultadoFinal(txtPorcentajeDescuento);
 
-           
+
         }
-        private void calcularResultadoFinal(TextBox textBox) 
+        private void calcularResultadoFinal(TextBox textBox)
         {
 
             try
@@ -408,7 +403,7 @@ namespace OfertasGo
                     double final;
                     double costodescuento;
                     double costorecargo;
-                    
+
 
                     double descuento = double.Parse(txtPorcentajeDescuento.Text.Replace(".", ","));
                     double costo = double.Parse(txtCosto.Text.Replace(".", ","));
@@ -419,7 +414,7 @@ namespace OfertasGo
                     costodescuento = ((costo * descuento) / 100);
                     costo_iva = ((costo * iva) / 100);
                     costorecargo = ((costo * recargo) / 100);
-                    final = costo - costodescuento + (costo_iva + costorecargo)+ajuste;
+                    final = costo - costodescuento + (costo_iva + costorecargo) + ajuste;
 
                     cbxIva.Text = iva.ToString();
                     txtFinal.Text = final.ToString();
@@ -437,7 +432,7 @@ namespace OfertasGo
 
                 throw ex;
             }
-            
+
 
 
         }
@@ -451,14 +446,15 @@ namespace OfertasGo
                 {
                     if (paso) calcularResultadoFinal(txtAjuste);
                 }
-                else {
+                else
+                {
                     int cont = tecleado.Length;
-                    tecleado.Remove(cont-1);
+                    tecleado.Remove(cont - 1);
                     txtAjuste.Text = tecleado;
                 }
             }
-            
-            
+
+
         }
     }
 }

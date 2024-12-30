@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionesExternas", "ConexionesExternas\ConexionesExternas.csproj", "{75379594-9404-41CD-B7D1-1F52B03E334C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupOfertasGoProgram", "SetupOfertasGoProgram\SetupOfertasGoProgram.vdproj", "{3247DA2F-E701-450A-B347-DBBEA2185D66}"
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfertasgoSetup", "OfertasgoSetup\OfertasgoSetup.vdproj", "{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}"
 EndProject
 Global
@@ -55,10 +53,6 @@ Global
 		{75379594-9404-41CD-B7D1-1F52B03E334C}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{75379594-9404-41CD-B7D1-1F52B03E334C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75379594-9404-41CD-B7D1-1F52B03E334C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3247DA2F-E701-450A-B347-DBBEA2185D66}.All|Any CPU.ActiveCfg = Debug
-		{3247DA2F-E701-450A-B347-DBBEA2185D66}.Debug|Any CPU.ActiveCfg = Debug
-		{3247DA2F-E701-450A-B347-DBBEA2185D66}.DefaultBuild|Any CPU.ActiveCfg = Debug
-		{3247DA2F-E701-450A-B347-DBBEA2185D66}.Release|Any CPU.ActiveCfg = Release
 		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.All|Any CPU.ActiveCfg = Debug
 		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.Debug|Any CPU.ActiveCfg = Debug
 		{E7CA8CA2-111E-43D3-845A-5AFD27E6B55D}.DefaultBuild|Any CPU.ActiveCfg = Debug

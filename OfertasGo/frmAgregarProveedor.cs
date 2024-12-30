@@ -1,10 +1,9 @@
-﻿using Dominio;
-using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace OfertasGo
 {
@@ -102,7 +101,7 @@ namespace OfertasGo
         private void cargardgvLista()
         {
             ConexionProveedores conexionProveedores = new ConexionProveedores();
-             listaProveedores =  conexionProveedores.listarProveedores(false); //carga a la propiedad de la clase
+            listaProveedores = conexionProveedores.listarProveedores(false); //carga a la propiedad de la clase
             dgvListaProveedores.DataSource = listaProveedores;
             tacharProveedorDesactivado();
         }
@@ -120,8 +119,8 @@ namespace OfertasGo
                 dgvListaProveedores.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
                 dgvListaProveedores.Columns["Eliminado"].Visible = false;
                 btnNuevo.Enabled = true;
-                
-                
+
+
 
 
 
@@ -137,7 +136,7 @@ namespace OfertasGo
 
             }
         }
-        
+
         private void tacharProveedorDesactivado()
         {
             foreach (DataGridViewRow row in dgvListaProveedores.Rows)
@@ -146,7 +145,7 @@ namespace OfertasGo
 
                 if (activoValue == 0)
                 {
-                    
+
                     row.DefaultCellStyle.BackColor = Color.Gray;
                 }
             }
@@ -162,7 +161,7 @@ namespace OfertasGo
             txtEmail.Text = selecionadoid.Email.ToString();
             txtTelefono.Text = selecionadoid.Telefono.ToString();
             txtTelefono2.Text = selecionadoid.Telefono2.ToString();
-            if (selecionadoid.Activo ==1)
+            if (selecionadoid.Activo == 1)
             {
                 cbxActivo.Checked = true;
             }

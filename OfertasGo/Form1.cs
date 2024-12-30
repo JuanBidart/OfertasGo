@@ -1,19 +1,18 @@
-﻿using ConexionesExternas;
-using Dominio;
-using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Security.Policy;
 using System.Windows.Forms;
+using ConexionesExternas;
+using Dominio;
+using Negocio;
 
 namespace OfertasGo
 {
     public partial class Form1 : Form
     {
-        
+
         string fechalarga;
         string Hora;
         public Form1()
@@ -157,9 +156,9 @@ namespace OfertasGo
 
 
             }
-            catch (IOException) 
+            catch (IOException)
             {
-                MessageBox.Show("Ya exite la base de datos intente en un minuto","Error",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+                MessageBox.Show("Ya exite la base de datos intente en un minuto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
 
             catch (Exception ex)
@@ -176,7 +175,7 @@ namespace OfertasGo
         {
             ConexionProveedores conexionProveedores = new ConexionProveedores();
             List<TProveedores> listapr = new List<TProveedores>();
-            listapr =  conexionProveedores.listarProveedores(false);
+            listapr = conexionProveedores.listarProveedores(false);
             TProveedores proveedores = listapr[0];
             frmAgregarProveedor frmAgregarProveedor = new frmAgregarProveedor(proveedores);
             frmAgregarProveedor.ShowDialog();
@@ -202,13 +201,13 @@ namespace OfertasGo
                             foreach (var item in Directory.EnumerateFiles("./Database"))
                             {
                                 archivos.Add(item.Trim());
-                                
+
                             }
                             foreach (var archivo in archivos)
                             {
                                 File.Delete(archivo);
                             }
-                            
+
                         }
                         else
                         {
@@ -220,25 +219,26 @@ namespace OfertasGo
                         File.Copy(databaseNueva, ".\\Database\\dbofertas.db");
 
                         MessageBox.Show("Carga exitosa");
-                    }ofd.Dispose();
+                    }
+                    ofd.Dispose();
                 }
             }
 
-            catch (ArgumentException) 
-            { 
-               
+            catch (ArgumentException)
+            {
+
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error"+ex.Message.ToString());
+                MessageBox.Show("Error" + ex.Message.ToString());
             }
-           
+
         }
 
         private void cargarDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           button1_Click(sender, e);
+            button1_Click(sender, e);
         }
 
         private void backupDBToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,7 +246,7 @@ namespace OfertasGo
             btnBackupDB_Click(sender, e);
         }
 
-       
+
 
         private void sentenciaDBToolStripMenuItem_Click(object sender, EventArgs e)
         {

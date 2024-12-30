@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juandi\\desktop\\ofertasgo-master\\ofertasgo\\ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmAgregarProducto.cs",
-              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\frmAgregarProducto.cs",
-              "ToolTip": "C:\\Users\\juandi\\Desktop\\OfertasGo-master\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
-              "RelativeToolTip": "OfertasGo\\frmAgregarProducto.cs",
-              "ViewState": "AgIAAFoBAAAAAAAAAAAqwGUBAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T02:44:59.933Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

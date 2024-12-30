@@ -1,13 +1,7 @@
-﻿using Dominio;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 using Negocio;
 
 namespace OfertasGo
@@ -25,11 +19,11 @@ namespace OfertasGo
             InitializeComponent();
             listadeProductosSeleccionados = listadeSelecionados;
         }
-        private void ActualizarLista() 
+        private void ActualizarLista()
         {
-            
+
             dgvSelecionados.DataSource = listadeProductosSeleccionados;
-        
+
         }
         private void Lista_Load(object sender, EventArgs e)
         {
@@ -85,7 +79,7 @@ namespace OfertasGo
                         if (!(robPeso.Checked) && !(robPorcentaje.Checked))
                         {
                             MessageBox.Show("Selecione unna opcion de cambio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                           
+
                             return;
                         }
                         productodb.modificarProducto(item);
@@ -97,8 +91,9 @@ namespace OfertasGo
                     MessageBox.Show("Tarea realizada con exito", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                else {
-                    MessageBox.Show("Ingrese un dato en la caja de texto","Dato vacio");
+                else
+                {
+                    MessageBox.Show("Ingrese un dato en la caja de texto", "Dato vacio");
                 }
             }
             catch (Exception)
@@ -106,7 +101,7 @@ namespace OfertasGo
 
                 throw;
             }
-            
+
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using Dominio;
-using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace OfertasGo
 {
@@ -15,7 +15,7 @@ namespace OfertasGo
         public frmListaProductos()
         {
             InitializeComponent();
-            listaTotalProductos = conexionProductodb.listarProductosTodos(true,true);
+            listaTotalProductos = conexionProductodb.listarProductosTodos(true, true);
         }
 
         private void frmListaProductos_Load(object sender, EventArgs e)
@@ -96,6 +96,6 @@ namespace OfertasGo
             }
         }
 
-       
+
     }
 }

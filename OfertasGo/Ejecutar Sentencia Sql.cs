@@ -1,15 +1,8 @@
-﻿using Negocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace OfertasGo
 {
@@ -18,23 +11,23 @@ namespace OfertasGo
         //private ProgressBar progressBar;
         public frmEjecutarSentenciaSql()
         {
-            
+
             InitializeComponent();
 
         }
 
         private void btnEjecutar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea hacer una copia de la base de datos antes de modificar? \n ¡ES MUY RECOMENDABLE QUE LO HAGA!", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
+            if (MessageBox.Show("¿Desea hacer una copia de la base de datos antes de modificar? \n ¡ES MUY RECOMENDABLE QUE LO HAGA!", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Form1 form1 = new Form1();
                 form1.btnBackupDB_Click(this, new EventArgs());
-            } 
-           
+            }
+
             Cursor = Cursors.WaitCursor;
             if (textBox1.Text == string.Empty)
             {
-                MessageBox.Show("Debe escribir o cargar la sentencia a ejecutar","No puede estar vacio",default,MessageBoxIcon.Error);
+                MessageBox.Show("Debe escribir o cargar la sentencia a ejecutar", "No puede estar vacio", default, MessageBoxIcon.Error);
                 Cursor = Cursors.Default;
                 return;
             }
@@ -57,19 +50,19 @@ namespace OfertasGo
                 Thread.Sleep(1000);
                 progressBar1.PerformStep();
                 lblEstado.Text = "Exitoso...";
-                MessageBox.Show("Ejecucion realizada con exito","Exitoso",default,MessageBoxIcon.Asterisk);
+                MessageBox.Show("Ejecucion realizada con exito", "Exitoso", default, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
             {
                 lblEstado.Text = "Error";
                 MessageBox.Show(ex.Message, "ERROR", default, MessageBoxIcon.Error);
-                
+
             }
-            finally 
-            { 
-                accesoDatos.cerrarConexion(); 
+            finally
+            {
+                accesoDatos.cerrarConexion();
                 Cursor = Cursors.Default;
-                
+
             }
         }
 
@@ -83,7 +76,7 @@ namespace OfertasGo
         private void frmEjecutarSentenciaSql_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
-            
+
         }
 
         private void btnCargarArchivo_Click(object sender, EventArgs e)
@@ -102,10 +95,10 @@ namespace OfertasGo
                 textBox1.Text = streamReader.ReadLine();
                 streamReader.Close();
             }
-            else {  }
+            else { }
 
         }
 
-      
+
     }
 }
