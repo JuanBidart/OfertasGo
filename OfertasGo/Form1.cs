@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -43,6 +44,10 @@ namespace OfertasGo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (ConfigurationManager.AppSettings["Actualizacion"] == "true")
+            {
+                MessageBox.Show("su sistema esta actualizado","OK",MessageBoxButtons.OK,MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button1);
+            }
             btnCargardb.Enabled = false;
 
             tsslFecha.Spring = true;

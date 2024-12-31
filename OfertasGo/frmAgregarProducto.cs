@@ -76,6 +76,7 @@ namespace OfertasGo
                 producto.Final = double.Parse(txtFinal.Text.Replace(".", ","));
                 producto.FechaModificacion = DateTime.Now.Date.ToString("dd/MM/yy"); // dtpFecha.Value.Date.ToString("dd/MM/yy");
                 producto.Iva = double.Parse(cbxIva.Text.Replace(".", ","));
+                producto.AjustePesos = double.Parse(txtAjuste.Text.Replace(".", ","));
 
                 if (chbactivo.Checked)
                 {
