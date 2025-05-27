@@ -42,6 +42,8 @@ namespace OfertasGo
             this.cargarDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sentenciaDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rubrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tslAcercade = new System.Windows.Forms.ToolStripLabel();
             this.tslVersion = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -118,7 +120,8 @@ namespace OfertasGo
             // tslConfiguracion
             // 
             this.tslConfiguracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.baseDeDatosToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem,
+            this.modificarDatosToolStripMenuItem});
             this.tslConfiguracion.Name = "tslConfiguracion";
             this.tslConfiguracion.Size = new System.Drawing.Size(96, 22);
             this.tslConfiguracion.Text = "Configuración";
@@ -130,7 +133,7 @@ namespace OfertasGo
             this.backupDBToolStripMenuItem,
             this.sentenciaDBToolStripMenuItem});
             this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
-            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.baseDeDatosToolStripMenuItem.Text = "Base de datos";
             // 
             // cargarDBToolStripMenuItem
@@ -153,6 +156,21 @@ namespace OfertasGo
             this.sentenciaDBToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.sentenciaDBToolStripMenuItem.Text = "Sentencia DB";
             this.sentenciaDBToolStripMenuItem.Click += new System.EventHandler(this.sentenciaDBToolStripMenuItem_Click);
+            // 
+            // modificarDatosToolStripMenuItem
+            // 
+            this.modificarDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rubrosToolStripMenuItem});
+            this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
+            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
+            // 
+            // rubrosToolStripMenuItem
+            // 
+            this.rubrosToolStripMenuItem.Name = "rubrosToolStripMenuItem";
+            this.rubrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rubrosToolStripMenuItem.Text = "Rubros";
+            this.rubrosToolStripMenuItem.Click += new System.EventHandler(this.rubrosToolStripMenuItem_Click);
             // 
             // tslAcercade
             // 
@@ -313,6 +331,8 @@ namespace OfertasGo
         private System.Windows.Forms.ToolStripMenuItem backupDBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sentenciaDBToolStripMenuItem;
         private System.Windows.Forms.Button btnListaProductos;
+        private System.Windows.Forms.ToolStripMenuItem modificarDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rubrosToolStripMenuItem;
     }
 }
 

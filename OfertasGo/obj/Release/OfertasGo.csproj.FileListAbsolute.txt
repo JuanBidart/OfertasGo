@@ -104,6 +104,7 @@ C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\ConexionesExte
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Dominio.dll
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\EntityFramework.dll
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\FuncionesComunes.dll
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Negocio.dll
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\System.Buffers.dll
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\System.Data.SQLite.dll
@@ -117,6 +118,7 @@ C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\ConexionesExte
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\ConexionesExternas.dll.config
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Dominio.pdb
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Dominio.dll.config
+C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\FuncionesComunes.pdb
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Negocio.pdb
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\Negocio.dll.config
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Release\EntityFramework.xml
@@ -136,7 +138,7 @@ C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.frmA
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.frmAgregarRubro.resources
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.frmListaProductos.resources
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.frmProductos.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.Lista.resources
+C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.ModificarLote.resources
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.ListaProductos.resources
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.Properties.Resources.resources
 C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Release\OfertasGo.csproj.GenerateResource.cache

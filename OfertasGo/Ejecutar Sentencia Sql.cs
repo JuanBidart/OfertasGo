@@ -76,7 +76,9 @@ namespace OfertasGo
         private void frmEjecutarSentenciaSql_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
-
+            this.WindowState = FormWindowState.Normal;
+            this.TopLevel = true;
+            this.TopMost = true;
         }
 
         private void btnCargarArchivo_Click(object sender, EventArgs e)
@@ -92,13 +94,16 @@ namespace OfertasGo
 
                 archivo = Path.GetFullPath(dlg.FileName);
                 StreamReader streamReader = new StreamReader(archivo);
-                textBox1.Text = streamReader.ReadLine();
+                textBox1.Text = streamReader.ReadToEnd();
                 streamReader.Close();
             }
             else { }
 
         }
 
-
+        private void frmEjecutarSentenciaSql_MouseLeave(object sender, EventArgs e)
+        {
+            TopMost = false;
+        }
     }
 }

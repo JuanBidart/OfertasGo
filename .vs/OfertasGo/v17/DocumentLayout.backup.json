@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juandi\\desktop\\programas\\ofertasgo\\ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juandi\\desktop\\programas\\ofertasgo\\ofertasgo\\frmagregarrubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarrubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|c:\\users\\juandi\\desktop\\programas\\ofertasgo\\ofertasgo\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\ofertasgo\\frmagregarrubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3677E8F6-BD76-4886-9F8C-C101606CB76C}|OfertasGo\\OfertasGo.csproj|solutionrelative:ofertasgo\\frmagregarrubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\App.config",
-              "RelativeDocumentMoniker": "OfertasGo\\App.config",
-              "ToolTip": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\App.config",
-              "RelativeToolTip": "OfertasGo\\App.config",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-31T13:51:14.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmAgregarProducto.cs",
-              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\frmAgregarProducto.cs",
-              "ToolTip": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
-              "RelativeToolTip": "OfertasGo\\frmAgregarProducto.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAjwE4AAABWAAAAAAAAAA==",
+              "Title": "frmAgregarRubro.cs",
+              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarRubro.cs",
+              "RelativeDocumentMoniker": "OfertasGo\\frmAgregarRubro.cs",
+              "ToolTip": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarRubro.cs",
+              "RelativeToolTip": "OfertasGo\\frmAgregarRubro.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAhwDMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T04:34:21.182Z",
+              "WhenOpened": "2025-01-08T17:20:08.402Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmAgregarProducto.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs",
-              "RelativeDocumentMoniker": "OfertasGo\\frmAgregarProducto.cs",
-              "ToolTip": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarProducto.cs [Dise\u00F1o]",
-              "RelativeToolTip": "OfertasGo\\frmAgregarProducto.cs [Dise\u00F1o]",
+              "Title": "frmAgregarRubro.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarRubro.cs",
+              "RelativeDocumentMoniker": "OfertasGo\\frmAgregarRubro.cs",
+              "ToolTip": "C:\\Users\\juandi\\Desktop\\Programas\\OfertasGo\\OfertasGo\\frmAgregarRubro.cs [Dise\u00F1o]",
+              "RelativeToolTip": "OfertasGo\\frmAgregarRubro.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T04:36:32.474Z",
+              "WhenOpened": "2025-01-08T17:10:02.451Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

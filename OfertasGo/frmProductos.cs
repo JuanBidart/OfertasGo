@@ -534,7 +534,7 @@ namespace OfertasGo
 
 
 
-            Lista listaa = new Lista(listaSelecionados);
+            ModificarLote listaa = new ModificarLote(listaSelecionados);
             listaa.ShowDialog();
             actualizaLista();
             actualizaHistorial();
@@ -671,14 +671,23 @@ namespace OfertasGo
             MessageBox.Show(productoSeleccionado.Descripcion + "\n" + "$" + productoSeleccionado.Final, "Producto", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
         }
 
-        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
+            // Obtener la posición del mouse al hacer clic derecho
+            Point posicionMouse = dgvProductos.PointToClient(Cursor.Position);
+
+            // Verificar si la posición está dentro del DataGridView
+            if (!dgvProductos.ClientRectangle.Contains(posicionMouse))
+            {
+                e.Cancel = true; // Cancelar la apertura del menú contextual
+            }
+            if (dgvProductos.RowCount == 0)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void btnBorrarDatosHistorial_Click(object sender, EventArgs e)
@@ -733,6 +742,38 @@ namespace OfertasGo
         {
             this.TopMost = false;
         }
+
+        private void cmsCopiaProductos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<TProductos> listaSeleccionados = new List<TProductos>();
+                for (int i = 0; i < dgvProductos.SelectedRows.Count; i++)
+                {
+                    var seleccion = (TProductos)dgvProductos.SelectedRows[i].DataBoundItem;
+                    listaSeleccionados.Add(seleccion);
+                }
+                var listaSelecOrdenada = listaSeleccionados.OrderBy(x => x.Descripcion);
+                // Construir la lista formateada correctamente
+                string listaFormateada = string.Join("\n", listaSelecOrdenada.Select(p => $"{p.Descripcion.PadRight(30, '-')}{p.Costo.ToString("C0", CultureInfo.CreateSpecificCulture("ES-ar"))}")
+                    .Prepend(new string('-', 55)).Prepend("Producto".PadRight(50, ' ') + "Costo"));
+                              
+                Clipboard.SetText(listaFormateada);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
+
+        private void selecionasarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgvProductos.SelectAll();
+        }
+
+       
     }
 
 }

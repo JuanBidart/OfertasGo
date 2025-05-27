@@ -1,0 +1,15 @@
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\FuncionesComunes.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\FuncionesComunes.pdb
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Dominio.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Negocio.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\System.Data.SQLite.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Dominio.pdb
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Dominio.dll.config
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Negocio.pdb
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\Negocio.dll.config
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\bin\Release\System.Data.SQLite.xml
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\obj\Release\FuncionesComunes.csproj.AssemblyReference.cache
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\obj\Release\FuncionesComunes.csproj.CoreCompileInputs.cache
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\obj\Release\Funcione.DB4230F7.Up2Date
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\obj\Release\FuncionesComunes.dll
+C:\Users\juandi\Desktop\Programas\OfertasGo\FuncionesComunes\obj\Release\FuncionesComunes.pdb

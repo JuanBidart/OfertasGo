@@ -57,9 +57,11 @@
             this.btnCambiarPorLotes = new System.Windows.Forms.Button();
             this.btnVermas = new System.Windows.Forms.Button();
             this.btnVermenos = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prueba2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuContextual = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsCopiaProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.elegirColumnasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selecionasarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnBorrarDatosHistorial = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -68,7 +70,7 @@
             label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.MenuContextual.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHistorial
@@ -122,6 +124,8 @@
             this.dgvProductos.Location = new System.Drawing.Point(12, 79);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.ReadOnly = true;
+            this.dgvProductos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1055, 250);
             this.dgvProductos.TabIndex = 0;
@@ -423,30 +427,50 @@
             this.btnVermenos.UseVisualStyleBackColor = false;
             this.btnVermenos.Click += new System.EventHandler(this.btnVermenos_Click);
             // 
-            // contextMenuStrip1
+            // MenuContextual
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pruebaToolStripMenuItem,
-            this.prueba2ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
-            this.contextMenuStrip1.Text = "HOla";
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.MenuContextual.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsCopiaProductos,
+            this.selecionasarTodosToolStripMenuItem});
+            this.MenuContextual.Name = "contextMenuStrip1";
+            this.MenuContextual.Size = new System.Drawing.Size(172, 48);
+            this.MenuContextual.Text = "HOla";
+            this.MenuContextual.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // pruebaToolStripMenuItem
+            // cmsCopiaProductos
             // 
-            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.pruebaToolStripMenuItem.Text = "Prueba";
-            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
+            this.cmsCopiaProductos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.elegirColumnasToolStripMenuItem,
+            this.proveedorToolStripMenuItem});
+            this.cmsCopiaProductos.Name = "cmsCopiaProductos";
+            this.cmsCopiaProductos.Size = new System.Drawing.Size(171, 22);
+            this.cmsCopiaProductos.Text = "Copiar Producto\\s";
+            this.cmsCopiaProductos.Click += new System.EventHandler(this.cmsCopiaProductos_Click);
             // 
-            // prueba2ToolStripMenuItem
+            // elegirColumnasToolStripMenuItem
             // 
-            this.prueba2ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
-            this.prueba2ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.prueba2ToolStripMenuItem.Name = "prueba2ToolStripMenuItem";
-            this.prueba2ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.prueba2ToolStripMenuItem.Text = "Prueba2";
+            this.elegirColumnasToolStripMenuItem.Checked = true;
+            this.elegirColumnasToolStripMenuItem.CheckOnClick = true;
+            this.elegirColumnasToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.elegirColumnasToolStripMenuItem.Name = "elegirColumnasToolStripMenuItem";
+            this.elegirColumnasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.elegirColumnasToolStripMenuItem.Text = "Costo";
+            // 
+            // proveedorToolStripMenuItem
+            // 
+            this.proveedorToolStripMenuItem.Checked = true;
+            this.proveedorToolStripMenuItem.CheckOnClick = true;
+            this.proveedorToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedorToolStripMenuItem.Text = "Proveedor";
+            // 
+            // selecionasarTodosToolStripMenuItem
+            // 
+            this.selecionasarTodosToolStripMenuItem.Name = "selecionasarTodosToolStripMenuItem";
+            this.selecionasarTodosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.selecionasarTodosToolStripMenuItem.Text = "Selecionar  todos";
+            this.selecionasarTodosToolStripMenuItem.Click += new System.EventHandler(this.selecionasarTodosToolStripMenuItem_Click);
             // 
             // btnImprimir
             // 
@@ -495,7 +519,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1070, 641);
-            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.ContextMenuStrip = this.MenuContextual;
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnBorrarDatosHistorial);
             this.Controls.Add(this.btnVermenos);
@@ -537,7 +561,7 @@
             this.Resize += new System.EventHandler(this.frmProductos_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.MenuContextual.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,11 +594,13 @@
         private System.Windows.Forms.Button btnCambiarPorLotes;
         private System.Windows.Forms.Button btnVermas;
         private System.Windows.Forms.Button btnVermenos;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prueba2ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip MenuContextual;
+        private System.Windows.Forms.ToolStripMenuItem cmsCopiaProductos;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnBorrarDatosHistorial;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ToolStripMenuItem selecionasarTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elegirColumnasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
     }
 }

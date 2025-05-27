@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using ConexionesExternas;
 using Dominio;
@@ -21,7 +22,31 @@ namespace OfertasGo
             InitializeComponent();
         }
 
+        private void actualizacion()
+        {
+            try
+            {
+                //if (ConfigurationManager.AppSettings["Actualizacion"] == "true")
+                //{
+                //    MessageBox.Show("su sistema se va a actualizar", "ACTUALIZACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                //    string sentencia = "ALTER TABLE Productos RENAME COLUMN Recargo$ TO AjustePesos;";
+                //    AccesoDatos accesoDatos = new AccesoDatos();
+                //    accesoDatos.seterarConsulta(sentencia);
+                //    accesoDatos.ejecutarAccion();
+                //    accesoDatos.cerrarConexion();
+                //    ConfigurationManager.AppSettings["Actualizacion"] = "false";
+                //    MessageBox.Show("su sistema esta actualizado", "OK", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                //}
 
+            }
+            catch (Exception )
+            {
+
+                throw;
+            }
+           
+
+        }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
@@ -44,10 +69,7 @@ namespace OfertasGo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (ConfigurationManager.AppSettings["Actualizacion"] == "true")
-            {
-                MessageBox.Show("su sistema esta actualizado","OK",MessageBoxButtons.OK,MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button1);
-            }
+             actualizacion();       // Verifica e instala una actualizacion
             btnCargardb.Enabled = false;
 
             tsslFecha.Spring = true;
@@ -267,6 +289,15 @@ namespace OfertasGo
             this.WindowState = FormWindowState.Minimized;
             ListaProductos listaProductos = new ListaProductos();
             listaProductos.ShowDialog();
+        }
+
+        private void rubrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TRubro rubro = new TRubro();
+            
+            frmAgregarRubro agregarRubro = new frmAgregarRubro(rubro);
+
+
         }
     }
 }

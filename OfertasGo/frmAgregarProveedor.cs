@@ -49,8 +49,18 @@ namespace OfertasGo
             AccesoDatos datos = new AccesoDatos();
 
             //Validacion cargar nuevo si no esta en la lista:
-            var selecionadoid = (TProveedores)dgvListaProveedores.CurrentRow.DataBoundItem;
-            if (txtRazonSocial.Text == selecionadoid.RazonSocial)
+            var selecionadoid = proveedor;
+            if (txtRazonSocial.Text != string.Empty)
+            {
+                selecionadoid = (TProveedores)dgvListaProveedores.CurrentRow.DataBoundItem;
+            }
+            if (txtRazonSocial.Text == "")
+            {
+                MessageBox.Show("¡El campo nombre no puede estar vacio!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+
+            }
+            else if (txtRazonSocial.Text == selecionadoid.RazonSocial)
             {
                 MessageBox.Show("¡Ya existe el Proveedor! \n Si lo que quiere es modificar presione el boton MODIFICAR", "Lea atentamente", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return;
@@ -108,6 +118,10 @@ namespace OfertasGo
 
         private void frmAgregarProveedor_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Normal;
+            this.TopLevel = true;
+            this.TopMost = true;
+
             if (Proveedor != null)
             {
                 this.Width = 850;
@@ -127,6 +141,13 @@ namespace OfertasGo
             }
             else
             {
+                txtRazonSocial.Text = string.Empty;
+                txtDireccion.Text = string.Empty;
+                txtCiudad.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                txtTelefono.Text = string.Empty;
+                txtTelefono2.Text = string.Empty;
+
                 btnDesactivar.Visible = false;
                 btnModificar.Visible = false;
                 lblListaProvedores.Visible = false;
@@ -214,6 +235,11 @@ namespace OfertasGo
             txtTelefono.Text = "";
             txtTelefono2.Text = "";
             btnNuevo.Enabled = false;
+        }
+
+        private void frmAgregarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+            TopMost = false;
         }
     }
 }

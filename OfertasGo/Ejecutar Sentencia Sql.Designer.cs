@@ -40,18 +40,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mulish ExtraBold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(154, 18);
+            this.label1.Location = new System.Drawing.Point(168, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 28);
+            this.label1.Size = new System.Drawing.Size(236, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingresar Archivo SQL";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Mulish Medium", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.textBox1.Location = new System.Drawing.Point(12, 71);
             this.textBox1.Multiline = true;
@@ -112,11 +112,11 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Sora", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lblEstado.Location = new System.Drawing.Point(293, 334);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(0, 23);
+            this.lblEstado.Size = new System.Drawing.Size(0, 18);
             this.lblEstado.TabIndex = 15;
             // 
             // frmEjecutarSentenciaSql
@@ -138,6 +138,7 @@
             this.Text = "Ejecutar_Sentencia_Sql";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmEjecutarSentenciaSql_Load);
+            this.MouseLeave += new System.EventHandler(this.frmEjecutarSentenciaSql_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

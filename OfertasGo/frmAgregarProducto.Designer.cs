@@ -150,7 +150,7 @@
             this.txtFinal.Location = new System.Drawing.Point(123, 391);
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(128, 26);
-            this.txtFinal.TabIndex = 9;
+            this.txtFinal.TabIndex = 10;
             // 
             // btnAceptar
             // 
@@ -161,7 +161,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(84, 448);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(164, 75);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -175,7 +175,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(437, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 75);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -342,7 +342,7 @@
             this.txtAjuste.Location = new System.Drawing.Point(121, 341);
             this.txtAjuste.Name = "txtAjuste";
             this.txtAjuste.Size = new System.Drawing.Size(128, 26);
-            this.txtAjuste.TabIndex = 25;
+            this.txtAjuste.TabIndex = 9;
             this.txtAjuste.TextChanged += new System.EventHandler(this.txtAjuste_TextChanged);
             // 
             // label10

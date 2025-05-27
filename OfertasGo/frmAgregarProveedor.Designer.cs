@@ -335,6 +335,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "    ";
             this.Load += new System.EventHandler(this.frmAgregarProveedor_Load);
+            this.MouseLeave += new System.EventHandler(this.frmAgregarProveedor_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
