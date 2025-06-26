@@ -52,6 +52,7 @@
       <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -84,6 +85,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ConexionHistorialPrecios.cs" />
     <Compile Include="ConexionProductodb.cs" />
+    <Compile Include="ConexionProductoImagen.cs" />
     <Compile Include="ConexionProveedores.cs" />
     <Compile Include="ConexionRubro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,7 +97,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

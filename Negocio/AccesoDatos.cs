@@ -1,24 +1,33 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.IO;
+using System.Configuration;
 
 namespace Negocio
 {
     public class AccesoDatos
     {
-        string rutaDatabase = "./Database/dbofertas.db";
+        // Ruta leída desde App.config
+        private string rutaDatabase;
         private SQLiteConnection conexion;
         private SQLiteCommand comando;
         private SQLiteDataReader lector;
-        
-        public SQLiteDataReader Lector
-        {
-            get { return lector; }
-        }
 
+        public SQLiteDataReader Lector => lector;
 
         public AccesoDatos()
         {
-            conexion = new SQLiteConnection($"data source= {rutaDatabase};Version=3");
+            // Lee la ruta desde App.config
+            rutaDatabase = ConfigurationManager.AppSettings["RutaDB"];
+
+            // Si no existe la carpeta, la crea (en caso de que sea por ej: C:\OfertasGo\Database)
+            string carpetaDB = Path.GetDirectoryName(rutaDatabase);
+            if (!Directory.Exists(carpetaDB))
+            {
+                Directory.CreateDirectory(carpetaDB);
+            }
+
+            conexion = new SQLiteConnection($"Data Source={rutaDatabase};Version=3;");
             comando = new SQLiteCommand();
         }
 
@@ -26,8 +35,8 @@ namespace Negocio
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
-            
         }
+
         public void ejecutarLectura()
         {
             comando.Connection = conexion;
@@ -35,19 +44,16 @@ namespace Negocio
             {
                 conexion.Open();
                 lector = comando.ExecuteReader();
-                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Error al ejecutar lectura", ex);
             }
-
         }
+
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
-
             try
             {
                 conexion.Open();
@@ -55,26 +61,34 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception("Error al ejecutar acción", ex);
             }
-
         }
 
         public void setearParametro(string nombre, object valor)
         {
-
             comando.Parameters.AddWithValue(nombre, valor);
-
         }
+
         public void cerrarConexion()
         {
             if (lector != null)
                 lector.Close();
             conexion.Close();
-
         }
-    
-    }
 
+
+        // -------------------------
+        // Código anterior comentado:
+        /*
+        string rutaDatabase = "./Database/dbofertas.db";
+
+        public AccesoDatos()
+        {
+            conexion = new SQLiteConnection($"data source= {rutaDatabase};Version=3");
+            comando = new SQLiteCommand();
+        }
+        */
+        // -------------------------
+    }
 }

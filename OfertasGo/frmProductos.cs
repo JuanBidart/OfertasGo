@@ -190,7 +190,7 @@ namespace OfertasGo
                 dgvHistorial.DataSource = ListaFiltradaObtenidda;
                 lblUltimaFechaAct.Text = obtenerUltimafechamod();
                 lblDiasPasados.Text = diasPasados().ToString();
-                lbIinflacionMen.Text = doubleAPorcentaje(inflacion(30));
+                lbIinflacionMen.Text = doubleAPorcentaje(inflacion(360));
                 lblVarMen.Text = doubleAPorcentaje(variacionMensualAcumulada());
 
 
@@ -301,7 +301,7 @@ namespace OfertasGo
         }
         public double variacionMensualAcumulada()
         {
-            List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(30);
+            List<THistorialPrecio> historialFiltroFecha = listaFiltradaporFecha(360);
             int cantidadDeRegistros = historialFiltroFecha.Count;
 
             List<double> datosVariaciones = new List<double>();

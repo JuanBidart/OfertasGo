@@ -33,6 +33,8 @@ namespace Dominio
         public byte Eliminado { get; set; }
         public string Observaciones { get; set; }
 
+        public TProductos_imagen RutaImagen { get; set; }
+
 
 
 

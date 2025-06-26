@@ -65,12 +65,15 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnBorrarDatosHistorial = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             lblHistorial = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.MenuContextual.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHistorial
@@ -80,7 +83,7 @@
             lblHistorial.AutoSize = true;
             lblHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblHistorial.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lblHistorial.Location = new System.Drawing.Point(748, 340);
+            lblHistorial.Location = new System.Drawing.Point(755, 335);
             lblHistorial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblHistorial.Name = "lblHistorial";
             lblHistorial.Size = new System.Drawing.Size(191, 24);
@@ -154,7 +157,7 @@
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHistorial.Location = new System.Drawing.Point(628, 366);
+            this.dgvHistorial.Location = new System.Drawing.Point(628, 361);
             this.dgvHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 51;
@@ -169,7 +172,7 @@
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorcentaje.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPorcentaje.Location = new System.Drawing.Point(657, 556);
+            this.lblPorcentaje.Location = new System.Drawing.Point(38, 24);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(32, 24);
             this.lblPorcentaje.TabIndex = 4;
@@ -180,7 +183,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(625, 539);
+            this.label1.Location = new System.Drawing.Point(3, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 5;
@@ -206,7 +209,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(625, 580);
+            this.label2.Location = new System.Drawing.Point(3, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 16);
             this.label2.TabIndex = 7;
@@ -217,7 +220,7 @@
             this.lblUltimaFechaAct.AutoSize = true;
             this.lblUltimaFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimaFechaAct.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUltimaFechaAct.Location = new System.Drawing.Point(624, 596);
+            this.lblUltimaFechaAct.Location = new System.Drawing.Point(3, 64);
             this.lblUltimaFechaAct.Name = "lblUltimaFechaAct";
             this.lblUltimaFechaAct.Size = new System.Drawing.Size(24, 24);
             this.lblUltimaFechaAct.TabIndex = 8;
@@ -228,18 +231,18 @@
             this.lbld555.AutoSize = true;
             this.lbld555.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbld555.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lbld555.Location = new System.Drawing.Point(770, 539);
+            this.lbld555.Location = new System.Drawing.Point(148, 7);
             this.lbld555.Name = "lbld555";
-            this.lbld555.Size = new System.Drawing.Size(105, 16);
+            this.lbld555.Size = new System.Drawing.Size(81, 16);
             this.lbld555.TabIndex = 9;
-            this.lbld555.Text = "Dias Pasados";
+            this.lbld555.Text = "Ultima Act.";
             // 
             // lblDiasPasados
             // 
             this.lblDiasPasados.AutoSize = true;
             this.lblDiasPasados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiasPasados.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDiasPasados.Location = new System.Drawing.Point(799, 559);
+            this.lblDiasPasados.Location = new System.Drawing.Point(165, 24);
             this.lblDiasPasados.Name = "lblDiasPasados";
             this.lblDiasPasados.Size = new System.Drawing.Size(32, 24);
             this.lblDiasPasados.TabIndex = 10;
@@ -252,9 +255,9 @@
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label3.Location = new System.Drawing.Point(899, 539);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 32);
+            this.label3.Size = new System.Drawing.Size(84, 32);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Variacion\rMensual Acu.";
+            this.label3.Text = "Variacion\r Anual Acu.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblVarMen
@@ -288,7 +291,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 32);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Inflacion\r\nMensual";
+            this.label5.Text = "Inflacion\r\n Anual";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnActDes
@@ -453,7 +456,7 @@
             this.elegirColumnasToolStripMenuItem.CheckOnClick = true;
             this.elegirColumnasToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.elegirColumnasToolStripMenuItem.Name = "elegirColumnasToolStripMenuItem";
-            this.elegirColumnasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.elegirColumnasToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.elegirColumnasToolStripMenuItem.Text = "Costo";
             // 
             // proveedorToolStripMenuItem
@@ -462,7 +465,7 @@
             this.proveedorToolStripMenuItem.CheckOnClick = true;
             this.proveedorToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
-            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.proveedorToolStripMenuItem.Text = "Proveedor";
             // 
             // selecionasarTodosToolStripMenuItem
@@ -512,16 +515,42 @@
             this.lblTitulo.TabIndex = 32;
             this.lblTitulo.Text = "Configuracion y datos de productos";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label8.Location = new System.Drawing.Point(166, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 16);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Dias";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblDiasPasados);
+            this.panel1.Controls.Add(this.lbld555);
+            this.panel1.Controls.Add(this.lblUltimaFechaAct);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblPorcentaje);
+            this.panel1.Location = new System.Drawing.Point(628, 537);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(226, 102);
+            this.panel1.TabIndex = 34;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1070, 641);
+            this.ClientSize = new System.Drawing.Size(1070, 669);
             this.ContextMenuStrip = this.MenuContextual;
-            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnBorrarDatosHistorial);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnVermenos);
             this.Controls.Add(this.btnVermas);
             this.Controls.Add(this.btnImprimir);
@@ -540,13 +569,7 @@
             this.Controls.Add(this.lbIinflacionMen);
             this.Controls.Add(this.lblVarMen);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblDiasPasados);
-            this.Controls.Add(this.lbld555);
-            this.Controls.Add(this.lblUltimaFechaAct);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(lblHistorial);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
@@ -562,6 +585,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.MenuContextual.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +627,7 @@
         private System.Windows.Forms.ToolStripMenuItem selecionasarTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elegirColumnasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
     }
 }

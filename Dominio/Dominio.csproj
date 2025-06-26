@@ -65,6 +65,7 @@
     <Compile Include="TClientes.cs" />
     <Compile Include="THistorialPrecio.cs" />
     <Compile Include="TProductos.cs" />
+    <Compile Include="TProductos_imagen.cs" />
     <Compile Include="TProveedores.cs" />
     <Compile Include="TRubro.cs" />
   </ItemGroup>

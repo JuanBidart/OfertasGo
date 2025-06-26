@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f8sEjbIgo/Vkn161jNNYcAkI9L2g7Ol98pvFSP5qYlU=</dsig:DigestValue>
+        <dsig:DigestValue>mnwAW90zFh0Pbs1ETD1lA7v7bnCfi2Kuv2X0Y1JM394=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dominio.dll" size="10752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dominio.dll" size="11264">
       <assemblyIdentity name="Dominio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Oll1MNUfbiyPgnjdj6qbxd6dsA/P9kFvVQtMZw6kFlA=</dsig:DigestValue>
+        <dsig:DigestValue>EPWksCvRk5KTwYSGgaxF65e5dtvxq7fbfhQFvYbx7FE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,19 +97,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZTp8bTKkmszb7j7fBHNfcdb7336pMWjomCRW/0OYwAQ=</dsig:DigestValue>
+        <dsig:DigestValue>YDwmxSU/yL9bU23kmqTBVKX8BAcBTVUZCQx+wxfo86E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="19456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocio.dll" size="20480">
       <assemblyIdentity name="Negocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MIdbqi7QFB/EzEa5vxFFsmZGYbA62/tS1MpJmfpuh+o=</dsig:DigestValue>
+        <dsig:DigestValue>SSGUHcYBbko1HB/DQ6Qvk5esWKhxlUCQFRP+ntz/KEo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="401840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OfertasGo.exe" size="406448">
       <assemblyIdentity name="OfertasGo" version="1.0.1.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XGJyxBuqXdMCPPeRU233wry8ggBPcYyl7cYf6rpYGIA=</dsig:DigestValue>
+        <dsig:DigestValue>qaCIgYXTmbPjcRwumnVKllFP0ZPuRAn9OJGcHMzBLxU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -230,13 +230,13 @@
       <dsig:DigestValue>O8MyiaF5DnDlnss5zcIWrAdqiSicbtUbt6ops4I4mcA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="OfertasGo.exe.config" size="3736">
+  <file name="OfertasGo.exe.config" size="3849">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>s+cievwTRkwEgka3mJ5xFXQHXbouFVf0ztl9hh4cdIM=</dsig:DigestValue>
+      <dsig:DigestValue>6cubQYINP16JdkPYqvVVo196s3+prTDZ8amKWsSlrc8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SQLite.Interop.dll" size="1592504">

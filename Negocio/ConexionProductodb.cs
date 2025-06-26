@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SQLite;
 using System.Data.SqlTypes;
 using System.Globalization;
@@ -8,10 +9,14 @@ using System.Windows.Forms;
 
 namespace Negocio
 {
-
+    
     public class ConexionProductodb
     {
-        string rutaDatabase = "./Database/dbofertas.db";
+
+
+        
+
+        string rutaDatabase = ConfigurationManager.AppSettings["RutaDB"];
 
 
         public List<TProductos> listarProductosTodos(bool orden, bool ascendente)

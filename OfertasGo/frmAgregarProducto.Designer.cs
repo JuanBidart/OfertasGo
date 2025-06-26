@@ -52,10 +52,11 @@
             this.cbxIva = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPorcentajeDescuento = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.txtAjuste = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BtnCargar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -107,7 +108,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(433, 379);
+            this.label5.Location = new System.Drawing.Point(541, 487);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 4;
@@ -158,7 +159,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(84, 448);
+            this.btnAceptar.Location = new System.Drawing.Point(42, 448);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(164, 75);
             this.btnAceptar.TabIndex = 11;
@@ -172,7 +173,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(437, 448);
+            this.btnCancelar.Location = new System.Drawing.Point(263, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 75);
             this.btnCancelar.TabIndex = 12;
@@ -182,7 +183,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(495, 379);
+            this.dtpFecha.Location = new System.Drawing.Point(477, 464);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 8;
@@ -278,11 +279,11 @@
             // 
             this.lblinfofecha.AutoSize = true;
             this.lblinfofecha.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lblinfofecha.Location = new System.Drawing.Point(411, 402);
+            this.lblinfofecha.Location = new System.Drawing.Point(416, 419);
             this.lblinfofecha.Name = "lblinfofecha";
-            this.lblinfofecha.Size = new System.Drawing.Size(284, 13);
+            this.lblinfofecha.Size = new System.Drawing.Size(280, 13);
             this.lblinfofecha.TabIndex = 19;
-            this.lblinfofecha.Text = "*Al Actualizar un producto se actualiza con la fecha del dia";
+            this.lblinfofecha.Text = "Al Actualizar un producto se actualiza con la fecha del dia";
             // 
             // label8
             // 
@@ -327,14 +328,15 @@
             this.txtPorcentajeDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPorcentajeDescuento.TextChanged += new System.EventHandler(this.txtPorcentajeDescuento_TextChanged);
             // 
-            // pictureBox1
+            // pbxImagen
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.MintCream;
-            this.pictureBox1.Location = new System.Drawing.Point(437, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(259, 238);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            this.pbxImagen.BackColor = System.Drawing.Color.MintCream;
+            this.pbxImagen.Location = new System.Drawing.Point(437, 128);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(259, 238);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 23;
+            this.pbxImagen.TabStop = false;
             // 
             // txtAjuste
             // 
@@ -356,15 +358,30 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Ajuste";
             // 
+            // BtnCargar
+            // 
+            this.BtnCargar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCargar.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnCargar.Location = new System.Drawing.Point(493, 369);
+            this.BtnCargar.Name = "BtnCargar";
+            this.BtnCargar.Size = new System.Drawing.Size(164, 41);
+            this.BtnCargar.TabIndex = 25;
+            this.BtnCargar.Text = "Cargar Imagen";
+            this.BtnCargar.UseVisualStyleBackColor = false;
+            this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
+            // 
             // frmAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(702, 551);
+            this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.txtAjuste);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.txtPorcentajeDescuento);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbxIva);
@@ -393,7 +410,7 @@
             this.Name = "frmAgregarProducto";
             this.Text = "Agregar Producto";
             this.Load += new System.EventHandler(this.frmAgregarProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,8 +442,9 @@
         private System.Windows.Forms.ComboBox cbxIva;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPorcentajeDescuento;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.TextBox txtAjuste;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button BtnCargar;
     }
 }

@@ -1,239 +1,56 @@
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CopyComplete
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\acercade.png
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\acercade.png
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\OfertasGo.application
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Negocio.dll.config
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmListaProductos.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.TrustInfo.xml
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.manifest
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.application
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CopyComplete
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
-C:\Users\juand\Desktop\Programas\OfertasGo\OfertasGo\OfertasGo\obj\Debug\OfertasGo.grafica.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\acercade.png
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.application
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Negocio.dll.config
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmEjecutarSentenciaSql.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmListaProductos.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Lista.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.TrustInfo.xml
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.manifest
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.application
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.Up2Date
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
-C:\Users\Juan Diego\Desktop\prueba visual\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\acercade.png
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\OfertasGo.application
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\EntityFramework.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll.config
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Dominio.dll.config
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Negocio.dll.config
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\EntityFramework.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmEjecutarSentenciaSql.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmListaProductos.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Lista.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.ListaProductos.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.TrustInfo.xml
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.manifest
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.application
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.Up2Date
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
-C:\Users\juandi\Desktop\OfertasGo-master\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\acercade.png
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Database\dbofertas.db
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.application
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\FuncionesComunes.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll.config
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.dll.config
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\FuncionesComunes.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.dll.config
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmEjecutarSentenciaSql.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmListaProductos.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.ModificarLote.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.ListaProductos.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.TrustInfo.xml
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.manifest
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.application
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.Up2Date
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
-C:\Users\juandi\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\acercade.png
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\SQLite.Interop.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.config
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe.manifest
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.application
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.exe
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\OfertasGo.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\FuncionesComunes.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\ConexionesExternas.dll.config
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Dominio.dll.config
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\FuncionesComunes.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Negocio.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Buffers.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Data.SQLite.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Memory.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.AssemblyReference.cache
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmEjecutarSentenciaSql.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Form1.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAcercade.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProducto.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarProveedor.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmAgregarRubro.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmListaProductos.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.frmProductos.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.ModificarLote.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.ListaProductos.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.Properties.Resources.resources
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.GenerateResource.cache
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.CoreCompileInputs.cache
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.TrustInfo.xml
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.manifest
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.application
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.csproj.Up2Date
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.pdb
+C:\Users\JuanDiego\Desktop\Programas\OfertasGo\OfertasGo\obj\Debug\OfertasGo.exe.config
